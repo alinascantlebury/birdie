@@ -4,49 +4,211 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Flock by Block</title>
-<style>
-body{max-width:680px;margin:80px auto;padding:0 24px;font-family:Georgia,serif;color:#1a1508;background:#faf7f0;line-height:1.7;}
-h1{font-size:48px;margin-bottom:4px;}
-h1 em{font-style:italic;color:#1a6a4a;}
-.name{font-size:14px;color:#5a5040;margin-bottom:32px;}
-p{font-size:16px;color:#3a3020;margin-bottom:20px;}
-h2{font-size:18px;margin:36px 0 12px;font-style:italic;}
-ul{padding-left:20px;color:#3a3020;font-size:15px;}
-li{margin-bottom:6px;}
-a{color:#1a6a4a;}
-footer{margin-top:60px;padding-top:20px;border-top:1px solid #d8ceb8;font-size:12px;color:#5a5040;}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<h1>Flock by <em>Block</em></h1>
-<div class="name">Alina Scantlebury · Data Visualization · Spring 2026</div>
+<!-- ── LANDING ── -->
+<section id="landing">
+  <div class="landing-top">
+    <div class="landing-title-wrap">
+      <h1 class="landing-title">Flock by Block</h1>
+      <p class="landing-desc">How does San Francisco's urban infrastructure shape which birds live where? This project uses over 600,000 eBird observations to follow four species across the city and ask why each one is where it is.</p>
+    </div>
+    <button class="choose-again" onclick="document.getElementById('landing').scrollIntoView()">Choose again</button>
+  </div>
 
-<p>How does San Francisco's urban infrastructure shape which birds live where? This project uses over 600,000 eBird observations to follow four species across the city and ask why each one is where it is.</p>
+  <div class="forest-scene">
+    <img src="img/tree-vector.png" alt="">
+  </div>
 
-<h2>Four chapters</h2>
-<ul>
-  <li><strong>Crows</strong> — .</li>
-  <li><strong>Parrots</strong> — exploring parrots sightings traveling from Telegraph Hill to Fort Mason.</li>
-  <li><strong>Hawks</strong> — investigating eagle raptor sightings considering the Pacific Flyway which runs through the city every autumn.</li>
-  <li><strong>Shorebirds</strong> — inspecting decrease in population.</li>
-</ul>
+  <!-- bird circles row -->
+  <div class="bird-row">
 
-<h2>Data</h2>
-<ul>
-  <li>eBird Basic Dataset · Cornell Lab of Ornithology · 621,286 records</li>
-  <li>SF Street Tree List · DataSF</li>
-  <li>SF Registered Businesses · DataSF</li>
-</ul>
+    <div class="bird-circle" onclick="goTo('ch-hawk')">
+      <img src="img/hawk.png" alt="hawk">
+      <div class="bird-circle-label">
+        <span class="bc-num">03</span>
+        <span class="bc-name">Hawk</span>
+        <span class="bc-line">Only here in September.</span>
+      </div>
+    </div>
 
-<h2>Built with</h2>
-<ul>
-  <li>D3.js · Leaflet · Scrollama · Python · geopandas</li>
-</ul>
+    <div class="bird-circle" onclick="goTo('ch-crow')">
+      <img src="img/crow.png" alt="crow">
+      <div class="bird-circle-label">
+        <span class="bc-num">01</span>
+        <span class="bc-name">Crow</span>
+        <span class="bc-line">I know when your bins go out.</span>
+      </div>
+    </div>
+
+    <div class="bird-circle" onclick="goTo('ch-parrot')">
+      <img src="img/parrot.png" alt="parrot">
+      <div class="bird-circle-label">
+        <span class="bc-num">02</span>
+        <span class="bc-name">Parrot</span>
+        <span class="bc-line">Telegraph Hill? I moved.</span>
+      </div>
+    </div>
+
+    <div class="bird-circle" onclick="goTo('ch-shore')">
+      <img src="img/shorebird.png" alt="shorebird">
+      <div class="bird-circle-label">
+        <span class="bc-num">04</span>
+        <span class="bc-name">Shorebird</span>
+        <span class="bc-line">There used to be more of us.</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── NAV ── -->
+<nav id="main-nav" style="display:none">
+  <div class="nav-logo">Flock by Block</div>
+  <div class="nav-links">
+    <a href="#ch-crow" id="nav-crow">Crows</a>
+    <a href="#ch-parrot" id="nav-parrot">Parrots</a>
+    <a href="#ch-hawk" id="nav-hawk">Hawks</a>
+    <a href="#ch-shore" id="nav-shore">Shorebirds</a>
+  </div>
+</nav>
+
+<!-- ── CH 1: CROWS ── -->
+<div class="sec-break" id="ch-crow">
+  <div class="sec-n">01.</div>
+  <div class="sec-title">The <em>Crow</em></div>
+</div>
+<div class="scrolly">
+  <div class="prose-col">
+    <div class="step" data-chapter="crow" data-viz="scatter">
+      <div class="step-label" style="color:#1a3a6a">Objective 1 · Crows</div>
+    </div>
+    <div class="step" data-chapter="crow" data-viz="choropleth">
+      <div class="step-label" style="color:#1a3a6a">The Map</div>
+
+    </div>
+  </div>
+  <div class="viz-col" id="viz-crow">
+    <div class="viz-wrap" id="crow-scatter-wrap">
+      <div class="viz-label">Crow frequency vs food business density</div>
+      <div class="chart-box">
+        <img src="img/img.jpg" alt="Crow scatter plot" style="width:100%;display:block;border-radius:2px;">
+      </div>
+      <div class="annot">r = −0.26, p = 0.19 — not significant. Crows do not follow restaurants.</div>
+    </div>
+    <div class="viz-wrap" id="crow-choro-wrap" style="display:none">
+      <div class="viz-label">Crow frequency by neighborhood</div>
+      <div class="chart-box">
+        <img src="img/img.jpg" alt="Crow choropleth map" style="width:100%;display:block;border-radius:2px;">
+      </div>
+      <div class="annot" id="choro-annot">Darker = more crows. Toggle to compare with food business density.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CH 2: PARROTS ── -->
+<div class="sec-break" id="ch-parrot">
+  <div class="sec-n">02.</div>
+  <div class="sec-title">The <em>Parrots</em></div>
+</div>
+<div class="scrolly">
+  <div class="prose-col">
+    <div class="step" data-chapter="parrot" data-viz="line">
+      <div class="step-label" style="color:#1a5a30">Objective 2 · Parrots</div>
+    </div>
+    <div class="step" data-chapter="parrot" data-viz="dotmap">
+      <div class="step-label" style="color:#1a5a30">The Colony</div>
+      <div class="stat-pull" style="border-color:#1a5a30">
+        <div class="num" style="color:#1a5a30">15×</div>
+        <div class="lbl">Fort Mason sightings vs Telegraph Hill annually since 2020</div>
+      </div>
+    </div>
+  </div>
+  <div class="viz-col">
+    <div class="viz-wrap" id="parrot-line-wrap">
+      <div class="viz-label">Red-masked Parakeet sightings 2010–2025</div>
+      <div class="chart-box">
+        <img src="img/img.jpg" alt="Parrot line chart" style="width:100%;display:block;border-radius:2px;">
+      </div>
+      <div class="annot" style="border-color:#1a5a30">Gray = Telegraph Hill. Green = Fort Mason. Crossover around 2014.</div>
+    </div>
+    <div class="viz-wrap" id="parrot-dot-wrap" style="display:none">
+      <div class="viz-label">Parrot colony · SF map</div>
+      <div class="chart-box">
+        <img src="img/img.jpg" alt="Parrot dot map" style="width:100%;display:block;border-radius:2px;">
+      </div>
+      <div class="annot" style="border-color:#1a5a30">Bubble size = sightings. Fort Mason dominates since 2014.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CH 3: HAWKS ── -->
+<div class="sec-break" id="ch-hawk">
+  <div class="sec-n">03.</div>
+  <div class="sec-title">The <em>Hawk</em></div>
+</div>
+<div class="scrolly">
+  <div class="prose-col">
+    <div class="step" data-chapter="hawk" data-viz="smult">
+      <div class="step-label" style="color:#8a6010">Objective 3 · Hawks</div>
+      <div class="stat-pull" style="border-color:#8a6010">
+      </div>
+    </div>
+  </div>
+  <div class="viz-col">
+    <div class="viz-wrap">
+      <div class="viz-label">Monthly raptor sightings · four species</div>
+      <div class="chart-box">
+        <img src="img/img.jpg" alt="Raptor small multiples" style="width:100%;display:block;border-radius:2px;">
+      </div>
+      <div class="annot" style="border-color:#8a6010">Amber = September and October. Same spike across all four species.</div>
+    </div>
+  </div>
+</div>
+
+  
+</div>
 
 <footer>
-  <a href="https://github.com/alinascantlebury/birdie">GitHub Repository</a>
+  <div>
+    <div class="footer-title">Flock by Block</div>
+    <div class="footer-meta">Alina Scantlebury · Data Visualization · Spring 2026<br>Cornell Lab of Ornithology · DataSF Open Data Portal</div>
+  </div>
 </footer>
 
+<script>
+function goTo(id){ document.getElementById(id).scrollIntoView({behavior:'smooth'}); }
+
+// show nav after landing
+const navEl = document.getElementById('main-nav');
+const obs = new IntersectionObserver(([e]) => {
+  navEl.style.display = e.isIntersecting ? 'none' : 'flex';
+}, {threshold: 0.05});
+obs.observe(document.getElementById('landing'));
+
+// scrollama — swap viz panels on scroll
+const scroller = scrollama();
+scroller.setup({step: '.step', offset: 0.5}).onStepEnter(({element}) => {
+  const viz = element.dataset.viz;
+  const ch  = element.dataset.chapter;
+
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  const nl = document.getElementById('nav-' + ch);
+  if (nl) nl.classList.add('active');
+
+  if (ch === 'crow') {
+    document.getElementById('crow-scatter-wrap').style.display = viz === 'scatter'    ? 'block' : 'none';
+    document.getElementById('crow-choro-wrap').style.display  = viz === 'choropleth' ? 'block' : 'none';
+  }
+  if (ch === 'parrot') {
+    document.getElementById('parrot-line-wrap').style.display = viz === 'line'   ? 'block' : 'none';
+    document.getElementById('parrot-dot-wrap').style.display  = viz === 'dotmap' ? 'block' : 'none';
+  }
+});
+</script>
 </body>
 </html>
