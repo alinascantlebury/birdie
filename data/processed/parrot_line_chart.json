@@ -1,0 +1,87 @@
+[
+  {
+    "year": 2010,
+    "fort_mason": 0,
+    "telegraph_hill": 1
+  },
+  {
+    "year": 2011,
+    "fort_mason": 6,
+    "telegraph_hill": 7
+  },
+  {
+    "year": 2012,
+    "fort_mason": 9,
+    "telegraph_hill": 8
+  },
+  {
+    "year": 2013,
+    "fort_mason": 23,
+    "telegraph_hill": 9
+  },
+  {
+    "year": 2014,
+    "fort_mason": 35,
+    "telegraph_hill": 14
+  },
+  {
+    "year": 2015,
+    "fort_mason": 49,
+    "telegraph_hill": 13
+  },
+  {
+    "year": 2016,
+    "fort_mason": 66,
+    "telegraph_hill": 10
+  },
+  {
+    "year": 2017,
+    "fort_mason": 47,
+    "telegraph_hill": 10
+  },
+  {
+    "year": 2018,
+    "fort_mason": 52,
+    "telegraph_hill": 10
+  },
+  {
+    "year": 2019,
+    "fort_mason": 67,
+    "telegraph_hill": 22
+  },
+  {
+    "year": 2020,
+    "fort_mason": 62,
+    "telegraph_hill": 4
+  },
+  {
+    "year": 2021,
+    "fort_mason": 81,
+    "telegraph_hill": 9
+  },
+  {
+    "year": 2022,
+    "fort_mason": 92,
+    "telegraph_hill": 30
+  },
+  {
+    "year": 2023,
+    "fort_mason": 78,
+    "telegraph_hill": 19
+  },
+  {
+    "year": 2024,
+    "fort_mason": 56,
+    "telegraph_hill": 17
+  },
+  {
+    "year": 2025,
+    "fort_mason": 55,
+    "telegraph_hill": 19
+  },
+  {
+    "year": 2026,
+    "fort_mason": 11,
+    "telegraph_hill": 2
+  }
+]

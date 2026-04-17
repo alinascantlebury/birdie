@@ -1,0 +1,532 @@
+[
+  {
+    "neighborhood": "Alamo Square",
+    "crow_frequency": 0.4179,
+    "sighting_checklists": 28
+  },
+  {
+    "neighborhood": "Anza Vista",
+    "crow_frequency": 0.5,
+    "sighting_checklists": 1
+  },
+  {
+    "neighborhood": "Aquatic Park / Ft. Mason",
+    "crow_frequency": 0.4101,
+    "sighting_checklists": 1205
+  },
+  {
+    "neighborhood": "Ashbury Heights",
+    "crow_frequency": 0.5439,
+    "sighting_checklists": 31
+  },
+  {
+    "neighborhood": "Balboa Terrace",
+    "crow_frequency": 0.4,
+    "sighting_checklists": 4
+  },
+  {
+    "neighborhood": "Bayview",
+    "crow_frequency": 0.375,
+    "sighting_checklists": 21
+  },
+  {
+    "neighborhood": "Bernal Heights",
+    "crow_frequency": 0.5417,
+    "sighting_checklists": 312
+  },
+  {
+    "neighborhood": "Bret Harte",
+    "crow_frequency": 0.4545,
+    "sighting_checklists": 20
+  },
+  {
+    "neighborhood": "Buena Vista",
+    "crow_frequency": 0.3832,
+    "sighting_checklists": 123
+  },
+  {
+    "neighborhood": "Candlestick Point SRA",
+    "crow_frequency": 0.3923,
+    "sighting_checklists": 264
+  },
+  {
+    "neighborhood": "Cathedral Hill",
+    "crow_frequency": 0.4222,
+    "sighting_checklists": 19
+  },
+  {
+    "neighborhood": "Central Waterfront",
+    "crow_frequency": 0.2944,
+    "sighting_checklists": 280
+  },
+  {
+    "neighborhood": "Chinatown",
+    "crow_frequency": 0.1053,
+    "sighting_checklists": 2
+  },
+  {
+    "neighborhood": "Civic Center",
+    "crow_frequency": 0.5909,
+    "sighting_checklists": 13
+  },
+  {
+    "neighborhood": "Clarendon Heights",
+    "crow_frequency": 0.3529,
+    "sighting_checklists": 12
+  },
+  {
+    "neighborhood": "Corona Heights",
+    "crow_frequency": 0.3599,
+    "sighting_checklists": 303
+  },
+  {
+    "neighborhood": "Cow Hollow",
+    "crow_frequency": 0.6,
+    "sighting_checklists": 3
+  },
+  {
+    "neighborhood": "Crocker Amazon",
+    "crow_frequency": 0.4462,
+    "sighting_checklists": 29
+  },
+  {
+    "neighborhood": "Diamond Heights",
+    "crow_frequency": 0.3774,
+    "sighting_checklists": 20
+  },
+  {
+    "neighborhood": "Dogpatch",
+    "crow_frequency": 0.1765,
+    "sighting_checklists": 3
+  },
+  {
+    "neighborhood": "Dolores Heights",
+    "crow_frequency": 0.2857,
+    "sighting_checklists": 2
+  },
+  {
+    "neighborhood": "Downtown / Union Square",
+    "crow_frequency": 0.0526,
+    "sighting_checklists": 1
+  },
+  {
+    "neighborhood": "Duboce Triangle",
+    "crow_frequency": 0.5,
+    "sighting_checklists": 17
+  },
+  {
+    "neighborhood": "Eureka Valley",
+    "crow_frequency": 0.55,
+    "sighting_checklists": 11
+  },
+  {
+    "neighborhood": "Excelsior",
+    "crow_frequency": 0.5,
+    "sighting_checklists": 4
+  },
+  {
+    "neighborhood": "Fairmount",
+    "crow_frequency": 0.4103,
+    "sighting_checklists": 16
+  },
+  {
+    "neighborhood": "Financial District",
+    "crow_frequency": 0.2441,
+    "sighting_checklists": 113
+  },
+  {
+    "neighborhood": "Fishermans Wharf",
+    "crow_frequency": 0.2319,
+    "sighting_checklists": 61
+  },
+  {
+    "neighborhood": "Forest Hill",
+    "crow_frequency": 0.1667,
+    "sighting_checklists": 2
+  },
+  {
+    "neighborhood": "Forest Knolls",
+    "crow_frequency": 0.2143,
+    "sighting_checklists": 12
+  },
+  {
+    "neighborhood": "Glen Park",
+    "crow_frequency": 0.4208,
+    "sighting_checklists": 247
+  },
+  {
+    "neighborhood": "Golden Gate Heights",
+    "crow_frequency": 0.4049,
+    "sighting_checklists": 66
+  },
+  {
+    "neighborhood": "Golden Gate Park",
+    "crow_frequency": 0.3932,
+    "sighting_checklists": 5207
+  },
+  {
+    "neighborhood": "Haight Ashbury",
+    "crow_frequency": 0.4444,
+    "sighting_checklists": 4
+  },
+  {
+    "neighborhood": "Hayes Valley",
+    "crow_frequency": 0.6923,
+    "sighting_checklists": 9
+  },
+  {
+    "neighborhood": "Holly Park",
+    "crow_frequency": 0.5885,
+    "sighting_checklists": 276
+  },
+  {
+    "neighborhood": "Hunters Point",
+    "crow_frequency": 0.4184,
+    "sighting_checklists": 305
+  },
+  {
+    "neighborhood": "India Basin",
+    "crow_frequency": 0.4225,
+    "sighting_checklists": 1317
+  },
+  {
+    "neighborhood": "Ingleside Terraces",
+    "crow_frequency": 0.2222,
+    "sighting_checklists": 2
+  },
+  {
+    "neighborhood": "Inner Richmond",
+    "crow_frequency": 0.4301,
+    "sighting_checklists": 40
+  },
+  {
+    "neighborhood": "Inner Sunset",
+    "crow_frequency": 0.3816,
+    "sighting_checklists": 58
+  },
+  {
+    "neighborhood": "Japantown",
+    "crow_frequency": 0.3333,
+    "sighting_checklists": 1
+  },
+  {
+    "neighborhood": "Laguna Honda",
+    "crow_frequency": 0.3827,
+    "sighting_checklists": 31
+  },
+  {
+    "neighborhood": "Lake Street",
+    "crow_frequency": 0.6875,
+    "sighting_checklists": 11
+  },
+  {
+    "neighborhood": "Lakeshore",
+    "crow_frequency": 0.4263,
+    "sighting_checklists": 1718
+  },
+  {
+    "neighborhood": "Laurel Heights / Jordan Park",
+    "crow_frequency": 1.1667,
+    "sighting_checklists": 7
+  },
+  {
+    "neighborhood": "Lincoln Park / Ft. Miley",
+    "crow_frequency": 0.3238,
+    "sighting_checklists": 1032
+  },
+  {
+    "neighborhood": "Little Hollywood",
+    "crow_frequency": 0.4286,
+    "sighting_checklists": 6
+  },
+  {
+    "neighborhood": "Lone Mountain",
+    "crow_frequency": 0.3415,
+    "sighting_checklists": 14
+  },
+  {
+    "neighborhood": "Lower Haight",
+    "crow_frequency": 0.4615,
+    "sighting_checklists": 6
+  },
+  {
+    "neighborhood": "Lower Pacific Heights",
+    "crow_frequency": 0.5,
+    "sighting_checklists": 3
+  },
+  {
+    "neighborhood": "Marina",
+    "crow_frequency": 0.3247,
+    "sighting_checklists": 150
+  },
+  {
+    "neighborhood": "McLaren Park",
+    "crow_frequency": 0.4917,
+    "sighting_checklists": 357
+  },
+  {
+    "neighborhood": "Merced Heights",
+    "crow_frequency": 0.4082,
+    "sighting_checklists": 40
+  },
+  {
+    "neighborhood": "Merced Manor",
+    "crow_frequency": 0.375,
+    "sighting_checklists": 6
+  },
+  {
+    "neighborhood": "Midtown Terrace",
+    "crow_frequency": 0.5211,
+    "sighting_checklists": 37
+  },
+  {
+    "neighborhood": "Mint Hill",
+    "crow_frequency": 2.0,
+    "sighting_checklists": 4
+  },
+  {
+    "neighborhood": "Miraloma Park",
+    "crow_frequency": 0.2873,
+    "sighting_checklists": 79
+  },
+  {
+    "neighborhood": "Mission",
+    "crow_frequency": 0.3235,
+    "sighting_checklists": 44
+  },
+  {
+    "neighborhood": "Mission Bay",
+    "crow_frequency": 0.2398,
+    "sighting_checklists": 41
+  },
+  {
+    "neighborhood": "Mission Dolores",
+    "crow_frequency": 0.6833,
+    "sighting_checklists": 82
+  },
+  {
+    "neighborhood": "Mission Terrace",
+    "crow_frequency": 0.4118,
+    "sighting_checklists": 14
+  },
+  {
+    "neighborhood": "Nob Hill",
+    "crow_frequency": 0.2581,
+    "sighting_checklists": 8
+  },
+  {
+    "neighborhood": "Noe Valley",
+    "crow_frequency": 0.3784,
+    "sighting_checklists": 14
+  },
+  {
+    "neighborhood": "North Beach",
+    "crow_frequency": 0.375,
+    "sighting_checklists": 12
+  },
+  {
+    "neighborhood": "Northern Waterfront",
+    "crow_frequency": 0.2797,
+    "sighting_checklists": 40
+  },
+  {
+    "neighborhood": "Oceanview",
+    "crow_frequency": 0.3929,
+    "sighting_checklists": 11
+  },
+  {
+    "neighborhood": "Outer Mission",
+    "crow_frequency": 0.4548,
+    "sighting_checklists": 568
+  },
+  {
+    "neighborhood": "Outer Richmond",
+    "crow_frequency": 0.3652,
+    "sighting_checklists": 42
+  },
+  {
+    "neighborhood": "Outer Sunset",
+    "crow_frequency": 0.3814,
+    "sighting_checklists": 344
+  },
+  {
+    "neighborhood": "Pacific Heights",
+    "crow_frequency": 0.2513,
+    "sighting_checklists": 99
+  },
+  {
+    "neighborhood": "Panhandle",
+    "crow_frequency": 0.4474,
+    "sighting_checklists": 17
+  },
+  {
+    "neighborhood": "Parkmerced",
+    "crow_frequency": 0.5263,
+    "sighting_checklists": 30
+  },
+  {
+    "neighborhood": "Parkside",
+    "crow_frequency": 0.2985,
+    "sighting_checklists": 311
+  },
+  {
+    "neighborhood": "Parnassus Heights",
+    "crow_frequency": 0.3445,
+    "sighting_checklists": 164
+  },
+  {
+    "neighborhood": "Peralta Heights",
+    "crow_frequency": 0.2703,
+    "sighting_checklists": 10
+  },
+  {
+    "neighborhood": "Polk Gulch",
+    "crow_frequency": 0.75,
+    "sighting_checklists": 3
+  },
+  {
+    "neighborhood": "Portola",
+    "crow_frequency": 0.6667,
+    "sighting_checklists": 18
+  },
+  {
+    "neighborhood": "Potrero Hill",
+    "crow_frequency": 0.2443,
+    "sighting_checklists": 97
+  },
+  {
+    "neighborhood": "Presidio National Park",
+    "crow_frequency": 0.3644,
+    "sighting_checklists": 2579
+  },
+  {
+    "neighborhood": "Presidio Terrace",
+    "crow_frequency": 0.3229,
+    "sighting_checklists": 154
+  },
+  {
+    "neighborhood": "Rincon Hill",
+    "crow_frequency": 0.2308,
+    "sighting_checklists": 3
+  },
+  {
+    "neighborhood": "Russian Hill",
+    "crow_frequency": 0.2687,
+    "sighting_checklists": 18
+  },
+  {
+    "neighborhood": "Seacliff",
+    "crow_frequency": 0.3733,
+    "sighting_checklists": 28
+  },
+  {
+    "neighborhood": "Sherwood Forest",
+    "crow_frequency": 0.3652,
+    "sighting_checklists": 218
+  },
+  {
+    "neighborhood": "Showplace Square",
+    "crow_frequency": 0.1429,
+    "sighting_checklists": 1
+  },
+  {
+    "neighborhood": "Silver Terrace",
+    "crow_frequency": 0.1667,
+    "sighting_checklists": 5
+  },
+  {
+    "neighborhood": "South Beach",
+    "crow_frequency": 0.2685,
+    "sighting_checklists": 29
+  },
+  {
+    "neighborhood": "South of Market",
+    "crow_frequency": 0.3179,
+    "sighting_checklists": 62
+  },
+  {
+    "neighborhood": "St. Francis Wood",
+    "crow_frequency": 0.3333,
+    "sighting_checklists": 1
+  },
+  {
+    "neighborhood": "St. Marys Park",
+    "crow_frequency": 0.5949,
+    "sighting_checklists": 94
+  },
+  {
+    "neighborhood": "Stonestown",
+    "crow_frequency": 0.5,
+    "sighting_checklists": 6
+  },
+  {
+    "neighborhood": "Sunnydale",
+    "crow_frequency": 0.5,
+    "sighting_checklists": 1
+  },
+  {
+    "neighborhood": "Sunnyside",
+    "crow_frequency": 0.5,
+    "sighting_checklists": 25
+  },
+  {
+    "neighborhood": "Sutro Heights",
+    "crow_frequency": 0.2935,
+    "sighting_checklists": 248
+  },
+  {
+    "neighborhood": "Telegraph Hill",
+    "crow_frequency": 0.3665,
+    "sighting_checklists": 81
+  },
+  {
+    "neighborhood": "Tenderloin",
+    "crow_frequency": 0.2222,
+    "sighting_checklists": 4
+  },
+  {
+    "neighborhood": "Treasure Island",
+    "crow_frequency": 0.3707,
+    "sighting_checklists": 43
+  },
+  {
+    "neighborhood": "Union Street",
+    "crow_frequency": 0.5,
+    "sighting_checklists": 4
+  },
+  {
+    "neighborhood": "University Mound",
+    "crow_frequency": 0.5,
+    "sighting_checklists": 1
+  },
+  {
+    "neighborhood": "Upper Market",
+    "crow_frequency": 0.3846,
+    "sighting_checklists": 5
+  },
+  {
+    "neighborhood": "Visitacion Valley",
+    "crow_frequency": 0.4792,
+    "sighting_checklists": 23
+  },
+  {
+    "neighborhood": "West Portal",
+    "crow_frequency": 0.7273,
+    "sighting_checklists": 8
+  },
+  {
+    "neighborhood": "Western Addition",
+    "crow_frequency": 0.25,
+    "sighting_checklists": 4
+  },
+  {
+    "neighborhood": "Westwood Park",
+    "crow_frequency": 0.5455,
+    "sighting_checklists": 12
+  },
+  {
+    "neighborhood": "Yerba Buena Island",
+    "crow_frequency": 0.2222,
+    "sighting_checklists": 10
+  }
+]

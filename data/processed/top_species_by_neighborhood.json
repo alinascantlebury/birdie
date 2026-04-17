@@ -1,0 +1,773 @@
+{
+  "Alamo Square": [
+    "Anna's Hummingbird",
+    "American Crow",
+    "House Finch",
+    "White-crowned Sparrow",
+    "American Robin"
+  ],
+  "Anza Vista": [
+    "American Coot",
+    "American Crow",
+    "Anna's Hummingbird",
+    "Black-crowned Night Heron",
+    "California Scrub-Jay"
+  ],
+  "Aquatic Park / Ft. Mason": [
+    "Anna's Hummingbird",
+    "White-crowned Sparrow",
+    "American Crow",
+    "House Finch",
+    "Black Phoebe"
+  ],
+  "Ashbury Heights": [
+    "Anna's Hummingbird",
+    "Common Raven",
+    "White-crowned Sparrow",
+    "American Crow",
+    "House Finch"
+  ],
+  "Balboa Terrace": [
+    "Anna's Hummingbird",
+    "American Crow",
+    "Bushtit",
+    "Chestnut-backed Chickadee",
+    "Western Gull"
+  ],
+  "Bayview": [
+    "Anna's Hummingbird",
+    "Common Raven",
+    "Yellow-rumped Warbler",
+    "American Crow",
+    "Black Phoebe"
+  ],
+  "Bernal Heights": [
+    "Anna's Hummingbird",
+    "House Finch",
+    "California Scrub-Jay",
+    "Common Raven",
+    "Dark-eyed Junco"
+  ],
+  "Bret Harte": [
+    "Anna's Hummingbird",
+    "California Towhee",
+    "Yellow-rumped Warbler",
+    "American Crow",
+    "Black Phoebe"
+  ],
+  "Buena Vista": [
+    "Anna's Hummingbird",
+    "Dark-eyed Junco",
+    "California Scrub-Jay",
+    "Chestnut-backed Chickadee",
+    "Pygmy Nuthatch"
+  ],
+  "Candlestick Point SRA": [
+    "California Towhee",
+    "Anna's Hummingbird",
+    "Western Gull",
+    "California Scrub-Jay",
+    "Common Raven"
+  ],
+  "Castro": [
+    "Anna's Hummingbird",
+    "Black Phoebe",
+    "Chestnut-backed Chickadee",
+    "House Finch",
+    "Yellow-rumped Warbler"
+  ],
+  "Cathedral Hill": [
+    "Anna's Hummingbird",
+    "American Crow",
+    "White-crowned Sparrow",
+    "American Robin",
+    "Western Gull"
+  ],
+  "Cayuga": [
+    "Black Phoebe",
+    "California Towhee",
+    "Western Gull"
+  ],
+  "Central Waterfront": [
+    "Western Gull",
+    "Double-crested Cormorant",
+    "House Finch",
+    "White-crowned Sparrow",
+    "Snowy Egret"
+  ],
+  "Chinatown": [
+    "House Finch",
+    "Anna's Hummingbird",
+    "Black Phoebe",
+    "American Robin",
+    "Townsend's Warbler"
+  ],
+  "Civic Center": [
+    "Brewer's Blackbird",
+    "Western Gull",
+    "Brown-headed Cowbird",
+    "American Crow",
+    "Common Raven"
+  ],
+  "Clarendon Heights": [
+    "Anna's Hummingbird",
+    "Common Raven",
+    "Song Sparrow",
+    "White-crowned Sparrow",
+    "Golden-crowned Sparrow"
+  ],
+  "Cole Valley": [
+    "Brewer's Blackbird",
+    "Painted Bunting",
+    "white egret sp."
+  ],
+  "Corona Heights": [
+    "Anna's Hummingbird",
+    "California Scrub-Jay",
+    "White-crowned Sparrow",
+    "House Finch",
+    "California Towhee"
+  ],
+  "Cow Hollow": [
+    "American Crow",
+    "American Robin",
+    "Dark-eyed Junco",
+    "Western Gull",
+    "Yellow-rumped Warbler"
+  ],
+  "Crocker Amazon": [
+    "House Finch",
+    "Common Raven",
+    "White-crowned Sparrow",
+    "Anna's Hummingbird",
+    "California Towhee"
+  ],
+  "Diamond Heights": [
+    "Anna's Hummingbird",
+    "House Finch",
+    "Chestnut-backed Chickadee",
+    "Common Raven",
+    "American Crow"
+  ],
+  "Dogpatch": [
+    "Anna's Hummingbird",
+    "Yellow-rumped Warbler",
+    "American Crow",
+    "White-crowned Sparrow",
+    "American Robin"
+  ],
+  "Dolores Heights": [
+    "American Crow",
+    "Anna's Hummingbird",
+    "Caspian Tern",
+    "Common Raven",
+    "House Finch"
+  ],
+  "Downtown / Union Square": [
+    "Anna's Hummingbird",
+    "House Finch",
+    "Western Gull",
+    "Yellow-rumped Warbler",
+    "American Robin"
+  ],
+  "Duboce Triangle": [
+    "Anna's Hummingbird",
+    "Yellow-rumped Warbler",
+    "American Crow",
+    "Ruby-crowned Kinglet",
+    "House Finch"
+  ],
+  "Eureka Valley": [
+    "Anna's Hummingbird",
+    "House Finch",
+    "American Crow",
+    "California Scrub-Jay",
+    "Common Raven"
+  ],
+  "Excelsior": [
+    "Western Gull",
+    "American Crow",
+    "Anna's Hummingbird",
+    "California Gull",
+    "Common Raven"
+  ],
+  "Fairmount": [
+    "House Finch",
+    "California Scrub-Jay",
+    "Anna's Hummingbird",
+    "American Crow",
+    "White-crowned Sparrow"
+  ],
+  "Financial District": [
+    "Anna's Hummingbird",
+    "Western Gull",
+    "American Crow",
+    "Townsend's Warbler",
+    "White-crowned Sparrow"
+  ],
+  "Fishermans Wharf": [
+    "Western Gull",
+    "Double-crested Cormorant",
+    "Brown Pelican",
+    "Heermann's Gull",
+    "American Crow"
+  ],
+  "Forest Hill": [
+    "House Finch",
+    "American Crow",
+    "Pygmy Nuthatch",
+    "American Robin",
+    "Anna's Hummingbird"
+  ],
+  "Forest Knolls": [
+    "Anna's Hummingbird",
+    "Pied-billed Grebe",
+    "California Scrub-Jay",
+    "American Coot",
+    "Song Sparrow"
+  ],
+  "Glen Park": [
+    "Anna's Hummingbird",
+    "White-crowned Sparrow",
+    "Song Sparrow",
+    "Red-tailed Hawk",
+    "Chestnut-backed Chickadee"
+  ],
+  "Golden Gate Heights": [
+    "Anna's Hummingbird",
+    "Dark-eyed Junco",
+    "White-crowned Sparrow",
+    "House Finch",
+    "California Scrub-Jay"
+  ],
+  "Golden Gate Park": [
+    "Song Sparrow",
+    "Anna's Hummingbird",
+    "Dark-eyed Junco",
+    "Common Raven",
+    "Black Phoebe"
+  ],
+  "Haight Ashbury": [
+    "Brewer's Blackbird",
+    "Common Raven",
+    "Anna's Hummingbird",
+    "Dark-eyed Junco",
+    "American Crow"
+  ],
+  "Hayes Valley": [
+    "Anna's Hummingbird",
+    "American Crow",
+    "Red-tailed Hawk",
+    "Yellow-rumped Warbler",
+    "Bushtit"
+  ],
+  "Holly Park": [
+    "Anna's Hummingbird",
+    "House Finch",
+    "Western Gull",
+    "Red-tailed Hawk",
+    "Mourning Dove"
+  ],
+  "Hunters Point": [
+    "Western Gull",
+    "Least Sandpiper",
+    "Common Raven",
+    "Greater Yellowlegs",
+    "House Finch"
+  ],
+  "India Basin": [
+    "White-crowned Sparrow",
+    "Double-crested Cormorant",
+    "Western Gull",
+    "Snowy Egret",
+    "Willet"
+  ],
+  "Ingleside": [
+    "Brewer's Blackbird",
+    "Calliope Hummingbird",
+    "Double-crested Cormorant"
+  ],
+  "Ingleside Terraces": [
+    "Anna's Hummingbird",
+    "White-crowned Sparrow",
+    "American Crow",
+    "Chestnut-backed Chickadee",
+    "Yellow-rumped Warbler"
+  ],
+  "Inner Richmond": [
+    "Dark-eyed Junco",
+    "American Crow",
+    "Anna's Hummingbird",
+    "American Robin",
+    "California Towhee"
+  ],
+  "Inner Sunset": [
+    "Dark-eyed Junco",
+    "Anna's Hummingbird",
+    "Chestnut-backed Chickadee",
+    "House Finch",
+    "California Scrub-Jay"
+  ],
+  "Japantown": [
+    "Western Gull",
+    "American Crow",
+    "American Robin",
+    "Bushtit",
+    "House Finch"
+  ],
+  "Laguna Honda": [
+    "Common Raven",
+    "White-crowned Sparrow",
+    "Anna's Hummingbird",
+    "California Scrub-Jay",
+    "Song Sparrow"
+  ],
+  "Lake Street": [
+    "Anna's Hummingbird",
+    "American Crow",
+    "Dark-eyed Junco",
+    "Common Raven",
+    "White-crowned Sparrow"
+  ],
+  "Lakeshore": [
+    "White-crowned Sparrow",
+    "Western Gull",
+    "Double-crested Cormorant",
+    "Common Raven",
+    "Song Sparrow"
+  ],
+  "Laurel Heights / Jordan Park": [
+    "American Crow",
+    "Anna's Hummingbird",
+    "Yellow-rumped Warbler",
+    "American Robin",
+    "Black Phoebe"
+  ],
+  "Lincoln Park / Ft. Miley": [
+    "White-crowned Sparrow",
+    "Western Gull",
+    "Common Raven",
+    "Brown Pelican",
+    "Anna's Hummingbird"
+  ],
+  "Little Hollywood": [
+    "Common Raven",
+    "House Finch",
+    "American Crow",
+    "Anna's Hummingbird",
+    "California Scrub-Jay"
+  ],
+  "Lone Mountain": [
+    "Anna's Hummingbird",
+    "Dark-eyed Junco",
+    "White-crowned Sparrow",
+    "Yellow-rumped Warbler",
+    "House Finch"
+  ],
+  "Lower Haight": [
+    "Anna's Hummingbird",
+    "American Crow",
+    "Common Raven",
+    "California Scrub-Jay",
+    "House Finch"
+  ],
+  "Lower Nob Hill": [
+    "Anna's Hummingbird",
+    "California Gull",
+    "Cooper's Hawk",
+    "Red-tailed Hawk",
+    "Western Gull"
+  ],
+  "Lower Pacific Heights": [
+    "American Crow",
+    "White-crowned Sparrow",
+    "American Robin",
+    "Anna's Hummingbird",
+    "Golden-crowned Sparrow"
+  ],
+  "Marina": [
+    "Western Gull",
+    "Black-crowned Night Heron",
+    "American Crow",
+    "Mallard",
+    "Great Blue Heron"
+  ],
+  "McLaren Park": [
+    "Dark-eyed Junco",
+    "Anna's Hummingbird",
+    "Common Raven",
+    "American Robin",
+    "California Towhee"
+  ],
+  "Merced Heights": [
+    "Anna's Hummingbird",
+    "House Finch",
+    "Dark-eyed Junco",
+    "California Towhee",
+    "White-crowned Sparrow"
+  ],
+  "Merced Manor": [
+    "American Crow",
+    "Yellow-rumped Warbler",
+    "Anna's Hummingbird",
+    "Pygmy Nuthatch",
+    "White-crowned Sparrow"
+  ],
+  "Midtown Terrace": [
+    "Common Raven",
+    "White-crowned Sparrow",
+    "Song Sparrow",
+    "Anna's Hummingbird",
+    "Black Phoebe"
+  ],
+  "Mint Hill": [
+    "Anna's Hummingbird",
+    "House Finch",
+    "American Crow",
+    "American Robin",
+    "gull sp."
+  ],
+  "Miraloma Park": [
+    "House Finch",
+    "Anna's Hummingbird",
+    "California Scrub-Jay",
+    "Song Sparrow",
+    "Mourning Dove"
+  ],
+  "Mission": [
+    "House Finch",
+    "Anna's Hummingbird",
+    "American Crow",
+    "Yellow-rumped Warbler",
+    "American Robin"
+  ],
+  "Mission Bay": [
+    "Western Gull",
+    "Double-crested Cormorant",
+    "Anna's Hummingbird",
+    "White-crowned Sparrow",
+    "American Crow"
+  ],
+  "Mission Dolores": [
+    "House Finch",
+    "Anna's Hummingbird",
+    "American Crow",
+    "Common Raven",
+    "Red-tailed Hawk"
+  ],
+  "Mission Terrace": [
+    "American Crow",
+    "Anna's Hummingbird",
+    "Black Phoebe",
+    "Dark-eyed Junco",
+    "White-crowned Sparrow"
+  ],
+  "Nob Hill": [
+    "Anna's Hummingbird",
+    "White-crowned Sparrow",
+    "American Crow",
+    "American Robin",
+    "Townsend's Warbler"
+  ],
+  "Noe Valley": [
+    "Anna's Hummingbird",
+    "American Crow",
+    "House Finch",
+    "White-crowned Sparrow",
+    "Ruby-crowned Kinglet"
+  ],
+  "North Beach": [
+    "American Crow",
+    "Anna's Hummingbird",
+    "White-crowned Sparrow",
+    "Townsend's Warbler",
+    "Yellow-rumped Warbler"
+  ],
+  "Northern Waterfront": [
+    "Western Gull",
+    "American Crow",
+    "Brown Pelican",
+    "Anna's Hummingbird",
+    "Double-crested Cormorant"
+  ],
+  "Oceanview": [
+    "Red-tailed Hawk",
+    "Anna's Hummingbird",
+    "California Gull",
+    "Western Gull",
+    "Common Raven"
+  ],
+  "Outer Mission": [
+    "Western Gull",
+    "Anna's Hummingbird",
+    "American Crow",
+    "California Towhee",
+    "Common Raven"
+  ],
+  "Outer Richmond": [
+    "Anna's Hummingbird",
+    "Dark-eyed Junco",
+    "House Finch",
+    "American Crow",
+    "Broad-billed Hummingbird"
+  ],
+  "Outer Sunset": [
+    "Western Gull",
+    "Common Raven",
+    "Sanderling",
+    "Brown Pelican",
+    "California Gull"
+  ],
+  "Pacific Heights": [
+    "Anna's Hummingbird",
+    "Acorn Woodpecker",
+    "California Scrub-Jay",
+    "American Robin",
+    "White-crowned Sparrow"
+  ],
+  "Panhandle": [
+    "Anna's Hummingbird",
+    "American Crow",
+    "Dark-eyed Junco",
+    "Pygmy Nuthatch",
+    "American Robin"
+  ],
+  "Parkmerced": [
+    "American Crow",
+    "Anna's Hummingbird",
+    "Dark-eyed Junco",
+    "Black Phoebe",
+    "White-crowned Sparrow"
+  ],
+  "Parkside": [
+    "Anna's Hummingbird",
+    "Song Sparrow",
+    "Chestnut-backed Chickadee",
+    "Pied-billed Grebe",
+    "House Finch"
+  ],
+  "Parnassus Heights": [
+    "Song Sparrow",
+    "Anna's Hummingbird",
+    "Dark-eyed Junco",
+    "House Finch",
+    "Chestnut-backed Chickadee"
+  ],
+  "Peralta Heights": [
+    "Anna's Hummingbird",
+    "California Scrub-Jay",
+    "House Finch",
+    "American Crow",
+    "Western Gull"
+  ],
+  "Polk Gulch": [
+    "American Crow",
+    "Red-tailed Hawk",
+    "Western Gull",
+    "Anna's Hummingbird",
+    "Common Raven"
+  ],
+  "Portola": [
+    "American Crow",
+    "Common Raven",
+    "Anna's Hummingbird",
+    "California Scrub-Jay",
+    "House Finch"
+  ],
+  "Potrero Hill": [
+    "Anna's Hummingbird",
+    "House Finch",
+    "California Towhee",
+    "American Robin",
+    "Dark-eyed Junco"
+  ],
+  "Presidio National Park": [
+    "White-crowned Sparrow",
+    "Anna's Hummingbird",
+    "Song Sparrow",
+    "Western Gull",
+    "House Finch"
+  ],
+  "Presidio Terrace": [
+    "Anna's Hummingbird",
+    "Pied-billed Grebe",
+    "White-crowned Sparrow",
+    "Dark-eyed Junco",
+    "Song Sparrow"
+  ],
+  "Rincon Hill": [
+    "Anna's Hummingbird",
+    "Golden-crowned Sparrow",
+    "White-crowned Sparrow",
+    "American Crow",
+    "Black Phoebe"
+  ],
+  "Russian Hill": [
+    "Anna's Hummingbird",
+    "American Crow",
+    "American Robin",
+    "Chestnut-backed Chickadee",
+    "Dark-eyed Junco"
+  ],
+  "Seacliff": [
+    "Western Gull",
+    "Common Raven",
+    "Anna's Hummingbird",
+    "White-crowned Sparrow",
+    "Song Sparrow"
+  ],
+  "Sherwood Forest": [
+    "White-crowned Sparrow",
+    "Anna's Hummingbird",
+    "Song Sparrow",
+    "Pacific Wren",
+    "American Robin"
+  ],
+  "Showplace Square": [
+    "House Finch",
+    "Anna's Hummingbird",
+    "Lesser Goldfinch",
+    "Red-tailed Hawk",
+    "Western Gull"
+  ],
+  "Silver Terrace": [
+    "House Finch",
+    "Northern Mockingbird",
+    "Anna's Hummingbird",
+    "Yellow-rumped Warbler",
+    "California Towhee"
+  ],
+  "South Beach": [
+    "Western Gull",
+    "California Gull",
+    "Brown Pelican",
+    "Double-crested Cormorant",
+    "American Crow"
+  ],
+  "South of Market": [
+    "Anna's Hummingbird",
+    "White-crowned Sparrow",
+    "House Finch",
+    "American Crow",
+    "Western Gull"
+  ],
+  "St. Francis Wood": [
+    "American Crow",
+    "American Robin",
+    "Anna's Hummingbird",
+    "Black Phoebe",
+    "California Towhee"
+  ],
+  "St. Marys Park": [
+    "Anna's Hummingbird",
+    "House Finch",
+    "Western Gull",
+    "California Towhee",
+    "California Scrub-Jay"
+  ],
+  "Stonestown": [
+    "American Crow",
+    "Yellow-rumped Warbler",
+    "Anna's Hummingbird",
+    "Brewer's Blackbird",
+    "California Gull"
+  ],
+  "Sunnydale": [
+    "American Crow",
+    "American Kestrel",
+    "California Towhee",
+    "Common Raven",
+    "Tricolored Blackbird"
+  ],
+  "Sunnyside": [
+    "Anna's Hummingbird",
+    "White-crowned Sparrow",
+    "American Crow",
+    "Dark-eyed Junco",
+    "House Finch"
+  ],
+  "Sutro Heights": [
+    "Western Gull",
+    "Brandt's Cormorant",
+    "Brown Pelican",
+    "Common Raven",
+    "Black Oystercatcher"
+  ],
+  "Telegraph Hill": [
+    "Anna's Hummingbird",
+    "Dark-eyed Junco",
+    "American Crow",
+    "Pygmy Nuthatch",
+    "American Robin"
+  ],
+  "Tenderloin": [
+    "Yellow-rumped Warbler",
+    "Anna's Hummingbird",
+    "Townsend's Warbler",
+    "Western Gull",
+    "American Crow"
+  ],
+  "Treasure Island": [
+    "Western Gull",
+    "White-crowned Sparrow",
+    "Double-crested Cormorant",
+    "House Finch",
+    "Yellow-rumped Warbler"
+  ],
+  "Union Street": [
+    "Anna's Hummingbird",
+    "American Crow",
+    "American Robin",
+    "Black Phoebe",
+    "Chestnut-backed Chickadee"
+  ],
+  "University Mound": [
+    "American Crow",
+    "Anna's Hummingbird",
+    "California Scrub-Jay",
+    "House Finch",
+    "Merlin"
+  ],
+  "Upper Market": [
+    "Anna's Hummingbird",
+    "Common Raven",
+    "American Robin",
+    "Golden-crowned Sparrow",
+    "House Finch"
+  ],
+  "Visitacion Valley": [
+    "Common Raven",
+    "Anna's Hummingbird",
+    "California Towhee",
+    "Yellow-rumped Warbler",
+    "California Scrub-Jay"
+  ],
+  "West Portal": [
+    "American Crow",
+    "Anna's Hummingbird",
+    "Chestnut-backed Chickadee",
+    "Common Raven",
+    "Dark-eyed Junco"
+  ],
+  "Western Addition": [
+    "Anna's Hummingbird",
+    "Yellow-rumped Warbler",
+    "Dark-eyed Junco",
+    "American Crow",
+    "Chestnut-backed Chickadee"
+  ],
+  "Westwood Park": [
+    "American Crow",
+    "Anna's Hummingbird",
+    "Black Phoebe",
+    "House Finch",
+    "Western Gull"
+  ],
+  "Yerba Buena Island": [
+    "Anna's Hummingbird",
+    "Western Gull",
+    "Double-crested Cormorant",
+    "White-crowned Sparrow",
+    "Yellow-rumped Warbler"
+  ]
+}

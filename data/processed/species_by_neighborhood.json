@@ -1,0 +1,557 @@
+[
+  {
+    "neighborhood": "Alamo Square",
+    "total_species": 54,
+    "checklist_effort": 67.0
+  },
+  {
+    "neighborhood": "Anza Vista",
+    "total_species": 13,
+    "checklist_effort": 2.0
+  },
+  {
+    "neighborhood": "Aquatic Park / Ft. Mason",
+    "total_species": 240,
+    "checklist_effort": 2938.0
+  },
+  {
+    "neighborhood": "Ashbury Heights",
+    "total_species": 77,
+    "checklist_effort": 57.0
+  },
+  {
+    "neighborhood": "Balboa Terrace",
+    "total_species": 20,
+    "checklist_effort": 10.0
+  },
+  {
+    "neighborhood": "Bayview",
+    "total_species": 44,
+    "checklist_effort": 56.0
+  },
+  {
+    "neighborhood": "Bernal Heights",
+    "total_species": 173,
+    "checklist_effort": 576.0
+  },
+  {
+    "neighborhood": "Bret Harte",
+    "total_species": 49,
+    "checklist_effort": 44.0
+  },
+  {
+    "neighborhood": "Buena Vista",
+    "total_species": 101,
+    "checklist_effort": 321.0
+  },
+  {
+    "neighborhood": "Candlestick Point SRA",
+    "total_species": 206,
+    "checklist_effort": 673.0
+  },
+  {
+    "neighborhood": "Castro",
+    "total_species": 5,
+    "checklist_effort": 1.0
+  },
+  {
+    "neighborhood": "Cathedral Hill",
+    "total_species": 39,
+    "checklist_effort": 45.0
+  },
+  {
+    "neighborhood": "Cayuga",
+    "total_species": 3,
+    "checklist_effort": 2.0
+  },
+  {
+    "neighborhood": "Central Waterfront",
+    "total_species": 169,
+    "checklist_effort": 951.0
+  },
+  {
+    "neighborhood": "Chinatown",
+    "total_species": 19,
+    "checklist_effort": 19.0
+  },
+  {
+    "neighborhood": "Civic Center",
+    "total_species": 23,
+    "checklist_effort": 22.0
+  },
+  {
+    "neighborhood": "Clarendon Heights",
+    "total_species": 45,
+    "checklist_effort": 34.0
+  },
+  {
+    "neighborhood": "Cole Valley",
+    "total_species": 3,
+    "checklist_effort": 2.0
+  },
+  {
+    "neighborhood": "Corona Heights",
+    "total_species": 158,
+    "checklist_effort": 842.0
+  },
+  {
+    "neighborhood": "Cow Hollow",
+    "total_species": 19,
+    "checklist_effort": 5.0
+  },
+  {
+    "neighborhood": "Crocker Amazon",
+    "total_species": 73,
+    "checklist_effort": 65.0
+  },
+  {
+    "neighborhood": "Diamond Heights",
+    "total_species": 55,
+    "checklist_effort": 53.0
+  },
+  {
+    "neighborhood": "Dogpatch",
+    "total_species": 16,
+    "checklist_effort": 17.0
+  },
+  {
+    "neighborhood": "Dolores Heights",
+    "total_species": 17,
+    "checklist_effort": 7.0
+  },
+  {
+    "neighborhood": "Downtown / Union Square",
+    "total_species": 15,
+    "checklist_effort": 19.0
+  },
+  {
+    "neighborhood": "Duboce Triangle",
+    "total_species": 35,
+    "checklist_effort": 34.0
+  },
+  {
+    "neighborhood": "Eureka Valley",
+    "total_species": 34,
+    "checklist_effort": 20.0
+  },
+  {
+    "neighborhood": "Excelsior",
+    "total_species": 24,
+    "checklist_effort": 8.0
+  },
+  {
+    "neighborhood": "Fairmount",
+    "total_species": 45,
+    "checklist_effort": 39.0
+  },
+  {
+    "neighborhood": "Financial District",
+    "total_species": 124,
+    "checklist_effort": 463.0
+  },
+  {
+    "neighborhood": "Fishermans Wharf",
+    "total_species": 104,
+    "checklist_effort": 263.0
+  },
+  {
+    "neighborhood": "Forest Hill",
+    "total_species": 19,
+    "checklist_effort": 12.0
+  },
+  {
+    "neighborhood": "Forest Knolls",
+    "total_species": 65,
+    "checklist_effort": 56.0
+  },
+  {
+    "neighborhood": "Glen Park",
+    "total_species": 123,
+    "checklist_effort": 587.0
+  },
+  {
+    "neighborhood": "Golden Gate Heights",
+    "total_species": 121,
+    "checklist_effort": 163.0
+  },
+  {
+    "neighborhood": "Golden Gate Park",
+    "total_species": 332,
+    "checklist_effort": 13242.0
+  },
+  {
+    "neighborhood": "Haight Ashbury",
+    "total_species": 11,
+    "checklist_effort": 9.0
+  },
+  {
+    "neighborhood": "Hayes Valley",
+    "total_species": 24,
+    "checklist_effort": 13.0
+  },
+  {
+    "neighborhood": "Holly Park",
+    "total_species": 142,
+    "checklist_effort": 469.0
+  },
+  {
+    "neighborhood": "Hunters Point",
+    "total_species": 193,
+    "checklist_effort": 729.0
+  },
+  {
+    "neighborhood": "India Basin",
+    "total_species": 215,
+    "checklist_effort": 3117.0
+  },
+  {
+    "neighborhood": "Ingleside",
+    "total_species": 3,
+    "checklist_effort": NaN
+  },
+  {
+    "neighborhood": "Ingleside Terraces",
+    "total_species": 17,
+    "checklist_effort": 9.0
+  },
+  {
+    "neighborhood": "Inner Richmond",
+    "total_species": 107,
+    "checklist_effort": 93.0
+  },
+  {
+    "neighborhood": "Inner Sunset",
+    "total_species": 58,
+    "checklist_effort": 152.0
+  },
+  {
+    "neighborhood": "Japantown",
+    "total_species": 5,
+    "checklist_effort": 3.0
+  },
+  {
+    "neighborhood": "Laguna Honda",
+    "total_species": 60,
+    "checklist_effort": 81.0
+  },
+  {
+    "neighborhood": "Lake Street",
+    "total_species": 45,
+    "checklist_effort": 16.0
+  },
+  {
+    "neighborhood": "Lakeshore",
+    "total_species": 358,
+    "checklist_effort": 4030.0
+  },
+  {
+    "neighborhood": "Laurel Heights / Jordan Park",
+    "total_species": 24,
+    "checklist_effort": 6.0
+  },
+  {
+    "neighborhood": "Lincoln Park / Ft. Miley",
+    "total_species": 290,
+    "checklist_effort": 3187.0
+  },
+  {
+    "neighborhood": "Little Hollywood",
+    "total_species": 35,
+    "checklist_effort": 14.0
+  },
+  {
+    "neighborhood": "Lone Mountain",
+    "total_species": 62,
+    "checklist_effort": 41.0
+  },
+  {
+    "neighborhood": "Lower Haight",
+    "total_species": 29,
+    "checklist_effort": 13.0
+  },
+  {
+    "neighborhood": "Lower Nob Hill",
+    "total_species": 7,
+    "checklist_effort": 5.0
+  },
+  {
+    "neighborhood": "Lower Pacific Heights",
+    "total_species": 8,
+    "checklist_effort": 6.0
+  },
+  {
+    "neighborhood": "Marina",
+    "total_species": 154,
+    "checklist_effort": 462.0
+  },
+  {
+    "neighborhood": "McLaren Park",
+    "total_species": 159,
+    "checklist_effort": 726.0
+  },
+  {
+    "neighborhood": "Merced Heights",
+    "total_species": 60,
+    "checklist_effort": 98.0
+  },
+  {
+    "neighborhood": "Merced Manor",
+    "total_species": 29,
+    "checklist_effort": 16.0
+  },
+  {
+    "neighborhood": "Midtown Terrace",
+    "total_species": 64,
+    "checklist_effort": 71.0
+  },
+  {
+    "neighborhood": "Mint Hill",
+    "total_species": 20,
+    "checklist_effort": 2.0
+  },
+  {
+    "neighborhood": "Miraloma Park",
+    "total_species": 78,
+    "checklist_effort": 275.0
+  },
+  {
+    "neighborhood": "Mission",
+    "total_species": 51,
+    "checklist_effort": 136.0
+  },
+  {
+    "neighborhood": "Mission Bay",
+    "total_species": 93,
+    "checklist_effort": 171.0
+  },
+  {
+    "neighborhood": "Mission Dolores",
+    "total_species": 67,
+    "checklist_effort": 120.0
+  },
+  {
+    "neighborhood": "Mission Terrace",
+    "total_species": 34,
+    "checklist_effort": 34.0
+  },
+  {
+    "neighborhood": "Nob Hill",
+    "total_species": 29,
+    "checklist_effort": 31.0
+  },
+  {
+    "neighborhood": "Noe Valley",
+    "total_species": 53,
+    "checklist_effort": 37.0
+  },
+  {
+    "neighborhood": "North Beach",
+    "total_species": 22,
+    "checklist_effort": 32.0
+  },
+  {
+    "neighborhood": "Northern Waterfront",
+    "total_species": 76,
+    "checklist_effort": 143.0
+  },
+  {
+    "neighborhood": "Oceanview",
+    "total_species": 58,
+    "checklist_effort": 28.0
+  },
+  {
+    "neighborhood": "Outer Mission",
+    "total_species": 91,
+    "checklist_effort": 1249.0
+  },
+  {
+    "neighborhood": "Outer Richmond",
+    "total_species": 81,
+    "checklist_effort": 115.0
+  },
+  {
+    "neighborhood": "Outer Sunset",
+    "total_species": 185,
+    "checklist_effort": 902.0
+  },
+  {
+    "neighborhood": "Pacific Heights",
+    "total_species": 112,
+    "checklist_effort": 394.0
+  },
+  {
+    "neighborhood": "Panhandle",
+    "total_species": 48,
+    "checklist_effort": 38.0
+  },
+  {
+    "neighborhood": "Parkmerced",
+    "total_species": 65,
+    "checklist_effort": 57.0
+  },
+  {
+    "neighborhood": "Parkside",
+    "total_species": 164,
+    "checklist_effort": 1042.0
+  },
+  {
+    "neighborhood": "Parnassus Heights",
+    "total_species": 106,
+    "checklist_effort": 476.0
+  },
+  {
+    "neighborhood": "Peralta Heights",
+    "total_species": 30,
+    "checklist_effort": 37.0
+  },
+  {
+    "neighborhood": "Polk Gulch",
+    "total_species": 12,
+    "checklist_effort": 4.0
+  },
+  {
+    "neighborhood": "Portola",
+    "total_species": 38,
+    "checklist_effort": 27.0
+  },
+  {
+    "neighborhood": "Potrero Hill",
+    "total_species": 100,
+    "checklist_effort": 397.0
+  },
+  {
+    "neighborhood": "Presidio National Park",
+    "total_species": 411,
+    "checklist_effort": 7077.0
+  },
+  {
+    "neighborhood": "Presidio Terrace",
+    "total_species": 154,
+    "checklist_effort": 477.0
+  },
+  {
+    "neighborhood": "Rincon Hill",
+    "total_species": 20,
+    "checklist_effort": 13.0
+  },
+  {
+    "neighborhood": "Russian Hill",
+    "total_species": 37,
+    "checklist_effort": 67.0
+  },
+  {
+    "neighborhood": "Seacliff",
+    "total_species": 81,
+    "checklist_effort": 75.0
+  },
+  {
+    "neighborhood": "Sherwood Forest",
+    "total_species": 180,
+    "checklist_effort": 597.0
+  },
+  {
+    "neighborhood": "Showplace Square",
+    "total_species": 9,
+    "checklist_effort": 7.0
+  },
+  {
+    "neighborhood": "Silver Terrace",
+    "total_species": 33,
+    "checklist_effort": 30.0
+  },
+  {
+    "neighborhood": "South Beach",
+    "total_species": 78,
+    "checklist_effort": 108.0
+  },
+  {
+    "neighborhood": "South of Market",
+    "total_species": 84,
+    "checklist_effort": 195.0
+  },
+  {
+    "neighborhood": "St. Francis Wood",
+    "total_species": 13,
+    "checklist_effort": 3.0
+  },
+  {
+    "neighborhood": "St. Marys Park",
+    "total_species": 97,
+    "checklist_effort": 158.0
+  },
+  {
+    "neighborhood": "Stonestown",
+    "total_species": 18,
+    "checklist_effort": 12.0
+  },
+  {
+    "neighborhood": "Sunnydale",
+    "total_species": 7,
+    "checklist_effort": 2.0
+  },
+  {
+    "neighborhood": "Sunnyside",
+    "total_species": 52,
+    "checklist_effort": 50.0
+  },
+  {
+    "neighborhood": "Sutro Heights",
+    "total_species": 214,
+    "checklist_effort": 845.0
+  },
+  {
+    "neighborhood": "Telegraph Hill",
+    "total_species": 104,
+    "checklist_effort": 221.0
+  },
+  {
+    "neighborhood": "Tenderloin",
+    "total_species": 14,
+    "checklist_effort": 18.0
+  },
+  {
+    "neighborhood": "Treasure Island",
+    "total_species": 134,
+    "checklist_effort": 116.0
+  },
+  {
+    "neighborhood": "Union Street",
+    "total_species": 15,
+    "checklist_effort": 8.0
+  },
+  {
+    "neighborhood": "University Mound",
+    "total_species": 8,
+    "checklist_effort": 2.0
+  },
+  {
+    "neighborhood": "Upper Market",
+    "total_species": 28,
+    "checklist_effort": 13.0
+  },
+  {
+    "neighborhood": "Visitacion Valley",
+    "total_species": 45,
+    "checklist_effort": 48.0
+  },
+  {
+    "neighborhood": "West Portal",
+    "total_species": 33,
+    "checklist_effort": 11.0
+  },
+  {
+    "neighborhood": "Western Addition",
+    "total_species": 18,
+    "checklist_effort": 16.0
+  },
+  {
+    "neighborhood": "Westwood Park",
+    "total_species": 38,
+    "checklist_effort": 22.0
+  },
+  {
+    "neighborhood": "Yerba Buena Island",
+    "total_species": 82,
+    "checklist_effort": 45.0
+  }
+]

@@ -1,0 +1,1162 @@
+[
+  {
+    "neighborhood": "Alamo Square",
+    "total_trees": 677,
+    "oak_conifer_count": 27.0,
+    "fruiting_count": 147.0,
+    "area_km2": 0.24698613823838977,
+    "oak_conifer_density": 109.3,
+    "fruiting_density": 595.2,
+    "total_density": 2741.0
+  },
+  {
+    "neighborhood": "Anza Vista",
+    "total_trees": 850,
+    "oak_conifer_count": 22.0,
+    "fruiting_count": 41.0,
+    "area_km2": 0.30137457185306876,
+    "oak_conifer_density": 73.0,
+    "fruiting_density": 136.0,
+    "total_density": 2820.4
+  },
+  {
+    "neighborhood": "Apparel City",
+    "total_trees": 324,
+    "oak_conifer_count": 17.0,
+    "fruiting_count": 91.0,
+    "area_km2": 0.3691740577161585,
+    "oak_conifer_density": 46.0,
+    "fruiting_density": 246.5,
+    "total_density": 877.6
+  },
+  {
+    "neighborhood": "Aquatic Park / Ft. Mason",
+    "total_trees": 230,
+    "oak_conifer_count": 11.0,
+    "fruiting_count": 19.0,
+    "area_km2": 0.42335707041880116,
+    "oak_conifer_density": 26.0,
+    "fruiting_density": 44.9,
+    "total_density": 543.3
+  },
+  {
+    "neighborhood": "Ashbury Heights",
+    "total_trees": 1382,
+    "oak_conifer_count": 57.0,
+    "fruiting_count": 270.0,
+    "area_km2": 0.3438142074894654,
+    "oak_conifer_density": 165.8,
+    "fruiting_density": 785.3,
+    "total_density": 4019.6
+  },
+  {
+    "neighborhood": "Balboa Terrace",
+    "total_trees": 710,
+    "oak_conifer_count": 22.0,
+    "fruiting_count": 269.0,
+    "area_km2": 0.2774624621059338,
+    "oak_conifer_density": 79.3,
+    "fruiting_density": 969.5,
+    "total_density": 2558.9
+  },
+  {
+    "neighborhood": "Bayview",
+    "total_trees": 6505,
+    "oak_conifer_count": 560.0,
+    "fruiting_count": 626.0,
+    "area_km2": 2.5781588513059686,
+    "oak_conifer_density": 217.2,
+    "fruiting_density": 242.8,
+    "total_density": 2523.1
+  },
+  {
+    "neighborhood": "Bernal Heights",
+    "total_trees": 6078,
+    "oak_conifer_count": 468.0,
+    "fruiting_count": 1119.0,
+    "area_km2": 1.7264450532011062,
+    "oak_conifer_density": 271.1,
+    "fruiting_density": 648.2,
+    "total_density": 3520.5
+  },
+  {
+    "neighborhood": "Bret Harte",
+    "total_trees": 1044,
+    "oak_conifer_count": 89.0,
+    "fruiting_count": 117.0,
+    "area_km2": 0.8445111610232084,
+    "oak_conifer_density": 105.4,
+    "fruiting_density": 138.5,
+    "total_density": 1236.2
+  },
+  {
+    "neighborhood": "Buena Vista",
+    "total_trees": 2135,
+    "oak_conifer_count": 160.0,
+    "fruiting_count": 346.0,
+    "area_km2": 0.6796702130338714,
+    "oak_conifer_density": 235.4,
+    "fruiting_density": 509.1,
+    "total_density": 3141.2
+  },
+  {
+    "neighborhood": "Candlestick Point SRA",
+    "total_trees": 250,
+    "oak_conifer_count": 133.0,
+    "fruiting_count": 15.0,
+    "area_km2": 1.5871939949272924,
+    "oak_conifer_density": 83.8,
+    "fruiting_density": 9.5,
+    "total_density": 157.5
+  },
+  {
+    "neighborhood": "Castro",
+    "total_trees": 1014,
+    "oak_conifer_count": 15.0,
+    "fruiting_count": 212.0,
+    "area_km2": 0.24431157074824492,
+    "oak_conifer_density": 61.4,
+    "fruiting_density": 867.7,
+    "total_density": 4150.4
+  },
+  {
+    "neighborhood": "Cathedral Hill",
+    "total_trees": 2078,
+    "oak_conifer_count": 175.0,
+    "fruiting_count": 138.0,
+    "area_km2": 0.49125094880710624,
+    "oak_conifer_density": 356.2,
+    "fruiting_density": 280.9,
+    "total_density": 4230.0
+  },
+  {
+    "neighborhood": "Cayuga",
+    "total_trees": 1113,
+    "oak_conifer_count": 138.0,
+    "fruiting_count": 136.0,
+    "area_km2": 0.7414676872420539,
+    "oak_conifer_density": 186.1,
+    "fruiting_density": 183.4,
+    "total_density": 1501.1
+  },
+  {
+    "neighborhood": "Central Waterfront",
+    "total_trees": 1474,
+    "oak_conifer_count": 143.0,
+    "fruiting_count": 111.0,
+    "area_km2": 2.603127263795352,
+    "oak_conifer_density": 54.9,
+    "fruiting_density": 42.6,
+    "total_density": 566.2
+  },
+  {
+    "neighborhood": "Chinatown",
+    "total_trees": 406,
+    "oak_conifer_count": 38.0,
+    "fruiting_count": 75.0,
+    "area_km2": 0.3184429562305427,
+    "oak_conifer_density": 119.3,
+    "fruiting_density": 235.5,
+    "total_density": 1275.0
+  },
+  {
+    "neighborhood": "Civic Center",
+    "total_trees": 1667,
+    "oak_conifer_count": 29.0,
+    "fruiting_count": 173.0,
+    "area_km2": 0.5264510531845037,
+    "oak_conifer_density": 55.1,
+    "fruiting_density": 328.6,
+    "total_density": 3166.5
+  },
+  {
+    "neighborhood": "Clarendon Heights",
+    "total_trees": 274,
+    "oak_conifer_count": 43.0,
+    "fruiting_count": 59.0,
+    "area_km2": 0.5441919947059134,
+    "oak_conifer_density": 79.0,
+    "fruiting_density": 108.4,
+    "total_density": 503.5
+  },
+  {
+    "neighborhood": "Cole Valley",
+    "total_trees": 722,
+    "oak_conifer_count": 12.0,
+    "fruiting_count": 120.0,
+    "area_km2": 0.18527878335470357,
+    "oak_conifer_density": 64.8,
+    "fruiting_density": 647.7,
+    "total_density": 3896.8
+  },
+  {
+    "neighborhood": "Corona Heights",
+    "total_trees": 698,
+    "oak_conifer_count": 44.0,
+    "fruiting_count": 112.0,
+    "area_km2": 0.28452918867980626,
+    "oak_conifer_density": 154.6,
+    "fruiting_density": 393.6,
+    "total_density": 2453.2
+  },
+  {
+    "neighborhood": "Cow Hollow",
+    "total_trees": 1175,
+    "oak_conifer_count": 127.0,
+    "fruiting_count": 267.0,
+    "area_km2": 0.3948926349680187,
+    "oak_conifer_density": 321.6,
+    "fruiting_density": 676.1,
+    "total_density": 2975.5
+  },
+  {
+    "neighborhood": "Crocker Amazon",
+    "total_trees": 1332,
+    "oak_conifer_count": 114.0,
+    "fruiting_count": 277.0,
+    "area_km2": 1.4489297806487313,
+    "oak_conifer_density": 78.7,
+    "fruiting_density": 191.2,
+    "total_density": 919.3
+  },
+  {
+    "neighborhood": "Diamond Heights",
+    "total_trees": 840,
+    "oak_conifer_count": 195.0,
+    "fruiting_count": 59.0,
+    "area_km2": 0.6348655724748685,
+    "oak_conifer_density": 307.2,
+    "fruiting_density": 92.9,
+    "total_density": 1323.1
+  },
+  {
+    "neighborhood": "Dogpatch",
+    "total_trees": 1052,
+    "oak_conifer_count": 71.0,
+    "fruiting_count": 100.0,
+    "area_km2": 0.42443369578913276,
+    "oak_conifer_density": 167.3,
+    "fruiting_density": 235.6,
+    "total_density": 2478.6
+  },
+  {
+    "neighborhood": "Dolores Heights",
+    "total_trees": 3930,
+    "oak_conifer_count": 335.0,
+    "fruiting_count": 687.0,
+    "area_km2": 0.9323678623858531,
+    "oak_conifer_density": 359.3,
+    "fruiting_density": 736.8,
+    "total_density": 4215.1
+  },
+  {
+    "neighborhood": "Downtown / Union Square",
+    "total_trees": 462,
+    "oak_conifer_count": 9.0,
+    "fruiting_count": 178.0,
+    "area_km2": 0.35987577727545844,
+    "oak_conifer_density": 25.0,
+    "fruiting_density": 494.6,
+    "total_density": 1283.8
+  },
+  {
+    "neighborhood": "Duboce Triangle",
+    "total_trees": 1937,
+    "oak_conifer_count": 47.0,
+    "fruiting_count": 291.0,
+    "area_km2": 0.42863554697219636,
+    "oak_conifer_density": 109.7,
+    "fruiting_density": 678.9,
+    "total_density": 4519.0
+  },
+  {
+    "neighborhood": "Eureka Valley",
+    "total_trees": 2857,
+    "oak_conifer_count": 159.0,
+    "fruiting_count": 631.0,
+    "area_km2": 0.7591042590084631,
+    "oak_conifer_density": 209.5,
+    "fruiting_density": 831.2,
+    "total_density": 3763.6
+  },
+  {
+    "neighborhood": "Excelsior",
+    "total_trees": 2672,
+    "oak_conifer_count": 178.0,
+    "fruiting_count": 549.0,
+    "area_km2": 1.6742315676410815,
+    "oak_conifer_density": 106.3,
+    "fruiting_density": 327.9,
+    "total_density": 1596.0
+  },
+  {
+    "neighborhood": "Fairmount",
+    "total_trees": 1782,
+    "oak_conifer_count": 173.0,
+    "fruiting_count": 284.0,
+    "area_km2": 0.590207607848619,
+    "oak_conifer_density": 293.1,
+    "fruiting_density": 481.2,
+    "total_density": 3019.3
+  },
+  {
+    "neighborhood": "Financial District",
+    "total_trees": 2120,
+    "oak_conifer_count": 18.0,
+    "fruiting_count": 401.0,
+    "area_km2": 0.8283049107068617,
+    "oak_conifer_density": 21.7,
+    "fruiting_density": 484.1,
+    "total_density": 2559.4
+  },
+  {
+    "neighborhood": "Fishermans Wharf",
+    "total_trees": 1252,
+    "oak_conifer_count": 21.0,
+    "fruiting_count": 359.0,
+    "area_km2": 0.6625015669631662,
+    "oak_conifer_density": 31.7,
+    "fruiting_density": 541.9,
+    "total_density": 1889.8
+  },
+  {
+    "neighborhood": "Forest Hill",
+    "total_trees": 1747,
+    "oak_conifer_count": 370.0,
+    "fruiting_count": 285.0,
+    "area_km2": 0.5132967693927684,
+    "oak_conifer_density": 720.8,
+    "fruiting_density": 555.2,
+    "total_density": 3403.5
+  },
+  {
+    "neighborhood": "Forest Knolls",
+    "total_trees": 80,
+    "oak_conifer_count": 26.0,
+    "fruiting_count": 1.0,
+    "area_km2": 0.44933654912395765,
+    "oak_conifer_density": 57.9,
+    "fruiting_density": 2.2,
+    "total_density": 178.0
+  },
+  {
+    "neighborhood": "Glen Park",
+    "total_trees": 1958,
+    "oak_conifer_count": 284.0,
+    "fruiting_count": 274.0,
+    "area_km2": 0.8970225456679872,
+    "oak_conifer_density": 316.6,
+    "fruiting_density": 305.5,
+    "total_density": 2182.8
+  },
+  {
+    "neighborhood": "Golden Gate Heights",
+    "total_trees": 2622,
+    "oak_conifer_count": 233.0,
+    "fruiting_count": 786.0,
+    "area_km2": 1.671380850171664,
+    "oak_conifer_density": 139.4,
+    "fruiting_density": 470.3,
+    "total_density": 1568.8
+  },
+  {
+    "neighborhood": "Golden Gate Park",
+    "total_trees": 94,
+    "oak_conifer_count": 47.0,
+    "fruiting_count": 5.0,
+    "area_km2": 4.368035845442235,
+    "oak_conifer_density": 10.8,
+    "fruiting_density": 1.1,
+    "total_density": 21.5
+  },
+  {
+    "neighborhood": "Haight Ashbury",
+    "total_trees": 1354,
+    "oak_conifer_count": 67.0,
+    "fruiting_count": 259.0,
+    "area_km2": 0.3374137844754655,
+    "oak_conifer_density": 198.6,
+    "fruiting_density": 767.6,
+    "total_density": 4012.9
+  },
+  {
+    "neighborhood": "Hayes Valley",
+    "total_trees": 1682,
+    "oak_conifer_count": 88.0,
+    "fruiting_count": 306.0,
+    "area_km2": 0.29209577349136556,
+    "oak_conifer_density": 301.3,
+    "fruiting_density": 1047.6,
+    "total_density": 5758.4
+  },
+  {
+    "neighborhood": "Holly Park",
+    "total_trees": 1503,
+    "oak_conifer_count": 125.0,
+    "fruiting_count": 343.0,
+    "area_km2": 0.4490143376063895,
+    "oak_conifer_density": 278.4,
+    "fruiting_density": 763.9,
+    "total_density": 3347.3
+  },
+  {
+    "neighborhood": "Hunters Point",
+    "total_trees": 1025,
+    "oak_conifer_count": 51.0,
+    "fruiting_count": 79.0,
+    "area_km2": 2.9670756227822515,
+    "oak_conifer_density": 17.2,
+    "fruiting_density": 26.6,
+    "total_density": 345.5
+  },
+  {
+    "neighborhood": "India Basin",
+    "total_trees": 974,
+    "oak_conifer_count": 164.0,
+    "fruiting_count": 11.0,
+    "area_km2": 0.8119734781463827,
+    "oak_conifer_density": 202.0,
+    "fruiting_density": 13.5,
+    "total_density": 1199.5
+  },
+  {
+    "neighborhood": "Ingleside",
+    "total_trees": 1840,
+    "oak_conifer_count": 115.0,
+    "fruiting_count": 452.0,
+    "area_km2": 0.947441235619932,
+    "oak_conifer_density": 121.4,
+    "fruiting_density": 477.1,
+    "total_density": 1942.1
+  },
+  {
+    "neighborhood": "Ingleside Terraces",
+    "total_trees": 602,
+    "oak_conifer_count": 45.0,
+    "fruiting_count": 172.0,
+    "area_km2": 0.6156409978295732,
+    "oak_conifer_density": 73.1,
+    "fruiting_density": 279.4,
+    "total_density": 977.8
+  },
+  {
+    "neighborhood": "Inner Richmond",
+    "total_trees": 4358,
+    "oak_conifer_count": 211.0,
+    "fruiting_count": 882.0,
+    "area_km2": 2.2670866955350912,
+    "oak_conifer_density": 93.1,
+    "fruiting_density": 389.0,
+    "total_density": 1922.3
+  },
+  {
+    "neighborhood": "Inner Sunset",
+    "total_trees": 3076,
+    "oak_conifer_count": 92.0,
+    "fruiting_count": 867.0,
+    "area_km2": 1.1252923579553957,
+    "oak_conifer_density": 81.8,
+    "fruiting_density": 770.5,
+    "total_density": 2733.5
+  },
+  {
+    "neighborhood": "Japantown",
+    "total_trees": 1185,
+    "oak_conifer_count": 106.0,
+    "fruiting_count": 320.0,
+    "area_km2": 0.2926077012440472,
+    "oak_conifer_density": 362.3,
+    "fruiting_density": 1093.6,
+    "total_density": 4049.8
+  },
+  {
+    "neighborhood": "Laguna Honda",
+    "total_trees": 950,
+    "oak_conifer_count": 178.0,
+    "fruiting_count": 200.0,
+    "area_km2": 0.8574338705634643,
+    "oak_conifer_density": 207.6,
+    "fruiting_density": 233.3,
+    "total_density": 1108.0
+  },
+  {
+    "neighborhood": "Lake Street",
+    "total_trees": 880,
+    "oak_conifer_count": 98.0,
+    "fruiting_count": 139.0,
+    "area_km2": 0.3838880902962977,
+    "oak_conifer_density": 255.3,
+    "fruiting_density": 362.1,
+    "total_density": 2292.3
+  },
+  {
+    "neighborhood": "Lakeshore",
+    "total_trees": 341,
+    "oak_conifer_count": 197.0,
+    "fruiting_count": 15.0,
+    "area_km2": 6.296408580744255,
+    "oak_conifer_density": 31.3,
+    "fruiting_density": 2.4,
+    "total_density": 54.2
+  },
+  {
+    "neighborhood": "Laurel Heights / Jordan Park",
+    "total_trees": 1130,
+    "oak_conifer_count": 93.0,
+    "fruiting_count": 160.0,
+    "area_km2": 0.5832070964011467,
+    "oak_conifer_density": 159.5,
+    "fruiting_density": 274.3,
+    "total_density": 1937.6
+  },
+  {
+    "neighborhood": "Little Hollywood",
+    "total_trees": 698,
+    "oak_conifer_count": 30.0,
+    "fruiting_count": 53.0,
+    "area_km2": 0.4429471639141714,
+    "oak_conifer_density": 67.7,
+    "fruiting_density": 119.7,
+    "total_density": 1575.8
+  },
+  {
+    "neighborhood": "Lone Mountain",
+    "total_trees": 1539,
+    "oak_conifer_count": 145.0,
+    "fruiting_count": 290.0,
+    "area_km2": 0.8134522212246135,
+    "oak_conifer_density": 178.3,
+    "fruiting_density": 356.5,
+    "total_density": 1891.9
+  },
+  {
+    "neighborhood": "Lower Haight",
+    "total_trees": 2110,
+    "oak_conifer_count": 90.0,
+    "fruiting_count": 472.0,
+    "area_km2": 0.4428142103732735,
+    "oak_conifer_density": 203.2,
+    "fruiting_density": 1065.9,
+    "total_density": 4765.0
+  },
+  {
+    "neighborhood": "Lower Nob Hill",
+    "total_trees": 1073,
+    "oak_conifer_count": 24.0,
+    "fruiting_count": 259.0,
+    "area_km2": 0.4308753956789783,
+    "oak_conifer_density": 55.7,
+    "fruiting_density": 601.1,
+    "total_density": 2490.3
+  },
+  {
+    "neighborhood": "Lower Pacific Heights",
+    "total_trees": 2019,
+    "oak_conifer_count": 151.0,
+    "fruiting_count": 295.0,
+    "area_km2": 0.6069212865600501,
+    "oak_conifer_density": 248.8,
+    "fruiting_density": 486.1,
+    "total_density": 3326.6
+  },
+  {
+    "neighborhood": "Marina",
+    "total_trees": 2273,
+    "oak_conifer_count": 313.0,
+    "fruiting_count": 532.0,
+    "area_km2": 1.4672866930468713,
+    "oak_conifer_density": 213.3,
+    "fruiting_density": 362.6,
+    "total_density": 1549.1
+  },
+  {
+    "neighborhood": "McLaren Park",
+    "total_trees": 36,
+    "oak_conifer_count": 7.0,
+    "fruiting_count": 8.0,
+    "area_km2": 1.3664286467012134,
+    "oak_conifer_density": 5.1,
+    "fruiting_density": 5.9,
+    "total_density": 26.3
+  },
+  {
+    "neighborhood": "Merced Heights",
+    "total_trees": 1088,
+    "oak_conifer_count": 218.0,
+    "fruiting_count": 251.0,
+    "area_km2": 0.7583727762698176,
+    "oak_conifer_density": 287.5,
+    "fruiting_density": 331.0,
+    "total_density": 1434.7
+  },
+  {
+    "neighborhood": "Merced Manor",
+    "total_trees": 501,
+    "oak_conifer_count": 86.0,
+    "fruiting_count": 132.0,
+    "area_km2": 0.5783797583091719,
+    "oak_conifer_density": 148.7,
+    "fruiting_density": 228.2,
+    "total_density": 866.2
+  },
+  {
+    "neighborhood": "Midtown Terrace",
+    "total_trees": 201,
+    "oak_conifer_count": 72.0,
+    "fruiting_count": 7.0,
+    "area_km2": 0.5498623886779779,
+    "oak_conifer_density": 130.9,
+    "fruiting_density": 12.7,
+    "total_density": 365.5
+  },
+  {
+    "neighborhood": "Mint Hill",
+    "total_trees": 636,
+    "oak_conifer_count": 17.0,
+    "fruiting_count": 104.0,
+    "area_km2": 0.1529822693480073,
+    "oak_conifer_density": 111.1,
+    "fruiting_density": 679.8,
+    "total_density": 4157.3
+  },
+  {
+    "neighborhood": "Miraloma Park",
+    "total_trees": 1049,
+    "oak_conifer_count": 113.0,
+    "fruiting_count": 158.0,
+    "area_km2": 0.9658369752138021,
+    "oak_conifer_density": 117.0,
+    "fruiting_density": 163.6,
+    "total_density": 1086.1
+  },
+  {
+    "neighborhood": "Mission",
+    "total_trees": 10577,
+    "oak_conifer_count": 263.0,
+    "fruiting_count": 2151.0,
+    "area_km2": 3.1157704919750726,
+    "oak_conifer_density": 84.4,
+    "fruiting_density": 690.4,
+    "total_density": 3394.7
+  },
+  {
+    "neighborhood": "Mission Bay",
+    "total_trees": 1892,
+    "oak_conifer_count": 76.0,
+    "fruiting_count": 134.0,
+    "area_km2": 1.6038147476710087,
+    "oak_conifer_density": 47.4,
+    "fruiting_density": 83.6,
+    "total_density": 1179.7
+  },
+  {
+    "neighborhood": "Mission Dolores",
+    "total_trees": 2832,
+    "oak_conifer_count": 234.0,
+    "fruiting_count": 560.0,
+    "area_km2": 0.8487021189983325,
+    "oak_conifer_density": 275.7,
+    "fruiting_density": 659.8,
+    "total_density": 3336.9
+  },
+  {
+    "neighborhood": "Mission Terrace",
+    "total_trees": 2049,
+    "oak_conifer_count": 113.0,
+    "fruiting_count": 480.0,
+    "area_km2": 1.274919877371769,
+    "oak_conifer_density": 88.6,
+    "fruiting_density": 376.5,
+    "total_density": 1607.2
+  },
+  {
+    "neighborhood": "Monterey Heights",
+    "total_trees": 222,
+    "oak_conifer_count": 21.0,
+    "fruiting_count": 47.0,
+    "area_km2": 0.26343990220419533,
+    "oak_conifer_density": 79.7,
+    "fruiting_density": 178.4,
+    "total_density": 842.7
+  },
+  {
+    "neighborhood": "Mt. Davidson Manor",
+    "total_trees": 559,
+    "oak_conifer_count": 27.0,
+    "fruiting_count": 98.0,
+    "area_km2": 0.22873859804860058,
+    "oak_conifer_density": 118.0,
+    "fruiting_density": 428.4,
+    "total_density": 2443.8
+  },
+  {
+    "neighborhood": "Nob Hill",
+    "total_trees": 1423,
+    "oak_conifer_count": 112.0,
+    "fruiting_count": 393.0,
+    "area_km2": 0.6395208862222287,
+    "oak_conifer_density": 175.1,
+    "fruiting_density": 614.5,
+    "total_density": 2225.1
+  },
+  {
+    "neighborhood": "Noe Valley",
+    "total_trees": 5717,
+    "oak_conifer_count": 357.0,
+    "fruiting_count": 1171.0,
+    "area_km2": 1.4516754347373495,
+    "oak_conifer_density": 245.9,
+    "fruiting_density": 806.7,
+    "total_density": 3938.2
+  },
+  {
+    "neighborhood": "North Beach",
+    "total_trees": 1633,
+    "oak_conifer_count": 115.0,
+    "fruiting_count": 402.0,
+    "area_km2": 0.581911390807832,
+    "oak_conifer_density": 197.6,
+    "fruiting_density": 690.8,
+    "total_density": 2806.3
+  },
+  {
+    "neighborhood": "Northern Waterfront",
+    "total_trees": 1389,
+    "oak_conifer_count": 56.0,
+    "fruiting_count": 249.0,
+    "area_km2": 0.5743510906184515,
+    "oak_conifer_density": 97.5,
+    "fruiting_density": 433.5,
+    "total_density": 2418.4
+  },
+  {
+    "neighborhood": "Oceanview",
+    "total_trees": 1279,
+    "oak_conifer_count": 63.0,
+    "fruiting_count": 190.0,
+    "area_km2": 1.0109436379658605,
+    "oak_conifer_density": 62.3,
+    "fruiting_density": 187.9,
+    "total_density": 1265.2
+  },
+  {
+    "neighborhood": "Outer Mission",
+    "total_trees": 837,
+    "oak_conifer_count": 44.0,
+    "fruiting_count": 131.0,
+    "area_km2": 0.7836450479376321,
+    "oak_conifer_density": 56.1,
+    "fruiting_density": 167.2,
+    "total_density": 1068.1
+  },
+  {
+    "neighborhood": "Outer Richmond",
+    "total_trees": 4395,
+    "oak_conifer_count": 206.0,
+    "fruiting_count": 862.0,
+    "area_km2": 2.9552344913021478,
+    "oak_conifer_density": 69.7,
+    "fruiting_density": 291.7,
+    "total_density": 1487.2
+  },
+  {
+    "neighborhood": "Outer Sunset",
+    "total_trees": 8320,
+    "oak_conifer_count": 1675.0,
+    "fruiting_count": 1066.0,
+    "area_km2": 7.051420367766647,
+    "oak_conifer_density": 237.5,
+    "fruiting_density": 151.2,
+    "total_density": 1179.9
+  },
+  {
+    "neighborhood": "Pacific Heights",
+    "total_trees": 5442,
+    "oak_conifer_count": 438.0,
+    "fruiting_count": 1018.0,
+    "area_km2": 1.7894754925302188,
+    "oak_conifer_density": 244.8,
+    "fruiting_density": 568.9,
+    "total_density": 3041.1
+  },
+  {
+    "neighborhood": "Panhandle",
+    "total_trees": 1349,
+    "oak_conifer_count": 79.0,
+    "fruiting_count": 261.0,
+    "area_km2": 0.5698083375505677,
+    "oak_conifer_density": 138.6,
+    "fruiting_density": 458.0,
+    "total_density": 2367.5
+  },
+  {
+    "neighborhood": "Parkmerced",
+    "total_trees": 800,
+    "oak_conifer_count": 369.0,
+    "fruiting_count": 5.0,
+    "area_km2": 1.2606763459015569,
+    "oak_conifer_density": 292.7,
+    "fruiting_density": 4.0,
+    "total_density": 634.6
+  },
+  {
+    "neighborhood": "Parkside",
+    "total_trees": 3797,
+    "oak_conifer_count": 832.0,
+    "fruiting_count": 738.0,
+    "area_km2": 3.0478562717117548,
+    "oak_conifer_density": 273.0,
+    "fruiting_density": 242.1,
+    "total_density": 1245.8
+  },
+  {
+    "neighborhood": "Parnassus Heights",
+    "total_trees": 837,
+    "oak_conifer_count": 41.0,
+    "fruiting_count": 315.0,
+    "area_km2": 0.7234859555043062,
+    "oak_conifer_density": 56.7,
+    "fruiting_density": 435.4,
+    "total_density": 1156.9
+  },
+  {
+    "neighborhood": "Peralta Heights",
+    "total_trees": 1054,
+    "oak_conifer_count": 113.0,
+    "fruiting_count": 215.0,
+    "area_km2": 0.3026352923976274,
+    "oak_conifer_density": 373.4,
+    "fruiting_density": 710.4,
+    "total_density": 3482.7
+  },
+  {
+    "neighborhood": "Polk Gulch",
+    "total_trees": 836,
+    "oak_conifer_count": 56.0,
+    "fruiting_count": 112.0,
+    "area_km2": 0.3016960960216231,
+    "oak_conifer_density": 185.6,
+    "fruiting_density": 371.2,
+    "total_density": 2771.0
+  },
+  {
+    "neighborhood": "Portola",
+    "total_trees": 2421,
+    "oak_conifer_count": 198.0,
+    "fruiting_count": 494.0,
+    "area_km2": 1.8837900180490101,
+    "oak_conifer_density": 105.1,
+    "fruiting_density": 262.2,
+    "total_density": 1285.2
+  },
+  {
+    "neighborhood": "Potrero Hill",
+    "total_trees": 5123,
+    "oak_conifer_count": 413.0,
+    "fruiting_count": 858.0,
+    "area_km2": 2.345249595061408,
+    "oak_conifer_density": 176.1,
+    "fruiting_density": 365.8,
+    "total_density": 2184.4
+  },
+  {
+    "neighborhood": "Presidio Heights",
+    "total_trees": 2288,
+    "oak_conifer_count": 247.0,
+    "fruiting_count": 379.0,
+    "area_km2": 0.5747177261622074,
+    "oak_conifer_density": 429.8,
+    "fruiting_density": 659.5,
+    "total_density": 3981.1
+  },
+  {
+    "neighborhood": "Presidio National Park",
+    "total_trees": 27,
+    "oak_conifer_count": 1.0,
+    "fruiting_count": 1.0,
+    "area_km2": 6.141279298346647,
+    "oak_conifer_density": 0.2,
+    "fruiting_density": 0.2,
+    "total_density": 4.4
+  },
+  {
+    "neighborhood": "Presidio Terrace",
+    "total_trees": 714,
+    "oak_conifer_count": 24.0,
+    "fruiting_count": 63.0,
+    "area_km2": 0.32892767365824244,
+    "oak_conifer_density": 73.0,
+    "fruiting_density": 191.5,
+    "total_density": 2170.7
+  },
+  {
+    "neighborhood": "Produce Market",
+    "total_trees": 415,
+    "oak_conifer_count": 8.0,
+    "fruiting_count": 53.0,
+    "area_km2": 0.8580789358685668,
+    "oak_conifer_density": 9.3,
+    "fruiting_density": 61.8,
+    "total_density": 483.6
+  },
+  {
+    "neighborhood": "Rincon Hill",
+    "total_trees": 729,
+    "oak_conifer_count": 24.0,
+    "fruiting_count": 29.0,
+    "area_km2": 0.37722567975873106,
+    "oak_conifer_density": 63.6,
+    "fruiting_density": 76.9,
+    "total_density": 1932.5
+  },
+  {
+    "neighborhood": "Russian Hill",
+    "total_trees": 2584,
+    "oak_conifer_count": 286.0,
+    "fruiting_count": 556.0,
+    "area_km2": 0.947207650439894,
+    "oak_conifer_density": 301.9,
+    "fruiting_density": 587.0,
+    "total_density": 2728.0
+  },
+  {
+    "neighborhood": "Seacliff",
+    "total_trees": 1144,
+    "oak_conifer_count": 101.0,
+    "fruiting_count": 112.0,
+    "area_km2": 0.4611961208692858,
+    "oak_conifer_density": 219.0,
+    "fruiting_density": 242.8,
+    "total_density": 2480.5
+  },
+  {
+    "neighborhood": "Sherwood Forest",
+    "total_trees": 321,
+    "oak_conifer_count": 55.0,
+    "fruiting_count": 62.0,
+    "area_km2": 0.5400268293771162,
+    "oak_conifer_density": 101.8,
+    "fruiting_density": 114.8,
+    "total_density": 594.4
+  },
+  {
+    "neighborhood": "Showplace Square",
+    "total_trees": 992,
+    "oak_conifer_count": 24.0,
+    "fruiting_count": 176.0,
+    "area_km2": 0.6346472301803565,
+    "oak_conifer_density": 37.8,
+    "fruiting_density": 277.3,
+    "total_density": 1563.1
+  },
+  {
+    "neighborhood": "Silver Terrace",
+    "total_trees": 1287,
+    "oak_conifer_count": 82.0,
+    "fruiting_count": 217.0,
+    "area_km2": 1.0295777179947445,
+    "oak_conifer_density": 79.6,
+    "fruiting_density": 210.8,
+    "total_density": 1250.0
+  },
+  {
+    "neighborhood": "South Beach",
+    "total_trees": 1021,
+    "oak_conifer_count": 9.0,
+    "fruiting_count": 96.0,
+    "area_km2": 0.693736850833668,
+    "oak_conifer_density": 13.0,
+    "fruiting_density": 138.4,
+    "total_density": 1471.7
+  },
+  {
+    "neighborhood": "South of Market",
+    "total_trees": 7632,
+    "oak_conifer_count": 112.0,
+    "fruiting_count": 1135.0,
+    "area_km2": 3.098061570375204,
+    "oak_conifer_density": 36.2,
+    "fruiting_density": 366.4,
+    "total_density": 2463.5
+  },
+  {
+    "neighborhood": "St. Francis Wood",
+    "total_trees": 1198,
+    "oak_conifer_count": 104.0,
+    "fruiting_count": 122.0,
+    "area_km2": 0.43318073241475186,
+    "oak_conifer_density": 240.1,
+    "fruiting_density": 281.6,
+    "total_density": 2765.6
+  },
+  {
+    "neighborhood": "St. Marys Park",
+    "total_trees": 578,
+    "oak_conifer_count": 73.0,
+    "fruiting_count": 91.0,
+    "area_km2": 0.41025059750466375,
+    "oak_conifer_density": 177.9,
+    "fruiting_density": 221.8,
+    "total_density": 1408.9
+  },
+  {
+    "neighborhood": "Stonestown",
+    "total_trees": 1220,
+    "oak_conifer_count": 251.0,
+    "fruiting_count": 201.0,
+    "area_km2": 0.6964331622246207,
+    "oak_conifer_density": 360.4,
+    "fruiting_density": 288.6,
+    "total_density": 1751.8
+  },
+  {
+    "neighborhood": "Sunnydale",
+    "total_trees": 238,
+    "oak_conifer_count": 75.0,
+    "fruiting_count": 11.0,
+    "area_km2": 0.37566805428903477,
+    "oak_conifer_density": 199.6,
+    "fruiting_density": 29.3,
+    "total_density": 633.5
+  },
+  {
+    "neighborhood": "Sunnyside",
+    "total_trees": 3041,
+    "oak_conifer_count": 337.0,
+    "fruiting_count": 477.0,
+    "area_km2": 1.1529585053777973,
+    "oak_conifer_density": 292.3,
+    "fruiting_density": 413.7,
+    "total_density": 2637.6
+  },
+  {
+    "neighborhood": "Sutro Heights",
+    "total_trees": 707,
+    "oak_conifer_count": 77.0,
+    "fruiting_count": 96.0,
+    "area_km2": 0.5626794635055821,
+    "oak_conifer_density": 136.8,
+    "fruiting_density": 170.6,
+    "total_density": 1256.5
+  },
+  {
+    "neighborhood": "Telegraph Hill",
+    "total_trees": 811,
+    "oak_conifer_count": 169.0,
+    "fruiting_count": 191.0,
+    "area_km2": 0.2536490221010967,
+    "oak_conifer_density": 666.3,
+    "fruiting_density": 753.0,
+    "total_density": 3197.3
+  },
+  {
+    "neighborhood": "Tenderloin",
+    "total_trees": 1228,
+    "oak_conifer_count": 31.0,
+    "fruiting_count": 122.0,
+    "area_km2": 0.5346965372967922,
+    "oak_conifer_density": 58.0,
+    "fruiting_density": 228.2,
+    "total_density": 2296.6
+  },
+  {
+    "neighborhood": "Treasure Island",
+    "total_trees": 4,
+    "oak_conifer_count": 0.0,
+    "fruiting_count": 0.0,
+    "area_km2": 1.6609160382351813,
+    "oak_conifer_density": 0.0,
+    "fruiting_density": 0.0,
+    "total_density": 2.4
+  },
+  {
+    "neighborhood": "Union Street",
+    "total_trees": 1059,
+    "oak_conifer_count": 32.0,
+    "fruiting_count": 400.0,
+    "area_km2": 0.4861914349626867,
+    "oak_conifer_density": 65.8,
+    "fruiting_density": 822.7,
+    "total_density": 2178.2
+  },
+  {
+    "neighborhood": "University Mound",
+    "total_trees": 699,
+    "oak_conifer_count": 80.0,
+    "fruiting_count": 156.0,
+    "area_km2": 0.5740047729643343,
+    "oak_conifer_density": 139.4,
+    "fruiting_density": 271.8,
+    "total_density": 1217.8
+  },
+  {
+    "neighborhood": "Upper Market",
+    "total_trees": 1056,
+    "oak_conifer_count": 116.0,
+    "fruiting_count": 141.0,
+    "area_km2": 0.541443319850213,
+    "oak_conifer_density": 214.2,
+    "fruiting_density": 260.4,
+    "total_density": 1950.3
+  },
+  {
+    "neighborhood": "Visitacion Valley",
+    "total_trees": 1238,
+    "oak_conifer_count": 96.0,
+    "fruiting_count": 240.0,
+    "area_km2": 1.2470791715322604,
+    "oak_conifer_density": 77.0,
+    "fruiting_density": 192.4,
+    "total_density": 992.7
+  },
+  {
+    "neighborhood": "West Portal",
+    "total_trees": 1732,
+    "oak_conifer_count": 154.0,
+    "fruiting_count": 378.0,
+    "area_km2": 0.7242810795200441,
+    "oak_conifer_density": 212.6,
+    "fruiting_density": 521.9,
+    "total_density": 2391.3
+  },
+  {
+    "neighborhood": "Western Addition",
+    "total_trees": 3586,
+    "oak_conifer_count": 175.0,
+    "fruiting_count": 357.0,
+    "area_km2": 0.948260765294644,
+    "oak_conifer_density": 184.5,
+    "fruiting_density": 376.5,
+    "total_density": 3781.7
+  },
+  {
+    "neighborhood": "Westwood Highlands",
+    "total_trees": 130,
+    "oak_conifer_count": 56.0,
+    "fruiting_count": 17.0,
+    "area_km2": 0.14674603222996258,
+    "oak_conifer_density": 381.6,
+    "fruiting_density": 115.8,
+    "total_density": 885.9
+  },
+  {
+    "neighborhood": "Westwood Park",
+    "total_trees": 1194,
+    "oak_conifer_count": 89.0,
+    "fruiting_count": 543.0,
+    "area_km2": 0.5671761223822818,
+    "oak_conifer_density": 156.9,
+    "fruiting_density": 957.4,
+    "total_density": 2105.2
+  },
+  {
+    "neighborhood": "Yerba Buena Island",
+    "total_trees": 4,
+    "oak_conifer_count": 0.0,
+    "fruiting_count": 0.0,
+    "area_km2": 0.6419689340932231,
+    "oak_conifer_density": 0.0,
+    "fruiting_density": 0.0,
+    "total_density": 6.2
+  }
+]

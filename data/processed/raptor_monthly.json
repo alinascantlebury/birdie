@@ -1,0 +1,74 @@
+[
+  {
+    "month": 1,
+    "total_sightings": 1834,
+    "rodent_hunter_sightings": 886,
+    "month_name": "Jan"
+  },
+  {
+    "month": 2,
+    "total_sightings": 1475,
+    "rodent_hunter_sightings": 698,
+    "month_name": "Feb"
+  },
+  {
+    "month": 3,
+    "total_sightings": 1652,
+    "rodent_hunter_sightings": 752,
+    "month_name": "Mar"
+  },
+  {
+    "month": 4,
+    "total_sightings": 1913,
+    "rodent_hunter_sightings": 906,
+    "month_name": "Apr"
+  },
+  {
+    "month": 5,
+    "total_sightings": 1548,
+    "rodent_hunter_sightings": 859,
+    "month_name": "May"
+  },
+  {
+    "month": 6,
+    "total_sightings": 1031,
+    "rodent_hunter_sightings": 541,
+    "month_name": "Jun"
+  },
+  {
+    "month": 7,
+    "total_sightings": 964,
+    "rodent_hunter_sightings": 465,
+    "month_name": "Jul"
+  },
+  {
+    "month": 8,
+    "total_sightings": 1562,
+    "rodent_hunter_sightings": 607,
+    "month_name": "Aug"
+  },
+  {
+    "month": 9,
+    "total_sightings": 3412,
+    "rodent_hunter_sightings": 1182,
+    "month_name": "Sep"
+  },
+  {
+    "month": 10,
+    "total_sightings": 3527,
+    "rodent_hunter_sightings": 1288,
+    "month_name": "Oct"
+  },
+  {
+    "month": 11,
+    "total_sightings": 2550,
+    "rodent_hunter_sightings": 1032,
+    "month_name": "Nov"
+  },
+  {
+    "month": 12,
+    "total_sightings": 2732,
+    "rodent_hunter_sightings": 1367,
+    "month_name": "Dec"
+  }
+]

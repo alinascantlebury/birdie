@@ -1,0 +1,248 @@
+[
+  {
+    "neighborhood": "Financial District/South Beach",
+    "food_business_count": 1893,
+    "area_km2": NaN,
+    "food_business_density": NaN
+  },
+  {
+    "neighborhood": "Mission",
+    "food_business_count": 1667,
+    "area_km2": 3.1157704919750726,
+    "food_business_density": 535.0
+  },
+  {
+    "neighborhood": "Bayview Hunters Point",
+    "food_business_count": 1089,
+    "area_km2": NaN,
+    "food_business_density": NaN
+  },
+  {
+    "neighborhood": "South of Market",
+    "food_business_count": 997,
+    "area_km2": 3.098061570375204,
+    "food_business_density": 321.8
+  },
+  {
+    "neighborhood": "Tenderloin",
+    "food_business_count": 884,
+    "area_km2": 0.5346965372967922,
+    "food_business_density": 1653.3
+  },
+  {
+    "neighborhood": "Sunset/Parkside",
+    "food_business_count": 658,
+    "area_km2": NaN,
+    "food_business_density": NaN
+  },
+  {
+    "neighborhood": "Mission Bay",
+    "food_business_count": 540,
+    "area_km2": 1.6038147476710087,
+    "food_business_density": 336.7
+  },
+  {
+    "neighborhood": "Chinatown",
+    "food_business_count": 532,
+    "area_km2": 0.3184429562305427,
+    "food_business_density": 1670.6
+  },
+  {
+    "neighborhood": "Marina",
+    "food_business_count": 456,
+    "area_km2": 1.4672866930468713,
+    "food_business_density": 310.8
+  },
+  {
+    "neighborhood": "Nob Hill",
+    "food_business_count": 441,
+    "area_km2": 0.6395208862222287,
+    "food_business_density": 689.6
+  },
+  {
+    "neighborhood": "Outer Richmond",
+    "food_business_count": 435,
+    "area_km2": 2.9552344913021478,
+    "food_business_density": 147.2
+  },
+  {
+    "neighborhood": "Hayes Valley",
+    "food_business_count": 412,
+    "area_km2": 0.29209577349136556,
+    "food_business_density": 1410.5
+  },
+  {
+    "neighborhood": "North Beach",
+    "food_business_count": 403,
+    "area_km2": 0.581911390807832,
+    "food_business_density": 692.5
+  },
+  {
+    "neighborhood": "Inner Richmond",
+    "food_business_count": 400,
+    "area_km2": 2.2670866955350912,
+    "food_business_density": 176.4
+  },
+  {
+    "neighborhood": "Castro/Upper Market",
+    "food_business_count": 398,
+    "area_km2": NaN,
+    "food_business_density": NaN
+  },
+  {
+    "neighborhood": "Inner Sunset",
+    "food_business_count": 359,
+    "area_km2": 1.1252923579553957,
+    "food_business_density": 319.0
+  },
+  {
+    "neighborhood": "West of Twin Peaks",
+    "food_business_count": 309,
+    "area_km2": NaN,
+    "food_business_density": NaN
+  },
+  {
+    "neighborhood": "Potrero Hill",
+    "food_business_count": 300,
+    "area_km2": 2.345249595061408,
+    "food_business_density": 127.9
+  },
+  {
+    "neighborhood": "Bernal Heights",
+    "food_business_count": 292,
+    "area_km2": 1.7264450532011062,
+    "food_business_density": 169.1
+  },
+  {
+    "neighborhood": "Russian Hill",
+    "food_business_count": 285,
+    "area_km2": 0.947207650439894,
+    "food_business_density": 300.9
+  },
+  {
+    "neighborhood": "Western Addition",
+    "food_business_count": 253,
+    "area_km2": 0.948260765294644,
+    "food_business_density": 266.8
+  },
+  {
+    "neighborhood": "Lakeshore",
+    "food_business_count": 226,
+    "area_km2": 6.296408580744255,
+    "food_business_density": 35.9
+  },
+  {
+    "neighborhood": "Noe Valley",
+    "food_business_count": 223,
+    "area_km2": 1.4516754347373495,
+    "food_business_density": 153.6
+  },
+  {
+    "neighborhood": "Haight Ashbury",
+    "food_business_count": 208,
+    "area_km2": 0.3374137844754655,
+    "food_business_density": 616.5
+  },
+  {
+    "neighborhood": "Pacific Heights",
+    "food_business_count": 192,
+    "area_km2": 1.7894754925302188,
+    "food_business_density": 107.3
+  },
+  {
+    "neighborhood": "Excelsior",
+    "food_business_count": 179,
+    "area_km2": 1.6742315676410815,
+    "food_business_density": 106.9
+  },
+  {
+    "neighborhood": "Outer Mission",
+    "food_business_count": 165,
+    "area_km2": 0.7836450479376321,
+    "food_business_density": 210.6
+  },
+  {
+    "neighborhood": "Oceanview/Merced/Ingleside",
+    "food_business_count": 143,
+    "area_km2": NaN,
+    "food_business_density": NaN
+  },
+  {
+    "neighborhood": "Lone Mountain/USF",
+    "food_business_count": 132,
+    "area_km2": NaN,
+    "food_business_density": NaN
+  },
+  {
+    "neighborhood": "Japantown",
+    "food_business_count": 128,
+    "area_km2": 0.2926077012440472,
+    "food_business_density": 437.4
+  },
+  {
+    "neighborhood": "Portola",
+    "food_business_count": 123,
+    "area_km2": 1.8837900180490101,
+    "food_business_density": 65.3
+  },
+  {
+    "neighborhood": "Visitacion Valley",
+    "food_business_count": 82,
+    "area_km2": 1.2470791715322604,
+    "food_business_density": 65.8
+  },
+  {
+    "neighborhood": "Presidio Heights",
+    "food_business_count": 75,
+    "area_km2": 0.5747177261622074,
+    "food_business_density": 130.5
+  },
+  {
+    "neighborhood": "Treasure Island",
+    "food_business_count": 75,
+    "area_km2": 1.6609160382351813,
+    "food_business_density": 45.2
+  },
+  {
+    "neighborhood": "Glen Park",
+    "food_business_count": 49,
+    "area_km2": 0.8970225456679872,
+    "food_business_density": 54.6
+  },
+  {
+    "neighborhood": "Twin Peaks",
+    "food_business_count": 28,
+    "area_km2": NaN,
+    "food_business_density": NaN
+  },
+  {
+    "neighborhood": "Presidio",
+    "food_business_count": 26,
+    "area_km2": NaN,
+    "food_business_density": NaN
+  },
+  {
+    "neighborhood": "Golden Gate Park",
+    "food_business_count": 15,
+    "area_km2": 4.368035845442235,
+    "food_business_density": 3.4
+  },
+  {
+    "neighborhood": "Seacliff",
+    "food_business_count": 6,
+    "area_km2": 0.4611961208692858,
+    "food_business_density": 13.0
+  },
+  {
+    "neighborhood": "Lincoln Park",
+    "food_business_count": 2,
+    "area_km2": NaN,
+    "food_business_density": NaN
+  },
+  {
+    "neighborhood": "McLaren Park",
+    "food_business_count": 1,
+    "area_km2": 1.3664286467012134,
+    "food_business_density": 0.7
+  }
+]

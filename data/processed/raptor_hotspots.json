@@ -1,0 +1,202 @@
+[
+  {
+    "locality": "Southeast Farallon Island (Farallon Islands NWR, restricted access)",
+    "lat": 37.6985,
+    "lng": -123.0028,
+    "total_sightings": 4493,
+    "species_count": 10,
+    "peak_month": "Oct"
+  },
+  {
+    "locality": "Presidio--Battery Godfrey",
+    "lat": 37.8038,
+    "lng": -122.4775,
+    "total_sightings": 1539,
+    "species_count": 12,
+    "peak_month": "Oct"
+  },
+  {
+    "locality": "Golden Gate Park--Arboretum (San Francisco Botanical Garden)",
+    "lat": 37.7676,
+    "lng": -122.4688,
+    "total_sightings": 1491,
+    "species_count": 8,
+    "peak_month": "Oct"
+  },
+  {
+    "locality": "Fort Mason",
+    "lat": 37.8052,
+    "lng": -122.4286,
+    "total_sightings": 991,
+    "species_count": 8,
+    "peak_month": "Sep"
+  },
+  {
+    "locality": "Golden Gate Park--Blue Heron Lake & Strawberry Hill",
+    "lat": 37.7686,
+    "lng": -122.4749,
+    "total_sightings": 879,
+    "species_count": 9,
+    "peak_month": "Oct"
+  },
+  {
+    "locality": "Golden Gate Park--North Lake",
+    "lat": 37.77,
+    "lng": -122.5029,
+    "total_sightings": 804,
+    "species_count": 8,
+    "peak_month": "Sep"
+  },
+  {
+    "locality": "Lake Merced--Concrete Bridge area",
+    "lat": 37.7127,
+    "lng": -122.4879,
+    "total_sightings": 765,
+    "species_count": 9,
+    "peak_month": "Oct"
+  },
+  {
+    "locality": "Presidio--El Polin Springs & Inspiration Point",
+    "lat": 37.7927,
+    "lng": -122.4565,
+    "total_sightings": 594,
+    "species_count": 9,
+    "peak_month": "Sep"
+  },
+  {
+    "locality": "Heron's Head Park",
+    "lat": 37.7381,
+    "lng": -122.3725,
+    "total_sightings": 416,
+    "species_count": 9,
+    "peak_month": "Dec"
+  },
+  {
+    "locality": "Corona Heights Park",
+    "lat": 37.7647,
+    "lng": -122.439,
+    "total_sightings": 376,
+    "species_count": 9,
+    "peak_month": "Oct"
+  },
+  {
+    "locality": "Battery Rao",
+    "lat": 37.7352,
+    "lng": -122.4183,
+    "total_sightings": 370,
+    "species_count": 11,
+    "peak_month": "Apr"
+  },
+  {
+    "locality": "Backyard",
+    "lat": 37.7083,
+    "lng": -122.4581,
+    "total_sightings": 355,
+    "species_count": 9,
+    "peak_month": "Oct"
+  },
+  {
+    "locality": "Pine Lake Park & Stern Grove",
+    "lat": 37.7363,
+    "lng": -122.4843,
+    "total_sightings": 343,
+    "species_count": 6,
+    "peak_month": "Aug"
+  },
+  {
+    "locality": "McLaren Park - for long traveling lists- use more specific hotspot where appropriate",
+    "lat": 37.7208,
+    "lng": -122.4183,
+    "total_sightings": 340,
+    "species_count": 8,
+    "peak_month": "Dec"
+  },
+  {
+    "locality": "Bernal Hill",
+    "lat": 37.7429,
+    "lng": -122.4133,
+    "total_sightings": 319,
+    "species_count": 8,
+    "peak_month": "Apr"
+  },
+  {
+    "locality": "Mt. Davidson",
+    "lat": 37.7384,
+    "lng": -122.4534,
+    "total_sightings": 318,
+    "species_count": 8,
+    "peak_month": "May"
+  },
+  {
+    "locality": "Glen Canyon Park",
+    "lat": 37.7396,
+    "lng": -122.4413,
+    "total_sightings": 292,
+    "species_count": 6,
+    "peak_month": "Apr"
+  },
+  {
+    "locality": "Golden Gate Park--Chain of Lakes",
+    "lat": 37.7687,
+    "lng": -122.501,
+    "total_sightings": 275,
+    "species_count": 6,
+    "peak_month": "Sep"
+  },
+  {
+    "locality": "Golden Gate Park - long traveling lists - use more specific hotspots where appropriate",
+    "lat": 37.7696,
+    "lng": -122.4841,
+    "total_sightings": 241,
+    "species_count": 5,
+    "peak_month": "Apr"
+  },
+  {
+    "locality": "California Academy of Science--Living Roof (restricted access)",
+    "lat": 37.77,
+    "lng": -122.4661,
+    "total_sightings": 210,
+    "species_count": 8,
+    "peak_month": "Apr"
+  },
+  {
+    "locality": "Presidio--Crissy Field Lagoon",
+    "lat": 37.8048,
+    "lng": -122.4562,
+    "total_sightings": 203,
+    "species_count": 7,
+    "peak_month": "Aug"
+  },
+  {
+    "locality": "Golden Gate Park--Elk Glen Lake",
+    "lat": 37.7676,
+    "lng": -122.4819,
+    "total_sightings": 191,
+    "species_count": 5,
+    "peak_month": "Sep"
+  },
+  {
+    "locality": "Candlestick Pt. State Rec. Area - long traveling lists - use specific hotspot where appropriate",
+    "lat": 37.7117,
+    "lng": -122.3805,
+    "total_sightings": 185,
+    "species_count": 9,
+    "peak_month": "Dec"
+  },
+  {
+    "locality": "Lake Merced--Wooden Bridge area",
+    "lat": 37.728,
+    "lng": -122.4938,
+    "total_sightings": 170,
+    "species_count": 6,
+    "peak_month": "Jan"
+  },
+  {
+    "locality": "Presidio--Mountain Lake Park",
+    "lat": 37.7874,
+    "lng": -122.4695,
+    "total_sightings": 167,
+    "species_count": 6,
+    "peak_month": "Sep"
+  }
+]

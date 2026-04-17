@@ -1,0 +1,704 @@
+[
+  {
+    "month": 1,
+    "COMMON NAME": "American Kestrel",
+    "count": 80,
+    "month_name": "Jan"
+  },
+  {
+    "month": 1,
+    "COMMON NAME": "Cooper's Hawk",
+    "count": 93,
+    "month_name": "Jan"
+  },
+  {
+    "month": 1,
+    "COMMON NAME": "Merlin",
+    "count": 50,
+    "month_name": "Jan"
+  },
+  {
+    "month": 1,
+    "COMMON NAME": "Northern Harrier",
+    "count": 13,
+    "month_name": "Jan"
+  },
+  {
+    "month": 1,
+    "COMMON NAME": "Peregrine Falcon",
+    "count": 281,
+    "month_name": "Jan"
+  },
+  {
+    "month": 1,
+    "COMMON NAME": "Red-shouldered Hawk",
+    "count": 436,
+    "month_name": "Jan"
+  },
+  {
+    "month": 1,
+    "COMMON NAME": "Red-tailed Hawk",
+    "count": 780,
+    "month_name": "Jan"
+  },
+  {
+    "month": 1,
+    "COMMON NAME": "Sharp-shinned Hawk",
+    "count": 88,
+    "month_name": "Jan"
+  },
+  {
+    "month": 1,
+    "COMMON NAME": "White-tailed Kite",
+    "count": 13,
+    "month_name": "Jan"
+  },
+  {
+    "month": 2,
+    "COMMON NAME": "American Kestrel",
+    "count": 50,
+    "month_name": "Feb"
+  },
+  {
+    "month": 2,
+    "COMMON NAME": "Cooper's Hawk",
+    "count": 103,
+    "month_name": "Feb"
+  },
+  {
+    "month": 2,
+    "COMMON NAME": "Merlin",
+    "count": 29,
+    "month_name": "Feb"
+  },
+  {
+    "month": 2,
+    "COMMON NAME": "Northern Harrier",
+    "count": 8,
+    "month_name": "Feb"
+  },
+  {
+    "month": 2,
+    "COMMON NAME": "Peregrine Falcon",
+    "count": 253,
+    "month_name": "Feb"
+  },
+  {
+    "month": 2,
+    "COMMON NAME": "Red-shouldered Hawk",
+    "count": 339,
+    "month_name": "Feb"
+  },
+  {
+    "month": 2,
+    "COMMON NAME": "Red-tailed Hawk",
+    "count": 635,
+    "month_name": "Feb"
+  },
+  {
+    "month": 2,
+    "COMMON NAME": "Rough-legged Hawk",
+    "count": 1,
+    "month_name": "Feb"
+  },
+  {
+    "month": 2,
+    "COMMON NAME": "Sharp-shinned Hawk",
+    "count": 52,
+    "month_name": "Feb"
+  },
+  {
+    "month": 2,
+    "COMMON NAME": "White-tailed Kite",
+    "count": 5,
+    "month_name": "Feb"
+  },
+  {
+    "month": 3,
+    "COMMON NAME": "American Kestrel",
+    "count": 32,
+    "month_name": "Mar"
+  },
+  {
+    "month": 3,
+    "COMMON NAME": "Cooper's Hawk",
+    "count": 168,
+    "month_name": "Mar"
+  },
+  {
+    "month": 3,
+    "COMMON NAME": "Ferruginous Hawk",
+    "count": 2,
+    "month_name": "Mar"
+  },
+  {
+    "month": 3,
+    "COMMON NAME": "Merlin",
+    "count": 39,
+    "month_name": "Mar"
+  },
+  {
+    "month": 3,
+    "COMMON NAME": "Northern Harrier",
+    "count": 5,
+    "month_name": "Mar"
+  },
+  {
+    "month": 3,
+    "COMMON NAME": "Peregrine Falcon",
+    "count": 237,
+    "month_name": "Mar"
+  },
+  {
+    "month": 3,
+    "COMMON NAME": "Red-shouldered Hawk",
+    "count": 387,
+    "month_name": "Mar"
+  },
+  {
+    "month": 3,
+    "COMMON NAME": "Red-tailed Hawk",
+    "count": 706,
+    "month_name": "Mar"
+  },
+  {
+    "month": 3,
+    "COMMON NAME": "Sharp-shinned Hawk",
+    "count": 67,
+    "month_name": "Mar"
+  },
+  {
+    "month": 3,
+    "COMMON NAME": "White-tailed Kite",
+    "count": 9,
+    "month_name": "Mar"
+  },
+  {
+    "month": 4,
+    "COMMON NAME": "American Kestrel",
+    "count": 21,
+    "month_name": "Apr"
+  },
+  {
+    "month": 4,
+    "COMMON NAME": "Cooper's Hawk",
+    "count": 243,
+    "month_name": "Apr"
+  },
+  {
+    "month": 4,
+    "COMMON NAME": "Ferruginous Hawk",
+    "count": 1,
+    "month_name": "Apr"
+  },
+  {
+    "month": 4,
+    "COMMON NAME": "Merlin",
+    "count": 27,
+    "month_name": "Apr"
+  },
+  {
+    "month": 4,
+    "COMMON NAME": "Northern Harrier",
+    "count": 6,
+    "month_name": "Apr"
+  },
+  {
+    "month": 4,
+    "COMMON NAME": "Peregrine Falcon",
+    "count": 199,
+    "month_name": "Apr"
+  },
+  {
+    "month": 4,
+    "COMMON NAME": "Prairie Falcon",
+    "count": 1,
+    "month_name": "Apr"
+  },
+  {
+    "month": 4,
+    "COMMON NAME": "Red-shouldered Hawk",
+    "count": 419,
+    "month_name": "Apr"
+  },
+  {
+    "month": 4,
+    "COMMON NAME": "Red-tailed Hawk",
+    "count": 874,
+    "month_name": "Apr"
+  },
+  {
+    "month": 4,
+    "COMMON NAME": "Sharp-shinned Hawk",
+    "count": 117,
+    "month_name": "Apr"
+  },
+  {
+    "month": 4,
+    "COMMON NAME": "White-tailed Kite",
+    "count": 5,
+    "month_name": "Apr"
+  },
+  {
+    "month": 5,
+    "COMMON NAME": "American Kestrel",
+    "count": 9,
+    "month_name": "May"
+  },
+  {
+    "month": 5,
+    "COMMON NAME": "Cooper's Hawk",
+    "count": 147,
+    "month_name": "May"
+  },
+  {
+    "month": 5,
+    "COMMON NAME": "Northern Harrier",
+    "count": 2,
+    "month_name": "May"
+  },
+  {
+    "month": 5,
+    "COMMON NAME": "Peregrine Falcon",
+    "count": 157,
+    "month_name": "May"
+  },
+  {
+    "month": 5,
+    "COMMON NAME": "Red-shouldered Hawk",
+    "count": 355,
+    "month_name": "May"
+  },
+  {
+    "month": 5,
+    "COMMON NAME": "Red-tailed Hawk",
+    "count": 845,
+    "month_name": "May"
+  },
+  {
+    "month": 5,
+    "COMMON NAME": "Sharp-shinned Hawk",
+    "count": 30,
+    "month_name": "May"
+  },
+  {
+    "month": 5,
+    "COMMON NAME": "White-tailed Kite",
+    "count": 3,
+    "month_name": "May"
+  },
+  {
+    "month": 6,
+    "COMMON NAME": "American Kestrel",
+    "count": 4,
+    "month_name": "Jun"
+  },
+  {
+    "month": 6,
+    "COMMON NAME": "Cooper's Hawk",
+    "count": 96,
+    "month_name": "Jun"
+  },
+  {
+    "month": 6,
+    "COMMON NAME": "Peregrine Falcon",
+    "count": 116,
+    "month_name": "Jun"
+  },
+  {
+    "month": 6,
+    "COMMON NAME": "Red-shouldered Hawk",
+    "count": 277,
+    "month_name": "Jun"
+  },
+  {
+    "month": 6,
+    "COMMON NAME": "Red-tailed Hawk",
+    "count": 534,
+    "month_name": "Jun"
+  },
+  {
+    "month": 6,
+    "COMMON NAME": "Sharp-shinned Hawk",
+    "count": 1,
+    "month_name": "Jun"
+  },
+  {
+    "month": 6,
+    "COMMON NAME": "White-tailed Kite",
+    "count": 3,
+    "month_name": "Jun"
+  },
+  {
+    "month": 7,
+    "COMMON NAME": "American Kestrel",
+    "count": 7,
+    "month_name": "Jul"
+  },
+  {
+    "month": 7,
+    "COMMON NAME": "Cooper's Hawk",
+    "count": 113,
+    "month_name": "Jul"
+  },
+  {
+    "month": 7,
+    "COMMON NAME": "Peregrine Falcon",
+    "count": 117,
+    "month_name": "Jul"
+  },
+  {
+    "month": 7,
+    "COMMON NAME": "Red-shouldered Hawk",
+    "count": 268,
+    "month_name": "Jul"
+  },
+  {
+    "month": 7,
+    "COMMON NAME": "Red-tailed Hawk",
+    "count": 454,
+    "month_name": "Jul"
+  },
+  {
+    "month": 7,
+    "COMMON NAME": "Sharp-shinned Hawk",
+    "count": 1,
+    "month_name": "Jul"
+  },
+  {
+    "month": 7,
+    "COMMON NAME": "White-tailed Kite",
+    "count": 4,
+    "month_name": "Jul"
+  },
+  {
+    "month": 8,
+    "COMMON NAME": "American Kestrel",
+    "count": 47,
+    "month_name": "Aug"
+  },
+  {
+    "month": 8,
+    "COMMON NAME": "Cooper's Hawk",
+    "count": 191,
+    "month_name": "Aug"
+  },
+  {
+    "month": 8,
+    "COMMON NAME": "Merlin",
+    "count": 1,
+    "month_name": "Aug"
+  },
+  {
+    "month": 8,
+    "COMMON NAME": "Northern Harrier",
+    "count": 7,
+    "month_name": "Aug"
+  },
+  {
+    "month": 8,
+    "COMMON NAME": "Peregrine Falcon",
+    "count": 274,
+    "month_name": "Aug"
+  },
+  {
+    "month": 8,
+    "COMMON NAME": "Prairie Falcon",
+    "count": 1,
+    "month_name": "Aug"
+  },
+  {
+    "month": 8,
+    "COMMON NAME": "Red-shouldered Hawk",
+    "count": 474,
+    "month_name": "Aug"
+  },
+  {
+    "month": 8,
+    "COMMON NAME": "Red-tailed Hawk",
+    "count": 545,
+    "month_name": "Aug"
+  },
+  {
+    "month": 8,
+    "COMMON NAME": "Sharp-shinned Hawk",
+    "count": 14,
+    "month_name": "Aug"
+  },
+  {
+    "month": 8,
+    "COMMON NAME": "White-tailed Kite",
+    "count": 8,
+    "month_name": "Aug"
+  },
+  {
+    "month": 9,
+    "COMMON NAME": "American Kestrel",
+    "count": 166,
+    "month_name": "Sep"
+  },
+  {
+    "month": 9,
+    "COMMON NAME": "Cooper's Hawk",
+    "count": 348,
+    "month_name": "Sep"
+  },
+  {
+    "month": 9,
+    "COMMON NAME": "Ferruginous Hawk",
+    "count": 3,
+    "month_name": "Sep"
+  },
+  {
+    "month": 9,
+    "COMMON NAME": "Merlin",
+    "count": 160,
+    "month_name": "Sep"
+  },
+  {
+    "month": 9,
+    "COMMON NAME": "Northern Harrier",
+    "count": 53,
+    "month_name": "Sep"
+  },
+  {
+    "month": 9,
+    "COMMON NAME": "Peregrine Falcon",
+    "count": 649,
+    "month_name": "Sep"
+  },
+  {
+    "month": 9,
+    "COMMON NAME": "Prairie Falcon",
+    "count": 1,
+    "month_name": "Sep"
+  },
+  {
+    "month": 9,
+    "COMMON NAME": "Red-shouldered Hawk",
+    "count": 916,
+    "month_name": "Sep"
+  },
+  {
+    "month": 9,
+    "COMMON NAME": "Red-tailed Hawk",
+    "count": 948,
+    "month_name": "Sep"
+  },
+  {
+    "month": 9,
+    "COMMON NAME": "Sharp-shinned Hawk",
+    "count": 153,
+    "month_name": "Sep"
+  },
+  {
+    "month": 9,
+    "COMMON NAME": "White-tailed Kite",
+    "count": 15,
+    "month_name": "Sep"
+  },
+  {
+    "month": 10,
+    "COMMON NAME": "American Kestrel",
+    "count": 238,
+    "month_name": "Oct"
+  },
+  {
+    "month": 10,
+    "COMMON NAME": "Cooper's Hawk",
+    "count": 287,
+    "month_name": "Oct"
+  },
+  {
+    "month": 10,
+    "COMMON NAME": "Ferruginous Hawk",
+    "count": 6,
+    "month_name": "Oct"
+  },
+  {
+    "month": 10,
+    "COMMON NAME": "Merlin",
+    "count": 273,
+    "month_name": "Oct"
+  },
+  {
+    "month": 10,
+    "COMMON NAME": "Northern Harrier",
+    "count": 130,
+    "month_name": "Oct"
+  },
+  {
+    "month": 10,
+    "COMMON NAME": "Peregrine Falcon",
+    "count": 764,
+    "month_name": "Oct"
+  },
+  {
+    "month": 10,
+    "COMMON NAME": "Red-shouldered Hawk",
+    "count": 672,
+    "month_name": "Oct"
+  },
+  {
+    "month": 10,
+    "COMMON NAME": "Red-tailed Hawk",
+    "count": 872,
+    "month_name": "Oct"
+  },
+  {
+    "month": 10,
+    "COMMON NAME": "Rough-legged Hawk",
+    "count": 6,
+    "month_name": "Oct"
+  },
+  {
+    "month": 10,
+    "COMMON NAME": "Sharp-shinned Hawk",
+    "count": 231,
+    "month_name": "Oct"
+  },
+  {
+    "month": 10,
+    "COMMON NAME": "White-tailed Kite",
+    "count": 48,
+    "month_name": "Oct"
+  },
+  {
+    "month": 11,
+    "COMMON NAME": "American Kestrel",
+    "count": 234,
+    "month_name": "Nov"
+  },
+  {
+    "month": 11,
+    "COMMON NAME": "Cooper's Hawk",
+    "count": 140,
+    "month_name": "Nov"
+  },
+  {
+    "month": 11,
+    "COMMON NAME": "Ferruginous Hawk",
+    "count": 4,
+    "month_name": "Nov"
+  },
+  {
+    "month": 11,
+    "COMMON NAME": "Merlin",
+    "count": 134,
+    "month_name": "Nov"
+  },
+  {
+    "month": 11,
+    "COMMON NAME": "Northern Harrier",
+    "count": 133,
+    "month_name": "Nov"
+  },
+  {
+    "month": 11,
+    "COMMON NAME": "Peregrine Falcon",
+    "count": 663,
+    "month_name": "Nov"
+  },
+  {
+    "month": 11,
+    "COMMON NAME": "Prairie Falcon",
+    "count": 1,
+    "month_name": "Nov"
+  },
+  {
+    "month": 11,
+    "COMMON NAME": "Red-shouldered Hawk",
+    "count": 350,
+    "month_name": "Nov"
+  },
+  {
+    "month": 11,
+    "COMMON NAME": "Red-tailed Hawk",
+    "count": 641,
+    "month_name": "Nov"
+  },
+  {
+    "month": 11,
+    "COMMON NAME": "Rough-legged Hawk",
+    "count": 52,
+    "month_name": "Nov"
+  },
+  {
+    "month": 11,
+    "COMMON NAME": "Sharp-shinned Hawk",
+    "count": 174,
+    "month_name": "Nov"
+  },
+  {
+    "month": 11,
+    "COMMON NAME": "White-tailed Kite",
+    "count": 24,
+    "month_name": "Nov"
+  },
+  {
+    "month": 12,
+    "COMMON NAME": "American Kestrel",
+    "count": 184,
+    "month_name": "Dec"
+  },
+  {
+    "month": 12,
+    "COMMON NAME": "Cooper's Hawk",
+    "count": 198,
+    "month_name": "Dec"
+  },
+  {
+    "month": 12,
+    "COMMON NAME": "Ferruginous Hawk",
+    "count": 1,
+    "month_name": "Dec"
+  },
+  {
+    "month": 12,
+    "COMMON NAME": "Merlin",
+    "count": 81,
+    "month_name": "Dec"
+  },
+  {
+    "month": 12,
+    "COMMON NAME": "Northern Harrier",
+    "count": 24,
+    "month_name": "Dec"
+  },
+  {
+    "month": 12,
+    "COMMON NAME": "Peregrine Falcon",
+    "count": 375,
+    "month_name": "Dec"
+  },
+  {
+    "month": 12,
+    "COMMON NAME": "Red-shouldered Hawk",
+    "count": 594,
+    "month_name": "Dec"
+  },
+  {
+    "month": 12,
+    "COMMON NAME": "Red-tailed Hawk",
+    "count": 1125,
+    "month_name": "Dec"
+  },
+  {
+    "month": 12,
+    "COMMON NAME": "Rough-legged Hawk",
+    "count": 8,
+    "month_name": "Dec"
+  },
+  {
+    "month": 12,
+    "COMMON NAME": "Sharp-shinned Hawk",
+    "count": 108,
+    "month_name": "Dec"
+  },
+  {
+    "month": 12,
+    "COMMON NAME": "White-tailed Kite",
+    "count": 34,
+    "month_name": "Dec"
+  }
+]
