@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Radial Bar · Raptor Migration by Month</title>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#F9F8FA;font-family:'DM Sans',sans-serif;font-weight:300;padding:40px;}
+h1{font-family:'IM Fell English',serif;font-size:26px;color:#3a3020;margin-bottom:6px;}
+.subtitle{font-size:13px;color:#93876F;margin-bottom:28px;max-width:560px;line-height:1.6;}
+.layout{display:flex;gap:32px;align-items:center;flex-wrap:wrap;}
+.chart-wrap{background:#f2ede0;border:1px solid #d8ceb8;border-radius:4px;padding:20px;display:flex;justify-content:center;}
+.note{font-size:11px;color:#93876F;line-height:1.6;padding:10px 12px;border-left:2px solid #8a6010;}
+</style>
+</head>
+<body>
+<h1>Raptor Migration · Radial Bar</h1>
+<p class="subtitle">Monthly raptor sighting distribution in San Francisco shown as a radial bar chart. Each bar is one month.</p>
+
+<div class="layout">
+  <div class="chart-wrap">
+    <svg id="radial-svg" viewBox="0 0 420 420" width="420" style="display:block;"></svg>
+  </div>
+
+</div>
+
+<script>
+// monthly % distribution of SF raptor sightings (normalized)
+const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const vals   = [7.2, 5.8, 6.4, 7.1, 6.2, 3.8, 3.5, 6.1, 14.8, 15.4, 11.2, 12.5];
+
+const W=420, H=420, cx=210, cy=210;
+const innerR = 60, outerMaxR = 160;
+const maxVal = d3.max(vals);
+
+const svg = d3.select('#radial-svg');
+const angleScale = d3.scaleBand()
+  .domain(d3.range(12))
+  .range([0, 2*Math.PI])
+  .padding(0.08);
+const rScale = d3.scaleLinear().domain([0, maxVal]).range([innerR, outerMaxR]);
+
+const arc = d3.arc()
+  .innerRadius(innerR)
+  .outerRadius(d => rScale(d))
+  .startAngle((_, i) => angleScale(i))
+  .endAngle((_, i) => angleScale(i) + angleScale.bandwidth())
+  .padAngle(0.02)
+  .cornerRadius(2);
+
+const g = svg.append('g').attr('transform', `translate(${cx},${cy})`);
+
+// subtle grid rings
+[25, 50, 75, 100].forEach(pct => {
+  const r = innerR + (outerMaxR - innerR) * pct / 100;
+  g.append('circle').attr('r', r).attr('fill','none').attr('stroke','#e0d8c8').attr('stroke-width',0.5);
+});
+
+// inner circle
+g.append('circle').attr('r', innerR).attr('fill','#F9F8FA').attr('stroke','#d8ceb8').attr('stroke-width',0.8);
+
+// bars
+g.selectAll('path').data(vals).join('path')
+  .attr('d', (d,i) => arc(d,i))
+  .attr('fill', (d,i) => i===8||i===9 ? '#b87a10' : '#627461')
+  .attr('opacity', (d,i) => i===8||i===9 ? 0.9 : 0.5);
+
+// month labels
+vals.forEach((v, i) => {
+  const midAngle = angleScale(i) + angleScale.bandwidth()/2 - Math.PI/2;
+  const labelR = outerMaxR + 18;
+  const lx = Math.cos(midAngle) * labelR;
+  const ly = Math.sin(midAngle) * labelR;
+  g.append('text')
+    .attr('x', lx).attr('y', ly)
+    .attr('text-anchor','middle')
+    .attr('dominant-baseline','central')
+    .attr('font-size', i===8||i===9 ? 11 : 9)
+    .attr('font-weight', i===8||i===9 ? '500' : '300')
+    .attr('fill', i===8||i===9 ? '#b87a10' : '#93876F')
+    .attr('font-family','DM Sans,sans-serif')
+    .text(months[i]);
+  
+  // value label on bar tip
+  if (i===8||i===9) {
+    const vR = rScale(v) + 4;
+    const vx = Math.cos(midAngle) * vR;
+    const vy = Math.sin(midAngle) * vR;
+    g.append('text')
+      .attr('x', vx).attr('y', vy)
+      .attr('text-anchor','middle').attr('dominant-baseline','central')
+      .attr('font-size', 8).attr('fill','#b87a10').attr('font-family','DM Sans,sans-serif')
+      .text(v+'%');
+  }
+});
+
+// center label
+g.append('text').attr('text-anchor','middle').attr('y',-8)
+  .attr('font-family','IM Fell English,serif').attr('font-size',13).attr('fill','#3a3020').text('Raptor');
+g.append('text').attr('text-anchor','middle').attr('y',8)
+  .attr('font-family','IM Fell English,serif').attr('font-size',13).attr('fill','#3a3020').text('Sightings');
+g.append('text').attr('text-anchor','middle').attr('y',22)
+  .attr('font-family','DM Sans,sans-serif').attr('font-size',9).attr('fill','#93876F').text('% by month');
+</script>
+</body>
+</html>

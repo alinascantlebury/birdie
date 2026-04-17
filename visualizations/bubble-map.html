@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Parrot Colony · 2013 vs 2022</title>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#F9F8FA;font-family:'DM Sans',sans-serif;font-weight:300;padding:40px;}
+.kicker{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#93876F;margin-bottom:8px;}
+h1{font-family:'IM Fell English',serif;font-size:26px;color:#3a3020;margin-bottom:8px;}
+h1 em{font-style:italic;}
+.sub{font-size:13px;color:#93876F;line-height:1.7;max-width:760px;margin-bottom:24px;}
+.maps-row{display:flex;gap:24px;align-items:flex-start;}
+.map-panel{flex:1;}
+.map-year{font-family:'IM Fell English',serif;font-size:48px;color:#05597A;line-height:1;margin-bottom:6px;}
+.map-caption{font-size:12px;color:#93876F;margin-bottom:10px;line-height:1.5;}
+.map-wrap{position:relative;width:100%;padding-bottom:100%;border:1px solid #d8ceb8;border-radius:4px;overflow:hidden;}
+.map-inner{position:absolute;inset:0;}
+.leaflet-map{position:absolute;inset:0;width:100%;height:100%;z-index:1;}
+.overlay-svg{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;}
+.divider{width:1px;background:#d8ceb8;flex-shrink:0;align-self:stretch;margin:0 4px;}
+.note{font-size:11px;color:#93876F;line-height:1.6;padding:10px 12px;border-left:2px solid #05597A;margin-top:20px;max-width:800px;}
+.scale-note{font-size:10px;color:#93876F;margin-top:8px;font-style:italic;}
+.loading{font-size:12px;color:#93876F;padding:20px;}
+</style>
+</head>
+<body>
+
+<p class="kicker">Chapter 02 · Parrots · Objective 2</p>
+<h1>The Colony <em>Moves</em></h1>
+<p class="sub">Red-masked Parakeet sightings by location. Both maps use the same bubble scale so sizes are directly comparable.</p>
+
+<div class="maps-row">
+  <div class="map-panel">
+    <div class="map-year">2013</div>
+    <div class="map-wrap">
+      <div class="map-inner">
+        <div class="leaflet-map" id="map-2013"></div>
+        <svg class="overlay-svg" id="svg-2013"></svg>
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="map-panel">
+    <div class="map-year">2022</div>
+    <div class="map-wrap">
+      <div class="map-inner">
+        <div class="leaflet-map" id="map-2022"></div>
+        <svg class="overlay-svg" id="svg-2022"></svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const CENTER = [37.776, -122.440];
+const ZOOM = 13;
+
+d3.json('../data/processed/parrot_by_location_year.json').then(parrotData => {
+
+  // shared max across all years for consistent scale
+  const allValues = Object.values(parrotData)
+    .flatMap(d => Object.values(d.years).map(Number));
+  const maxN = d3.max(allValues);
+  const rSc = d3.scaleSqrt().domain([0, maxN]).range([0, 38]);
+
+  function buildMap(mapId, svgId, year) {
+    const mapEl = document.getElementById(mapId);
+    const map = L.map(mapEl, {
+      center: CENTER, zoom: ZOOM,
+      zoomControl: false, scrollWheelZoom: false,
+      dragging: false, doubleClickZoom: false,
+      touchZoom: false, keyboard: false,
+    });
+
+    L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}.png', {
+      attribution: '© Stadia Maps © Stamen © OpenStreetMap',
+      maxZoom: 16,
+    }).addTo(map);
+
+    const svg = d3.select('#' + svgId);
+
+    function project(lat, lng) {
+      const pt = map.latLngToContainerPoint([lat, lng]);
+      return [pt.x, pt.y];
+    }
+
+    function draw() {
+      svg.selectAll('*').remove();
+
+      const locations = Object.entries(parrotData)
+        .map(([name, d]) => ({
+          name,
+          lat: d.lat,
+          lng: d.lng,
+          n: +(d.years[year] || 0),
+        }))
+        .sort((a, b) => a.n - b.n); // small first so large bubbles sit on top
+
+      const yearMax = d3.max(locations, d => d.n);
+
+      locations.forEach(d => {
+        const [x, y] = project(d.lat, d.lng);
+        const r = rSc(d.n);
+        if (r < 1) return;
+
+        svg.append('circle')
+          .attr('cx', x).attr('cy', y).attr('r', r)
+          .attr('fill', d.n === yearMax ? '#05597A' : '#627461')
+          .attr('opacity', 0.75)
+          .attr('stroke', '#F9F8FA')
+          .attr('stroke-width', 1.5);
+
+        if (d.n >= 5) {
+          svg.append('text')
+            .attr('x', x).attr('y', y + 4)
+            .attr('text-anchor', 'middle')
+            .attr('font-size', 9.5).attr('font-weight', '500')
+            .attr('fill', '#F9F8FA')
+            .attr('font-family', 'DM Sans, sans-serif')
+            .text(d.n);
+        }
+
+        if (d.n >= 6) {
+          const offsets = {
+            'Golden Gate Park':    [-r-8, 0],
+            'Fort Mason':          [0, -(r+10)],
+            'Telegraph Hill':      [r+7, 0],
+            'Corona Heights':      [r+7, 4],
+            'Presidio':            [-r-8, 0],
+            'Buena Vista Park':    [r+7, 0],
+            'USF / Lone Mountain': [r+7, 0],
+          };
+          const off = offsets[d.name] || [r+6, 0];
+          svg.append('text')
+            .attr('x', x + off[0]).attr('y', y + off[1])
+            .attr('text-anchor', off[0] < 0 ? 'end' : off[0] === 0 ? 'middle' : 'start')
+            .attr('font-size', 8.5).attr('font-weight', '500')
+            .attr('fill', '#1a1208')
+            .attr('font-family', 'DM Sans, sans-serif')
+            .style('text-shadow', '0 1px 3px rgba(249,248,250,0.9),0 -1px 3px rgba(249,248,250,0.9)')
+            .text(d.name);
+        }
+      });
+
+      // scale reference
+      const W = mapEl.offsetWidth;
+      const H = mapEl.offsetHeight;
+      svg.append('circle').attr('cx', W-42).attr('cy', H-28).attr('r', rSc(20))
+        .attr('fill','none').attr('stroke','#93876F').attr('stroke-width',0.8);
+      svg.append('text').attr('x', W-42).attr('y', H-10)
+        .attr('text-anchor','middle').attr('font-size',7.5)
+        .attr('fill','#93876F').attr('font-family','DM Sans,sans-serif')
+        .text('= 20 sightings');
+    }
+
+    map.whenReady(() => draw());
+  }
+
+  buildMap('map-2013', 'svg-2013', '2013');
+  buildMap('map-2022', 'svg-2022', '2022');
+
+}).catch(err => {
+  document.body.insertAdjacentHTML('afterbegin',
+    '<p class="loading">Run with: python3 -m http.server — data loads from ../data/processed/parrot_by_location_year.json</p>'
+  );
+});
+</script>
+</body>
+</html>

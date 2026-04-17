@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Diverging Bar · Crow Frequency vs City Average</title>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#F9F8FA;font-family:'DM Sans',sans-serif;padding:40px;}
+h1{font-family:'IM Fell English',serif;font-size:26px;color:#3a3020;margin-bottom:6px;}
+.subtitle{font-size:13px;color:#93876F;margin-bottom:24px;max-width:560px;line-height:1.6;}
+.chart-box{background:#f2ede0;border:1px solid #d8ceb8;border-radius:4px;padding:20px;}
+</style>
+</head>
+<body>
+<h1>Crow Frequency vs City Average</h1>
+<p class="subtitle">Each bar shows deviation from the SF city-wide crow frequency average. Blue = above average, red = below average.</p>
+<div class="chart-box">
+  <svg id="svg" style="width:100%;display:block;"></svg>
+</div>
+<script>
+d3.json('../data/processed/crow_by_neighborhood.json').then(crows => {
+  // filter low effort
+  const valid = crows.filter(d => d.sighting_checklists >= 15 && d.crow_frequency <= 1.0);
+  const cityAvg = d3.mean(valid, d => d.crow_frequency);
+
+  const data = valid
+    .map(d => ({n: d.neighborhood, crow: d.crow_frequency, diff: d.crow_frequency - cityAvg}))
+    .sort((a,b) => b.diff - a.diff);
+
+  const W=640, H=data.length*12+60;
+  const m={top:24,right:64,bottom:28,left:152};
+  const w=W-m.left-m.right, h=H-m.top-m.bottom;
+
+  const svg = d3.select('#svg').attr('viewBox',`0 0 ${W} ${H}`).attr('width','100%');
+  const g = svg.append('g').attr('transform',`translate(${m.left},${m.top})`);
+
+  const maxAbs = d3.max(data, d => Math.abs(d.diff));
+  const x = d3.scaleLinear().domain([-maxAbs*1.1, maxAbs*1.1]).range([0,w]);
+  const y = d3.scaleBand().domain(data.map(d=>d.n)).range([0,h]).padding(0.25);
+
+  // gridlines
+  [-0.2,-0.1,0,0.1,0.2,0.3].forEach(v => {
+    if(v<-maxAbs*1.1||v>maxAbs*1.1) return;
+    g.append('line')
+      .attr('x1',x(v)).attr('x2',x(v)).attr('y1',0).attr('y2',h)
+      .attr('stroke',v===0?'#c8b898':'#e8e0d0')
+      .attr('stroke-width',v===0?1:0.5)
+      .attr('stroke-dasharray',v===0?'none':'3 3');
+  });
+
+  // bars
+  g.selectAll('rect').data(data).join('rect')
+    .attr('x', d => d.diff<0?x(d.diff):x(0))
+    .attr('y', d => y(d.n))
+    .attr('width', d => Math.abs(x(d.diff)-x(0)))
+    .attr('height', y.bandwidth())
+    .attr('fill', d => d.diff>=0?'#05597A':'#627461')
+    .attr('opacity',0.82).attr('rx',2);
+
+  // value labels
+  g.selectAll('.val').data(data).join('text').attr('class','val')
+    .attr('x', d => d.diff>=0?x(d.diff)+3:x(d.diff)-3)
+    .attr('y', d => y(d.n)+y.bandwidth()/2)
+    .attr('dominant-baseline','central')
+    .attr('text-anchor', d => d.diff>=0?'start':'end')
+    .attr('font-size',7).attr('fill','#5a5040').attr('font-family','DM Sans,sans-serif')
+    .text(d => (d.diff>=0?'+':'')+d.diff.toFixed(2));
+
+  // neighborhood labels
+  g.selectAll('.lbl').data(data).join('text').attr('class','lbl')
+    .attr('x',-5).attr('y', d => y(d.n)+y.bandwidth()/2)
+    .attr('dominant-baseline','central').attr('text-anchor','end')
+    .attr('font-size',7.5)
+    .attr('fill', d => Math.abs(d.diff)>0.15?'#3a3020':'#93876F')
+    .attr('font-family','DM Sans,sans-serif').text(d => d.n);
+
+  // axis
+  g.append('g').attr('transform',`translate(0,${h})`)
+    .call(d3.axisBottom(x).ticks(6).tickFormat(v=>(v>=0?'+':'')+v.toFixed(1)))
+    .selectAll('text').attr('fill','#5a5040').attr('font-size',9).attr('font-family','DM Sans,sans-serif');
+  g.selectAll('.domain,.tick line').attr('stroke','#d8ceb8');
+
+  // avg annotation
+  g.append('text').attr('x',x(0)).attr('y',-7).attr('text-anchor','middle')
+    .attr('font-size',9).attr('fill','#5a5040').attr('font-family','DM Sans,sans-serif')
+    .text(`city avg ${cityAvg.toFixed(3)}`);
+});
+</script>
+</body>
+</html>

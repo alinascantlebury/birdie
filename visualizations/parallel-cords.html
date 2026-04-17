@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Parallel Coordinates · Crow Data</title>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#F9F8FA;font-family:'DM Sans',sans-serif;padding:40px;}
+h1{font-family:'IM Fell English',serif;font-size:26px;color:#3a3020;margin-bottom:6px;}
+.subtitle{font-size:13px;color:#93876F;margin-bottom:24px;max-width:640px;line-height:1.6;}
+.legend{display:flex;gap:20px;margin-bottom:14px;flex-wrap:wrap;}
+.leg{display:flex;align-items:center;gap:6px;font-size:11px;color:#5a5040;}
+.leg-line{width:28px;height:2.5px;border-radius:2px;}
+.chart-box{background:#f2ede0;border:1px solid #d8ceb8;border-radius:4px;padding:20px;}
+</style>
+</head>
+<body>
+<h1>Crow Data · Parallel Coordinates</h1>
+<p class="subtitle">Each line is one SF neighborhood traced across four variables: jay frequency, crow frequency, oak/conifer tree density, and food business count.</p>
+<div class="legend">
+  <div class="leg"><div class="leg-line" style="background:#05597A"></div>High crow (≥ 0.50)</div>
+  <div class="leg"><div class="leg-line" style="background:#93876F;opacity:0.4"></div>Mid crow</div>
+  <div class="leg"><div class="leg-line" style="background:#627461"></div>Low crow (≤ 0.25)</div>
+</div>
+<div class="chart-box">
+  <svg id="svg" style="width:100%;display:block;"></svg>
+</div>
+<script>
+d3.csv('../data/processed/parallel-cord.csv').then(raw => {
+  const data = raw.map(d => ({
+    n: d.n,
+    jay:  +d.jay  || 0,
+    crow: +d.crow || 0,
+    tree: +d.tree || 0,
+    food: d.food && d.food.trim() !== '' ? +d.food : null,
+  })).filter(d => d.crow > 0);
+
+  const dims = ['jay','crow','tree','food'];
+  const labels = {jay:'Jay Frequency', crow:'Crow Frequency', tree:'Tree Density\n(oak/conifer/km²)', food:'Food Businesses'};
+
+  // for food use 0 when missing so lines still draw
+  const plotData = data.map(d => ({...d, food: d.food ?? 0}));
+
+  const W=620, H=340, m={top:48,right:24,bottom:16,left:24};
+  const w=W-m.left-m.right, h=H-m.top-m.bottom;
+
+  const svg = d3.select('#svg').attr('viewBox',`0 0 ${W} ${H}`).attr('width','100%');
+  const g = svg.append('g').attr('transform',`translate(${m.left},${m.top})`);
+
+  const scales = {};
+  dims.forEach(dim => {
+    scales[dim] = d3.scaleLinear()
+      .domain(d3.extent(plotData, d => d[dim]))
+      .range([h, 0]).nice();
+  });
+  const xSc = d3.scalePoint().domain(dims).range([0, w]).padding(0.1);
+
+  function col(crow){ return crow>=0.5?'#05597A':crow<=0.25?'#627461':'#93876F'; }
+  function op(crow){ return crow>=0.5||crow<=0.25?0.72:0.18; }
+  function sw(crow){ return crow>=0.5||crow<=0.25?1.5:0.7; }
+
+  // draw mid/grey lines first, then colored on top
+  [false,true].forEach(highlight => {
+    g.selectAll(highlight?'.hl':'.bg')
+      .data(plotData.filter(d => highlight?(d.crow>=0.5||d.crow<=0.25):!(d.crow>=0.5||d.crow<=0.25)))
+      .join('path')
+      .attr('d', d => d3.line()(dims.map(dim => [xSc(dim), scales[dim](d[dim])])))
+      .attr('fill','none')
+      .attr('stroke', d => col(d.crow))
+      .attr('stroke-width', d => sw(d.crow))
+      .attr('opacity', d => op(d.crow))
+      .append('title').text(d => `${d.n} · crow=${d.crow.toFixed(3)}`);
+  });
+
+  // axes + labels
+  dims.forEach(dim => {
+    const ax = g.append('g').attr('transform',`translate(${xSc(dim)},0)`);
+    ax.call(d3.axisLeft(scales[dim]).ticks(4).tickFormat(v =>
+      dim==='food'&&v===0?'':dim==='tree'?d3.format('.0f')(v):d3.format('.2f')(v)
+    ));
+    ax.selectAll('text').attr('fill','#93876F').attr('font-size',8).attr('font-family','DM Sans,sans-serif');
+    ax.selectAll('.domain,.tick line').attr('stroke','#d8ceb8');
+    labels[dim].split('\n').forEach((part,i,arr) => {
+      ax.append('text')
+        .attr('y', -14-(arr.length-1-i)*12).attr('text-anchor','middle')
+        .attr('font-size',10).attr('font-weight','500')
+        .attr('fill','#3a3020').attr('font-family','DM Sans,sans-serif').text(part);
+    });
+  });
+});
+</script>
+</body>
+</html>
