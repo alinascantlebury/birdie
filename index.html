@@ -54,15 +54,6 @@
       </div>
     </div>
 
-    <div class="bird-circle" onclick="goTo('ch-shore')">
-      <img src="img/shorebird.png" alt="shorebird">
-      <div class="bird-circle-label">
-        <span class="bc-num">04</span>
-        <span class="bc-name">Shorebird</span>
-        <span class="bc-line">There used to be more of us.</span>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -86,24 +77,29 @@
   <div class="prose-col">
     <div class="step" data-chapter="crow" data-viz="scatter">
       <div class="step-label" style="color:#1a3a6a">Objective 1 · Crows</div>
+      <div class="step-body" style="color:#091221">Crows are urban generalists. Their sighting frequency barely shifts between SF's quietest residential neighborhoods and its densest commercial corridors, 37% to 35%. They don't need Clement Street. They just don't avoid it.
+        That's because food businesses create exactly the infrastructure crows exploit: dumpsters, outdoor dining scraps, bin collection days. The same density that drives jays out (noise, foot traffic, reduced canopy) functions as a food subsidy for crows. They are commensal: they benefit from human activity without depending on any particular form of it.
+        Jays are the opposite. Their frequency drops 2.5x between low- and high-commercial neighborhoods. Same family, opposite strategy.
+      </div>
     </div>
     <div class="step" data-chapter="crow" data-viz="choropleth">
       <div class="step-label" style="color:#1a3a6a">The Map</div>
-
     </div>
   </div>
   <div class="viz-col" id="viz-crow">
     <div class="viz-wrap" id="crow-scatter-wrap">
-      <div class="viz-label">Crow frequency vs food business density</div>
       <div class="chart-box">
-        <img src="img/img.jpg" alt="Crow scatter plot" style="width:100%;display:block;border-radius:2px;">
+        <iframe src="./visualizations/slope-chart.html"
+        style="width:100%;height:500px;border:none;display:block;">
+    </iframe>
       </div>
-      <div class="annot">r = −0.26, p = 0.19 — not significant. Crows do not follow restaurants.</div>
     </div>
     <div class="viz-wrap" id="crow-choro-wrap" style="display:none">
       <div class="viz-label">Crow frequency by neighborhood</div>
       <div class="chart-box">
-        <img src="img/img.jpg" alt="Crow choropleth map" style="width:100%;display:block;border-radius:2px;">
+        <iframe src="./visualizations/slope-chart.html"
+        style="width:100%;height:500px;border:none;display:block;">
+        </iframe>
       </div>
       <div class="annot" id="choro-annot">Darker = more crows. Toggle to compare with food business density.</div>
     </div>
@@ -122,24 +118,24 @@
     </div>
     <div class="step" data-chapter="parrot" data-viz="dotmap">
       <div class="step-label" style="color:#1a5a30">The Colony</div>
-      <div class="stat-pull" style="border-color:#1a5a30">
-        <div class="num" style="color:#1a5a30">15×</div>
-        <div class="lbl">Fort Mason sightings vs Telegraph Hill annually since 2020</div>
-      </div>
+
     </div>
   </div>
   <div class="viz-col">
     <div class="viz-wrap" id="parrot-line-wrap">
       <div class="viz-label">Red-masked Parakeet sightings 2010–2025</div>
       <div class="chart-box">
-        <img src="img/img.jpg" alt="Parrot line chart" style="width:100%;display:block;border-radius:2px;">
+        <iframe src="./visualizations/bubble-map.html"
+        style="width:100%;height:500px;border:none;display:block;">
+        </iframe>
       </div>
-      <div class="annot" style="border-color:#1a5a30">Gray = Telegraph Hill. Green = Fort Mason. Crossover around 2014.</div>
     </div>
     <div class="viz-wrap" id="parrot-dot-wrap" style="display:none">
       <div class="viz-label">Parrot colony · SF map</div>
       <div class="chart-box">
-        <img src="img/img.jpg" alt="Parrot dot map" style="width:100%;display:block;border-radius:2px;">
+        <iframe src="ch02-parrot-bubble-map.html"
+                style="width:100%;height:520px;border:none;border-radius:2px;">
+        </iframe>
       </div>
       <div class="annot" style="border-color:#1a5a30">Bubble size = sightings. Fort Mason dominates since 2014.</div>
     </div>
@@ -163,52 +159,16 @@
     <div class="viz-wrap">
       <div class="viz-label">Monthly raptor sightings · four species</div>
       <div class="chart-box">
-        <img src="img/img.jpg" alt="Raptor small multiples" style="width:100%;display:block;border-radius:2px;">
+        <iframe src="./visualizations/radial-chart.html"
+        style="width:100%;height:500px;border:none;display:block;">
+        </iframe>
       </div>
       <div class="annot" style="border-color:#8a6010">Amber = September and October. Same spike across all four species.</div>
     </div>
   </div>
 </div>
 
-  
-</div>
-
 <footer>
   <div>
     <div class="footer-title">Flock by Block</div>
-    <div class="footer-meta">Alina Scantlebury · Data Visualization · Spring 2026<br>Cornell Lab of Ornithology · DataSF Open Data Portal</div>
-  </div>
-</footer>
-
-<script>
-function goTo(id){ document.getElementById(id).scrollIntoView({behavior:'smooth'}); }
-
-// show nav after landing
-const navEl = document.getElementById('main-nav');
-const obs = new IntersectionObserver(([e]) => {
-  navEl.style.display = e.isIntersecting ? 'none' : 'flex';
-}, {threshold: 0.05});
-obs.observe(document.getElementById('landing'));
-
-// scrollama — swap viz panels on scroll
-const scroller = scrollama();
-scroller.setup({step: '.step', offset: 0.5}).onStepEnter(({element}) => {
-  const viz = element.dataset.viz;
-  const ch  = element.dataset.chapter;
-
-  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-  const nl = document.getElementById('nav-' + ch);
-  if (nl) nl.classList.add('active');
-
-  if (ch === 'crow') {
-    document.getElementById('crow-scatter-wrap').style.display = viz === 'scatter'    ? 'block' : 'none';
-    document.getElementById('crow-choro-wrap').style.display  = viz === 'choropleth' ? 'block' : 'none';
-  }
-  if (ch === 'parrot') {
-    document.getElementById('parrot-line-wrap').style.display = viz === 'line'   ? 'block' : 'none';
-    document.getElementById('parrot-dot-wrap').style.display  = viz === 'dotmap' ? 'block' : 'none';
-  }
-});
-</script>
-</body>
-</html>
+    <div class="footer-meta">Alina Scantlebury · Data Visualization · Spring 2026<br>Cornell Lab of Ornithology · DataSF Open Data Port

@@ -38,16 +38,6 @@ d3.json('../data/processed/raptor_monthly.json').then(raw => {
   const minVal = d3.min(vals);
   const minMonth = raw[vals.indexOf(minVal)].month_name;
 
-  // sidebar stats
-  const sb = d3.select('#sidebar');
-  sb.append('div').style('margin-bottom','12px')
-    .html(`<div style="font-family:'IM Fell English',serif;font-size:34px;color:#8a6010;line-height:1">${sepOctPct}%</div>
-           <div style="font-size:11px;color:#93876F;margin-top:3px">of all SF raptor sightings in Sep + Oct</div>`);
-  sb.append('div').style('margin-bottom','12px')
-    .html(`<div style="font-family:'IM Fell English',serif;font-size:34px;color:#8a6010;line-height:1">${(d3.max(vals)/minVal).toFixed(1)}×</div>
-           <div style="font-size:11px;color:#93876F;margin-top:3px">peak month vs summer low (${minMonth})</div>`);
-  sb.append('p').attr('class','note')
-    .text('The same Sep/Oct spike appears across all four major raptor species simultaneously — Red-tailed Hawk, Peregrine Falcon, Cooper\'s Hawk, and Merlin. This is the Pacific Flyway, not individual behavior.');
 
   // chart
   const W=420, H=420, cx=210, cy=210;
@@ -91,7 +81,7 @@ d3.json('../data/processed/raptor_monthly.json').then(raw => {
       .text(months[i]);
 
     if (isHL) {
-      const vr = rScale(v) + 6;
+      const vr = rScale(v) + 10;
       g.append('text')
         .attr('x', Math.cos(mid)*vr).attr('y', Math.sin(mid)*vr)
         .attr('text-anchor','middle').attr('dominant-baseline','central')
