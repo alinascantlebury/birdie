@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #F9F8FA;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    padding: 40px;
+}
+
+h1 {
+    font-family: 'IM Fell English', serif;
+    font-size: 26px;
+    color: #3a3020;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #93876F;
+    margin-bottom: 28px;
+    max-width: 560px;
+    line-height: 1.6;
+}
+
+.layout {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.chart-wrap {
+    background: #f2ede0;
+    border: 1px solid #d8ceb8;
+    border-radius: 4px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #F9F8FA;
+    font-family: 'DM Sans', sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 20px;
+    color: #1a1208;
+    margin-bottom: 6px;
+    max-width: 560px;
+    line-height: 1.3;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #93876F;
+    margin-bottom: 28px;
+    max-width: 560px;
+    line-height: 1.6;
+}
+
+.chart-wrap {
+    background: #f2ede0;
+    border: 1px solid #d8ceb8;
+    border-radius: 4px;
+    padding: 24px;
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slope Chart · Crows vs Jays</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<link rel="stylesheet" href="styles-slope.css">
+
+<!-- Slope chart adapted from https://observablehq.com/@d3/slope-chart/3 by Mike Bostock -->
+
+
+</head>
+<body>
+<h1>Crows Tolerate Commercial Density. Jays Don't.</h1>
+<p class="subtitle">Average sighting frequency in the bottom 15 vs top 15 SF neighborhoods by food business count. Data from neighborhood_master.json · neighborhoods with ≥20 checklists only.</p>
+
+<div class="chart-wrap">
+   <svg id="svg" style="width:100%;max-width:560px;display:block;"></svg>
+</div>
+
+<script>
+d3.json('../data/processed/master.json').then(raw => {
+
+  // filter valid neighborhoods
+  const valid = raw.filter(d =>
+    d.checklist_effort >= 20 &&
+    d.crow_frequency && d.crow_frequency <= 1.0 &&
+    d.jay_frequency != null &&
+    d.food_business_count != null
+  ).sort((a, b) => a.food_business_count - b.food_business_count);
+
+  const n = valid.length;
+  const bottom = valid.slice(0, 15);
+  const top    = valid.slice(-15);
+
+  const mean = (arr, key) => d3.mean(arr, d => d[key]);
+
+  // the two series
+  const series = [
+    {
+      name: 'Crow',
+      color: '#b87a10',
+      low:  mean(bottom, 'crow_frequency'),
+      high: mean(top,    'crow_frequency'),
+    },
+    {
+      name: 'Jay',
+      color: '#05597A',
+      low:  mean(bottom, 'jay_frequency'),
+      high: mean(top,    'jay_frequency'),
+    },
+  ];
+
+  // ── DIMENSIONS ──────────────────────────────────────────────────────────────
+  const W = 500, H = 320;
+  const m = {top: 30, right: 100, bottom: 70, left: 70};
+  const w = W - m.left - m.right;
+  const h = H - m.top - m.bottom;
+
+  const svg = d3.select('#svg').attr('viewBox', `0 0 ${W} ${H}`).attr('width', '100%');
+  const g = svg.append('g').attr('transform', `translate(${m.left},${m.top})`);
+
+  // ── SCALES ──────────────────────────────────────────────────────────────────
+  const xDomain = ['Low Food Business', 'High Food Business'];
+  const x = d3.scalePoint().domain(xDomain).range([0, w]).padding(0.4);
+  const y = d3.scaleLinear().domain([0, 0.45]).range([h, 0]).nice();
+
+  // ── GRIDLINES ───────────────────────────────────────────────────────────────
+  g.selectAll('.gl').data(y.ticks(5)).join('line')
+    .attr('x1', 0).attr('x2', w)
+    .attr('y1', d => y(d)).attr('y2', d => y(d))
+    .attr('stroke', '#e0d8c8').attr('stroke-width', 0.5);
+
+  // ── LINES ───────────────────────────────────────────────────────────────────
+  series.forEach(s => {
+    const pts = [
+      {x: xDomain[0], val: s.low},
+      {x: xDomain[1], val: s.high},
+    ];
+
+    g.append('line')
+      .attr('x1', x(xDomain[0])).attr('y1', y(s.low))
+      .attr('x2', x(xDomain[1])).attr('y2', y(s.high))
+      .attr('stroke', s.color)
+      .attr('stroke-width', 2.5);
+
+    // dots
+    pts.forEach(p => {
+      g.append('circle')
+        .attr('cx', x(p.x)).attr('cy', y(p.val))
+        .attr('r', 6)
+        .attr('fill', s.color);
+
+      // value label
+      const isLeft = p.x === xDomain[0];
+      g.append('text')
+        .attr('x', x(p.x) + (isLeft ? -12 : 12))
+        .attr('y', y(p.val))
+        .attr('dominant-baseline', 'central')
+        .attr('text-anchor', isLeft ? 'end' : 'start')
+        .attr('font-size', 13)
+        .attr('font-weight', '500')
+        .attr('fill', s.color)
+        .attr('font-family', 'DM Sans, sans-serif')
+        .text(d3.format('.0%')(p.val));
+    });
+
+    // series label — midpoint of line
+    const midX = (x(xDomain[0]) + x(xDomain[1])) / 2;
+    const midY = (y(s.low) + y(s.high)) / 2;
+    const angle = Math.atan2(y(s.high) - y(s.low), x(xDomain[1]) - x(xDomain[0])) * 180 / Math.PI;
+
+    g.append('text')
+      .attr('x', midX).attr('y', midY - 10)
+      .attr('text-anchor', 'middle')
+      .attr('font-size', 11).attr('font-weight', '500')
+      .attr('fill', s.color)
+      .attr('font-family', 'DM Sans, sans-serif')
+      .text(s.label);
+  });
+
+  // ── Y AXIS ───────────────────────────────────────────────────────────────────
+  g.append('g')
+    .call(d3.axisLeft(y).ticks(5).tickFormat(d3.format('.0%')))
+    .selectAll('text').attr('fill', '#93876F').attr('font-size', 10).attr('font-family', 'DM Sans, sans-serif');
+  g.selectAll('.domain,.tick line').attr('stroke', '#d8ceb8');
+
+  // axis label
+  g.append('text')
+    .attr('transform', 'rotate(-90)')
+    .attr('x', -h/2).attr('y', -52)
+    .attr('text-anchor', 'middle')
+    .attr('font-size', 10).attr('fill', '#93876F')
+    .attr('font-family', 'DM Sans, sans-serif')
+    .text('Sighting Frequency');
+    // ── LEGEND ────────────────────────────────────────────────────────────────────
+    const legend = g.append('g').attr('transform', `translate(${w + 16}, 0)`);
+
+    series.forEach((s, i) => {
+    const ly = i * 22;
+    legend.append('circle')
+        .attr('cx', 0).attr('cy', ly)
+        .attr('r', 5)
+        .attr('fill', s.color);
+    legend.append('text')
+        .attr('x', 10).attr('y', ly)
+        .attr('dominant-baseline', 'central')
+        .attr('font-size', 11)
+        .attr('fill', s.color)
+        .attr('font-weight', '500')
+        .attr('font-family', 'DM Sans, sans-serif')
+        .text(s.name);
+    });
+  // ── X AXIS LABELS ────────────────────────────────────────────────────────────
+  xDomain.forEach((label, i) => {
+    const sub = i === 0 ? 'Bottom 15 neighborhoods' : 'Top 15 neighborhoods';
+    g.append('text')
+      .attr('x', x(label)).attr('y', h + 28)
+      .attr('text-anchor', 'middle')
+      .attr('font-size', 13).attr('font-weight', '500')
+      .attr('fill', '#3a3020').attr('font-family', 'DM Sans, sans-serif')
+      .text(label);
+    g.append('text')
+      .attr('x', x(label)).attr('y', h + 46)
+      .attr('text-anchor', 'middle')
+      .attr('font-size', 10).attr('fill', '#93876F')
+      .attr('font-family', 'DM Sans, sans-serif')
+      .text(sub);
+  });
+//catch for data test
+}).catch(() => {
+  document.body.insertAdjacentHTML('afterbegin',
+    '<p style="color:#803020;padding:20px;">Run with python3 -m http.server — loads from ../data/processed/neighborhood_master.json</p>'
+  );
+});
+</script>
+</body>
+</html>

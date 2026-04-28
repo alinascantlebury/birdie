@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <!-- Animated bubble map using D3 + Leaflet -->
+<!-- Data: ../data/processed/parrot_by_location_year.json -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,79 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{background:#F9F8FA;font-family:'DM Sans',sans-serif;font-weight:300;padding:40px;}
-.kicker{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#93876F;margin-bottom:8px;}
-h1{font-size:22px;color:#3a3020;margin-bottom:8px;font-weight:400;}
-h1 em{font-style:italic;}
-.sub{font-size:13px;color:#93876F;line-height:1.7;max-width:600px;margin-bottom:20px;}
-
-.controls{
-  display:flex;align-items:center;gap:20px;
-  margin-bottom:16px;flex-wrap:wrap;
-}
-.year-display{
-  font-size:48px;font-weight:300;color:#05597A;
-  line-height:1;width:90px;flex-shrink:0;
-}
-.slider-wrap{flex:1;min-width:200px;}
-input[type=range]{
-  width:100%;
-  -webkit-appearance:none;
-  height:3px;
-  background:#c8d8e8;
-  border-radius:2px;
-  outline:none;
-  cursor:pointer;
-}
-input[type=range]::-webkit-slider-thumb{
-  -webkit-appearance:none;
-  width:18px;height:18px;
-  border-radius:50%;
-  background:#05597A;
-  cursor:pointer;
-  transition:background .15s;
-}
-input[type=range]::-webkit-slider-thumb:hover{background:#044a68;}
-.tick-row{
-  display:flex;justify-content:space-between;
-  font-size:9px;color:#93876F;
-  font-family:'DM Sans',sans-serif;
-  margin-top:4px;
-  padding:0 2px;
-}
-.play-btn{
-  padding:8px 18px;
-  background:#05597A;color:#fff;
-  border:none;border-radius:3px;
-  font-size:11px;font-family:'DM Sans',sans-serif;
-  letter-spacing:.1em;text-transform:uppercase;
-  cursor:pointer;transition:background .15s;
-  flex-shrink:0;
-}
-.play-btn:hover{background:#044a68;}
-
-.layout{display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;}
-.map-wrap{
-  position:relative;
-  width:520px;height:500px;
-  flex-shrink:0;
-  border:1px solid #d8ceb8;border-radius:4px;overflow:hidden;
-}
-#leaflet-map{position:absolute;inset:0;width:100%;height:100%;z-index:1;}
-#overlay-svg{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none;}
-
-.sidebar{flex:1;min-width:200px;}
-.leg{margin-top:12px;}
-.leg-title{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#93876F;margin-bottom:8px;}
-.leg-item{display:flex;align-items:center;gap:8px;font-size:11px;color:#5a5040;margin-bottom:5px;}
-.leg-dot{border-radius:50%;flex-shrink:0;}
-.stat-row{display:flex;gap:12px;margin-bottom:12px;flex-wrap:wrap;}
-.stat{background:#f2ede0;border:1px solid #d8ceb8;border-radius:4px;padding:10px 14px;flex:1;}
-.stat-num{font-size:24px;color:#05597A;line-height:1;margin-bottom:2px;}
-.stat-lbl{font-size:10px;color:#93876F;line-height:1.3;}
-</style>
+<link rel="stylesheet" href="styles-bubble.css">
 </head>
 <body>
 
@@ -124,141 +53,163 @@ input[type=range]::-webkit-slider-thumb:hover{background:#044a68;}
 </div>
 
 <script>
+// load real data from pipeline output
 d3.json('../data/processed/parrot_by_location_year.json').then(parrotData => {
 
-const CENTER = [37.778, -122.442];
-const ZOOM = 13;
-const MAX_N = 92;
-const rSc = d3.scaleSqrt().domain([0, MAX_N]).range([0, 38]);
-
-const map = L.map('leaflet-map', {
-  center: CENTER, zoom: ZOOM,
-  zoomControl: false, scrollWheelZoom: false,
-  dragging: false, doubleClickZoom: false,
-  touchZoom: false, keyboard: false,
-});
-
-L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_toner_lite/{z}/{x}/{y}{r}.png', {
-  attribution: '© Stadia Maps © Stamen © OpenStreetMap', maxZoom: 16,
-}).addTo(map);
-
-const svg = d3.select('#overlay-svg');
-const bubbleG = svg.append('g');
-const labelG  = svg.append('g');
-
-function project(lat, lng) {
-  const pt = map.latLngToContainerPoint([lat, lng]);
-  return [pt.x, pt.y];
-}
-
-function draw(year) {
-  const yr = String(year);
-  const locs = Object.entries(parrotData)
-    .map(([name, d]) => ({name, lat: d.lat, lng: d.lng, n: +(d.years[yr] || 0)}) )
-    .sort((a, b) => a.n - b.n);
-
-  const total = d3.sum(locs, d => d.n);
-  const top = locs.reduce((a, b) => a.n > b.n ? a : b);
-  const yearMax = top.n;
-
-  document.getElementById('stat-total').textContent = total;
-  document.getElementById('stat-top').textContent = top.n > 0 ? top.name.split(' /')[0] : 'None';
-
-  bubbleG.selectAll('circle').data(locs, d => d.name)
-    .join(
-      enter => enter.append('circle')
-        .attr('cx', d => project(d.lat, d.lng)[0])
-        .attr('cy', d => project(d.lat, d.lng)[1])
-        .attr('r', 0)
-        .attr('fill', d => d.n === yearMax && d.n > 0 ? '#05597A' : '#627461')
-        .attr('opacity', 0.78)
-        .attr('stroke', '#F9F8FA').attr('stroke-width', 1.5)
-        .call(e => e.transition().duration(400).attr('r', d => rSc(d.n))),
-      update => update
-        .call(u => u.transition().duration(400)
-          .attr('r', d => rSc(d.n))
-          .attr('fill', d => d.n === yearMax && d.n > 0 ? '#05597A' : '#627461'))
-    );
-
-  labelG.selectAll('.cnt').data(locs.filter(d => d.n >= 5), d => d.name)
-    .join(
-      enter => enter.append('text').attr('class', 'cnt')
-        .attr('x', d => project(d.lat, d.lng)[0])
-        .attr('y', d => project(d.lat, d.lng)[1] + 4)
-        .attr('text-anchor', 'middle')
-        .attr('font-size', 9.5).attr('font-weight', '500')
-        .attr('fill', '#F9F8FA').attr('font-family', 'DM Sans, sans-serif')
-        .attr('opacity', 0)
-        .call(e => e.transition().duration(400).attr('opacity', 1))
-        .text(d => d.n),
-      update => update.text(d => d.n),
-      exit => exit.remove()
-    );
-
-  labelG.selectAll('.nlbl').remove();
-  const labeled = locs.filter(d => d.n >= 15).sort((a,b) => b.n - a.n).slice(0, 2);
-  labeled.forEach(d => {
-    const [px, py] = project(d.lat, d.lng);
-    const r = rSc(d.n);
-    const offsets = {
-      'Fort Mason':         [0, -(r+10)],
-      'Telegraph Hill':     [r+8, 0],
-      'Presidio':           [-(r+8), 0],
-      'Golden Gate Park':   [0, r+12],
-      'Corona Heights':     [r+8, 0],
-    };
-    const off = offsets[d.name] || [r+7, 0];
-    labelG.append('text').attr('class', 'nlbl')
-      .attr('x', px + off[0]).attr('y', py + off[1])
-      .attr('text-anchor', off[0] < 0 ? 'end' : off[0] === 0 ? 'middle' : 'start')
-      .attr('font-size', 9).attr('font-weight', '500')
-      .attr('fill', '#1a1208').attr('font-family', 'DM Sans, sans-serif')
-      .style('text-shadow', '0 1px 3px rgba(249,248,250,0.9),0 -1px 3px rgba(249,248,250,0.9)')
-      .text(d.name);
+  // ── MAP SETUP ──────────────────────────────────────────────────────────────
+  // locked map 
+  const map = L.map('leaflet-map', {
+    center: [37.778, -122.442], zoom: 13,
+    zoomControl: false, scrollWheelZoom: false,
+    dragging: false, doubleClickZoom: false,
+    touchZoom: false, keyboard: false,
   });
-}
 
-const slider = document.getElementById('year-slider');
-const yearDisplay = document.getElementById('year-display');
+  // CARTO light basemap 
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© OpenStreetMap © CARTO', maxZoom: 19, subdomains: 'abcd',
+  }).addTo(map);
 
-slider.addEventListener('input', () => {
-  const yr = +slider.value;
-  yearDisplay.textContent = yr;
-  draw(yr);
-});
 
-let playing = false;
-let interval = null;
-const playBtn = document.getElementById('play-btn');
+  const svg    = d3.select('#overlay-svg');
+  const bubbleG = svg.append('g'); // bubbles drawn first
+  const labelG  = svg.append('g'); // labels on top
 
-playBtn.addEventListener('click', () => {
-  if (playing) {
-    clearInterval(interval);
-    playing = false;
-    playBtn.textContent = 'Play';
-  } else {
-    playing = true;
-    playBtn.textContent = 'Pause';
-    let yr = +slider.value;
-    if (yr >= 2025) yr = 2010;
-    interval = setInterval(() => {
-      yr++;
-      slider.value = yr;
-      yearDisplay.textContent = yr;
-      draw(yr);
-      if (yr >= 2025) {
-        clearInterval(interval);
-        playing = false;
-        playBtn.textContent = 'Play';
-      }
-    }, 900);
+  // using square root scale so bubble area is proportional to sighting count
+  const rSc = d3.scaleSqrt().domain([0, 92]).range([0, 38]);
+
+  // convert lat/lng to SVG pixel coordinates via Leaflet
+  const project = (lat, lng) => {
+    const pt = map.latLngToContainerPoint([lat, lng]);
+    return [pt.x, pt.y];
+  };
+
+  // ── DRAW FUNCTION ──────────────────────────────────────────────────────────
+  // called on every slider change — redraws bubbles with transition
+  function draw(year) {
+    const yr = String(year);
+
+    // build array of locations with this year's sighting count
+    // sort ascending so smaller bubbles render first (larger bubbles sit on top)
+    const locs = Object.entries(parrotData)
+      .map(([name, d]) => ({name, lat: d.lat, lng: d.lng, n: +(d.years[yr] || 0)}))
+      .sort((a, b) => a.n - b.n);
+
+    const total  = d3.sum(locs, d => d.n);
+    const top    = locs.reduce((a, b) => a.n > b.n ? a : b);
+    const yearMax = top.n;
+
+    // update sidebar stats
+    document.getElementById('stat-total').textContent = total;
+    document.getElementById('stat-top').textContent   = top.n > 0 ? top.name.split(' /')[0] : 'None';
+
+    // ── BUBBLES ──
+    // dominant site gets navy, all others get sage green
+    bubbleG.selectAll('circle').data(locs, d => d.name)
+      .join(
+        enter => enter.append('circle')
+          .attr('cx', d => project(d.lat, d.lng)[0])
+          .attr('cy', d => project(d.lat, d.lng)[1])
+          .attr('r', 0) // start at 0 for enter transition
+          .attr('fill',  d => d.n === yearMax && d.n > 0 ? '#05597A' : '#627461')
+          .attr('opacity', 0.78)
+          .attr('stroke', '#F9F8FA').attr('stroke-width', 1.5)
+          .call(e => e.transition().duration(400).attr('r', d => rSc(d.n))),
+        update => update
+          .call(u => u.transition().duration(400)
+            .attr('r',    d => rSc(d.n))
+            .attr('fill', d => d.n === yearMax && d.n > 0 ? '#05597A' : '#627461'))
+      );
+
+    // ── COUNT LABELS inside bubbles ──
+    // only show for bubbles with 5+ sightings so labels aren't cramped
+    labelG.selectAll('.cnt').data(locs.filter(d => d.n >= 5), d => d.name)
+      .join(
+        enter => enter.append('text').attr('class', 'cnt')
+          .attr('text-anchor', 'middle').attr('font-size', 9.5)
+          .attr('font-weight', '500').attr('fill', '#F9F8FA')
+          .attr('font-family', 'DM Sans, sans-serif')
+          .attr('opacity', 0)
+          .call(e => e.transition().duration(400).attr('opacity', 1)),
+        update => update,
+        exit   => exit.remove()
+      )
+      .attr('x', d => project(d.lat, d.lng)[0])
+      .attr('y', d => project(d.lat, d.lng)[1] + 4)
+      .text(d => d.n);
+
+    // ── LOCATION NAME LABELS ──
+    // only label the top 2 sites to avoid clutter
+    // offset direction is per-location so labels don't overlap bubbles
+    labelG.selectAll('.nlbl').remove();
+    const offsets = {
+      'Fort Mason':      [0, -1],  // above
+      'Telegraph Hill':  [1,  0],  // right
+      'Presidio':        [-1, 0],  // left
+      'Golden Gate Park':[0,  1],  // below
+      'Corona Heights':  [1,  0],  // right
+    };
+    locs.filter(d => d.n >= 15).sort((a,b) => b.n - a.n).slice(0, 2).forEach(d => {
+      const [px, py] = project(d.lat, d.lng);
+      const r   = rSc(d.n);
+      const dir = offsets[d.name] || [1, 0];
+      const off = [dir[0] * (r + 8), dir[1] * (r + 10)];
+      labelG.append('text').attr('class', 'nlbl')
+        .attr('x', px + off[0]).attr('y', py + off[1])
+        .attr('text-anchor', dir[0] < 0 ? 'end' : dir[0] === 0 ? 'middle' : 'start')
+        .attr('font-size', 9).attr('font-weight', '500')
+        .attr('fill', '#1a1208').attr('font-family', 'DM Sans, sans-serif')
+        .style('text-shadow', '0 1px 3px rgba(249,248,250,0.9)')
+        .text(d.name);
+    });
   }
-});
 
-map.whenReady(() => draw(2010));
+  // ── SLIDER ────────────────────────────────────────────────────────────────
+  const slider      = document.getElementById('year-slider');
+  const yearDisplay = document.getElementById('year-display');
+
+  slider.addEventListener('input', () => {
+    yearDisplay.textContent = slider.value;
+    draw(+slider.value);
+  });
+
+  // ── PLAY / PAUSE ──────────────────────────────────────────────────────────
+  let playing  = false;
+  let interval = null;
+  const playBtn = document.getElementById('play-btn');
+
+  playBtn.addEventListener('click', () => {
+    if (playing) {
+      // pause
+      clearInterval(interval);
+      playing = false;
+      playBtn.textContent = 'Play';
+    } else {
+      // play from current position, or restart if at end
+      playing = true;
+      playBtn.textContent = 'Pause';
+      let yr = +slider.value >= 2025 ? 2010 : +slider.value;
+      interval = setInterval(() => {
+        yr++;
+        slider.value = yr;
+        yearDisplay.textContent = yr;
+        draw(yr);
+        if (yr >= 2025) {
+          clearInterval(interval);
+          playing = false;
+          playBtn.textContent = 'Play';
+        }
+      }, 900);
+    }
+  });
+
+  // wait for Leaflet tiles to load before first draw so projection is correct
+  map.whenReady(() => draw(2010));
 
 }).catch(() => {
-  document.querySelector('.sub').textContent = 'Run with python3 -m http.server — loads from ../data/processed/parrot_by_location_year.json';
+  //  error for teseting
+  document.querySelector('.sub').textContent =
+    'Run with python3 -m http.server — loads from ../data/processed/parrot_by_location_year.json';
 });
 </script>
 </body>
