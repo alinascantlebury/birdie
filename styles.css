@@ -1,3 +1,67 @@
+/* ── FONTS ── */
+@font-face {
+  font-family: 'Inter';
+  src: url('../font/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../font/Inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('../font/IBM_Plex_Mono/IBMPlexMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('../font/IBM_Plex_Mono/IBMPlexMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('../font/IBM_Plex_Mono/IBMPlexMono-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('../font/IBM_Plex_Mono/IBMPlexMono-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('../font/IBM_Plex_Mono/IBMPlexMono-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('../font/IBM_Plex_Mono/IBMPlexMono-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Cause';
+  src: url('../font/Cause/Cause-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +78,9 @@
   --ink3: #6a5a40;
   --border: #c8d8e8;
   --paper: #F9F8FA;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-display: 'Cause', sans-serif;
 }
 
 html {
@@ -23,8 +90,8 @@ html {
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: Arial, sans-serif;
-  font-weight: 200;
+  font-family: var(--font-sans);
+  font-weight: 300;
   overflow-x: hidden;
 }
 
@@ -58,7 +125,7 @@ body {
 }
 
 .landing-title {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(56px, 8.5vw, 128px);
   line-height: 1.0;
   color: var(--ink);
@@ -67,16 +134,15 @@ body {
 }
 
 .landing-desc {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-sans);
   font-size: clamp(14px, 1.6vw, 24px);
   color: #F9F8FA;
   line-height: 1.05;
   max-width: 640px;
-
 }
 
 .choose-again {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-mono);
   font-size: clamp(16px, 2vw, 32px);
   color: var(--tan);
   background: none;
@@ -115,7 +181,7 @@ body {
 /* ── BIRD CIRCLES ROW ── */
 .bird-row {
   position: absolute;
-  bottom: 18%;
+  bottom: 22%;
   left: 0;
   right: 0;
   z-index: 5;
@@ -127,8 +193,8 @@ body {
 }
 
 .bird-circle {
-  width: clamp(100px, 9vw, 140px);
-  height: clamp(100px, 9vw, 140px);
+  width: clamp(180px, 18vw, 260px);
+  height: clamp(180px, 18vw, 260px);
   border-radius: 50%;
   background: #05597A;
   display: flex;
@@ -149,8 +215,8 @@ body {
 }
 
 .bird-circle img {
-  width: 55%;
-  height: 55%;
+  width: 75%;
+  height: 75%;
   object-fit: contain;
   position: relative;
   z-index: 1;
@@ -161,7 +227,6 @@ body {
   transform: scale(1.08);
 }
 
-/* label — shown below circle on hover */
 .bird-circle-label {
   position: absolute;
   bottom: -80px;
@@ -181,29 +246,29 @@ body {
 
 .bc-num {
   display: block;
+  font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--navy);
-  font-family: Arial, sans-serif;
   margin-bottom: 2px;
 }
 
 .bc-name {
   display: block;
-  font-family: Arial, sans-serif;
+  font-family: var(--font-display);
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--ink2);
   margin-bottom: 2px;
 }
 
 .bc-line {
   display: block;
+  font-family: var(--font-sans);
   font-size: 10px;
   color: var(--ink3);
   font-style: italic;
-  font-family: Arial, sans-serif;
 }
 
 /* ── NAV ── */
@@ -220,9 +285,9 @@ nav {
 }
 
 .nav-logo {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-display);
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 600;
   color: var(--ink2);
 }
 
@@ -232,13 +297,13 @@ nav {
 }
 
 .nav-links a {
+  font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--ink3);
   text-decoration: none;
   transition: color .2s;
-  font-family: Arial, sans-serif;
 }
 
 .nav-links a:hover,
@@ -258,9 +323,9 @@ nav {
 }
 
 .sec-n {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-mono);
   font-size: clamp(48px, 6vw, 128px);
-  font-weight: bold;
+  font-weight: 700;
   color: var(--navy);
   line-height: 1;
   flex-shrink: 0;
@@ -268,17 +333,17 @@ nav {
 }
 
 .sec-over {
+  font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: .2em;
   text-transform: uppercase;
   margin-bottom: 4px;
-  font-family: Arial, sans-serif;
 }
 
 .sec-title {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(32px, 5vw, 128px);
-  font-weight: bold;
+  font-weight: 600;
   line-height: 1.0;
   color: var(--ink);
 }
@@ -287,7 +352,6 @@ nav {
   font-style: italic;
 }
 
-/* decorative navy rectangle accent */
 .sec-break::after {
   content: '';
   position: absolute;
@@ -316,12 +380,41 @@ nav {
   position: sticky;
   top: 57px;
   height: calc(100vh - 57px);
+  min-height: 900px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 28px;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 16px;
   border-left: 1px solid var(--border);
   background: var(--paper);
+  gap: 12px;
+  overflow-y: auto;
+}
+
+.viz-wrap {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-box {
+  background: #eef4f8;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-box iframe {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
 }
 
 .step {
@@ -333,16 +426,16 @@ nav {
 }
 
 .step-label {
+  font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: .2em;
   text-transform: uppercase;
   margin-bottom: 10px;
-  font-family: Arial, sans-serif;
 }
 
 .step-head {
-  font-family: Arial, sans-serif;
-  font-weight: bold;
+  font-family: var(--font-display);
+  font-weight: 600;
   font-size: clamp(20px, 2.4vw, 28px);
   line-height: 1.25;
   margin-bottom: 16px;
@@ -354,11 +447,11 @@ nav {
 }
 
 .step-body {
+  font-family: var(--font-sans);
   font-size: 14px;
   line-height: 1.8;
   color: var(--ink3);
   max-width: 280px;
-  font-family: Arial, sans-serif;
 }
 
 .step-body+.step-body {
@@ -373,18 +466,18 @@ nav {
 }
 
 .stat-pull .num {
-  font-family: Arial, sans-serif;
-  font-weight: bold;
+  font-family: var(--font-display);
+  font-weight: 700;
   font-size: 38px;
   line-height: 1;
   margin-bottom: 2px;
 }
 
 .stat-pull .lbl {
+  font-family: var(--font-sans);
   font-size: 11px;
   color: var(--ink3);
   line-height: 1.4;
-  font-family: Arial, sans-serif;
 }
 
 /* ── VIZ ── */
@@ -401,22 +494,22 @@ nav {
 }
 
 .viz-label {
+  font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: .15em;
   text-transform: uppercase;
   color: var(--ink3);
   margin-bottom: 8px;
-  font-family: Arial, sans-serif;
 }
 
 .annot {
+  font-family: var(--font-sans);
   font-size: 11px;
   color: var(--ink3);
   margin-top: 8px;
   padding: 8px 12px;
   border-left: 2px solid var(--border);
   line-height: 1.5;
-  font-family: Arial, sans-serif;
 }
 
 .map-box {
@@ -433,6 +526,7 @@ nav {
 }
 
 .tog {
+  font-family: var(--font-mono);
   padding: 6px 12px;
   font-size: 10px;
   letter-spacing: .1em;
@@ -441,7 +535,6 @@ nav {
   background: none;
   color: var(--ink3);
   cursor: pointer;
-  font-family: Arial, sans-serif;
   transition: all .18s;
 }
 
@@ -475,11 +568,11 @@ nav {
 }
 
 .sm-title {
+  font-family: var(--font-mono);
   font-size: 10px;
   font-weight: 500;
   color: var(--ink2);
   margin-bottom: 6px;
-  font-family: Arial, sans-serif;
 }
 
 /* ── FOOTER ── */
@@ -493,25 +586,41 @@ footer {
 }
 
 .footer-title {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-display);
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 4px;
   color: var(--ink2);
 }
 
 .footer-meta {
+  font-family: var(--font-sans);
   font-size: 12px;
   color: var(--ink3);
   line-height: 1.7;
-  font-family: Arial, sans-serif;
 }
 
 .footer-right {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-sans);
   font-style: italic;
   font-size: 13px;
   color: var(--ink3);
   text-align: right;
   line-height: 2;
+}
+
+/* ── HAWK CHAPTER EXCEPTION ── */
+.scrolly--hawk .viz-col {
+  height: auto;
+  min-height: calc(100vh - 57px);
+  position: static;
+  overflow-y: visible;
+}
+
+.scrolly--hawk .viz-wrap:first-child {
+  flex: 0 0 500px;
+}
+
+.scrolly--hawk .viz-wrap:last-child {
+  flex: 0 0 700px;
 }

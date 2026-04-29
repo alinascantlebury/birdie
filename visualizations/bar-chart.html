@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raptor Migration — Small Multiples</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <link rel="stylesheet" href="styles-bar.css">
+
+</head>
+
+<body>
+
+    <h1>The Sep–Oct migration spike repeats across every top SF raptor</h1>
+    <div class="legend">
+        <span><span class="legend-dot" style="background:#E8910A;"></span>Sep–Oct (Pacific Flyway migration peak)</span>
+        <span><span class="legend-dot" style="background:#C8C9CC;"></span>Other months</span>
+    </div>
+
+    <div id="charts"></div>
+
+
+    <script>
+        /* ── Data ────────────────────────────────────────────────────────────────────*/
+        const SPECIES = ["Red-tailed Hawk", "Red-shouldered Hawk", "Peregrine Falcon", "Cooper's Hawk"];
+
+        d3.json("../data/processed/raptor_species_monthly.json").then(raw => {
+            const data = SPECIES.map(species => ({
+                species,
+                counts: d3.range(1, 13).map(m => {
+                    const row = raw.find(r => r["COMMON NAME"] === species && r.month ===
+                    m);
+                    return row ? row.count : 0;
+                })
+            }));
+
+            /* ── Config ──────────────────────────────────────────────────────────────── */
+            const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            const migrationMonths = new Set([8, 9]); // Sep=8, Oct=9
+            const ORANGE = "#E8910A";
+            const GRAY = "#C8C9CC";
+
+            const W = 300;
+            const H = 185;
+            const margin = {
+                top: 28,
+                right: 12,
+                bottom: 28,
+                left: 44
+            };
+            const innerW = W - margin.left - margin.right;
+            const innerH = H - margin.top - margin.bottom;
+
+            const container = document.getElementById("charts");
+
+            data.forEach(d => {
+                const wrap = document.createElement("div");
+                wrap.className = "chart-wrap";
+                container.appendChild(wrap);
+
+                const svg = d3.select(wrap).append("svg")
+                    .attr("viewBox", `0 0 ${W} ${H}`)
+                    .attr("width", "100%");
+
+                const g = svg.append("g")
+                    .attr("transform", `translate(${margin.left},${margin.top})`);
+
+                const x = d3.scaleBand()
+                    .domain(months)
+                    .range([0, innerW])
+                    .padding(0.2);
+
+                const y = d3.scaleLinear()
+                    .domain([0, d3.max(d.counts) * 1.1])
+                    .range([innerH, 0]);
+
+                /* Title */
+                g.append("text")
+                    .attr("x", innerW / 2)
+                    .attr("y", -10)
+                    .attr("text-anchor", "middle")
+                    .style("font-size", "12px")
+                    .style("font-weight", "500")
+                    .style("fill", "#222")
+                    .text(d.species);
+
+                /* X axis */
+                const xAxis = g.append("g")
+                    .attr("class", "axis")
+                    .attr("transform", `translate(0,${innerH})`)
+                    .call(d3.axisBottom(x).tickSize(0));
+                xAxis.select(".domain").remove();
+                xAxis.selectAll("text").attr("dy", "1em");
+
+                /* Y axis with gridlines */
+                const yAxis = g.append("g")
+                    .attr("class", "axis")
+                    .call(d3.axisLeft(y).ticks(4).tickSize(-innerW));
+                yAxis.select(".domain").remove();
+                yAxis.selectAll(".tick line")
+                    .attr("stroke", "#eee")
+                    .attr("stroke-dasharray", "2,2");
+
+                /* Y axis label */
+                g.append("text")
+                    .attr("transform", "rotate(-90)")
+                    .attr("x", -innerH / 2)
+                    .attr("y", -34)
+                    .attr("text-anchor", "middle")
+                    .style("font-size", "9px")
+                    .style("fill", "#999")
+                    .text("Sightings");
+
+                /* Bars */
+                g.selectAll("rect")
+                    .data(d.counts)
+                    .join("rect")
+                    .attr("x", (_, i) => x(months[i]))
+                    .attr("y", v => y(v))
+                    .attr("width", x.bandwidth())
+                    .attr("height", v => innerH - y(v))
+                    .attr("fill", (_, i) => migrationMonths.has(i) ? ORANGE : GRAY)
+                    .attr("rx", 1);
+            });
+        });
+    </script>
+</body>
+
+</html>
