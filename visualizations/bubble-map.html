@@ -10,6 +10,64 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 <link rel="stylesheet" href="styles-bubble.css">
+<style>
+/* ── SIZE + COLOR LEGEND ── */
+.legend-wrap {
+  margin-top: 16px;
+  border-top: 1px solid #d8ceb8;
+  padding-top: 12px;
+}
+.leg-section-title {
+  font-size: 9px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: #93876F;
+  margin-bottom: 8px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* color legend */
+.color-leg {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+.leg-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #5a5040;
+  font-family: 'DM Sans', sans-serif;
+}
+.leg-dot {
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* size legend */
+.size-leg {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+.size-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  color: #93876F;
+  font-family: 'DM Sans', sans-serif;
+}
+.size-circle {
+  border-radius: 50%;
+  background: #93876F;
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+</style>
 </head>
 <body>
 
@@ -44,20 +102,52 @@
         <div class="stat-lbl">Dominant location</div>
       </div>
     </div>
-    <div class="leg">
-      <div class="leg-title">Colony locations</div>
-      <div class="leg-item"><div class="leg-dot" style="width:14px;height:14px;background:#05597A;opacity:0.8"></div>Dominant site</div>
-      <div class="leg-item"><div class="leg-dot" style="width:10px;height:10px;background:#627461;opacity:0.75"></div>Secondary sites</div>
+
+    <div class="legend-wrap">
+      <!-- color legend -->
+      <div class="leg-section-title">Color</div>
+      <div class="color-leg">
+        <div class="leg-item">
+          <div class="leg-dot" style="width:14px;height:14px;background:#05597A;opacity:0.8"></div>
+          Dominant site that year
+        </div>
+        <div class="leg-item">
+          <div class="leg-dot" style="width:14px;height:14px;background:#627461;opacity:0.75"></div>
+          Secondary sites
+        </div>
+      </div>
+
+      <!-- size legend -->
+      <div class="leg-section-title">Bubble size = sightings</div>
+      <div class="size-leg" id="size-legend">
+        <!-- built by JS so it matches the real scale -->
+      </div>
     </div>
   </div>
 </div>
 
 <script>
-// load real data from pipeline output
+// shared scale — must match what's used in draw()
+const MAX_N = 92;
+const rSc = d3.scaleSqrt().domain([0, MAX_N]).range([0, 38]);
+
+// ── BUILD SIZE LEGEND ──────────────────────────────────────────────────────
+const sizeLegend = document.getElementById('size-legend');
+[10, 30, 60, 92].forEach(n => {
+  const r = rSc(n);
+  const d = r * 2;
+  const item = document.createElement('div');
+  item.className = 'size-item';
+  item.innerHTML = `
+    <div class="size-circle" style="width:${d}px;height:${d}px;margin-bottom:${38*2 - d}px"></div>
+    <span>${n}</span>
+  `;
+  sizeLegend.appendChild(item);
+});
+
 d3.json('../data/processed/parrot_by_location_year.json').then(parrotData => {
 
   // ── MAP SETUP ──────────────────────────────────────────────────────────────
-  // locked map 
   const map = L.map('leaflet-map', {
     center: [37.778, -122.442], zoom: 13,
     zoomControl: false, scrollWheelZoom: false,
@@ -65,30 +155,22 @@ d3.json('../data/processed/parrot_by_location_year.json').then(parrotData => {
     touchZoom: false, keyboard: false,
   });
 
-  // CARTO light basemap 
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '© OpenStreetMap © CARTO', maxZoom: 19, subdomains: 'abcd',
   }).addTo(map);
 
+  const svg     = d3.select('#overlay-svg');
+  const bubbleG = svg.append('g');
+  const labelG  = svg.append('g');
 
-  const svg    = d3.select('#overlay-svg');
-  const bubbleG = svg.append('g'); // bubbles drawn first
-  const labelG  = svg.append('g'); // labels on top
-
-  // using square root scale so bubble area is proportional to sighting count
-  const rSc = d3.scaleSqrt().domain([0, 92]).range([0, 38]);
-
-  // convert lat/lng to SVG pixel coordinates via Leaflet
   const project = (lat, lng) => {
     const pt = map.latLngToContainerPoint([lat, lng]);
     return [pt.x, pt.y];
   };
 
-  // ── DRAW FUNCTION ──────────────────────────────────────────────────────────
+  // ── DRAW ──────────────────────────────────────────────────────────────────
   function draw(year) {
     const yr = String(year);
-
-
     const locs = Object.entries(parrotData)
       .map(([name, d]) => ({name, lat: d.lat, lng: d.lng, n: +(d.years[yr] || 0)}))
       .sort((a, b) => a.n - b.n);
@@ -97,17 +179,16 @@ d3.json('../data/processed/parrot_by_location_year.json').then(parrotData => {
     const top    = locs.reduce((a, b) => a.n > b.n ? a : b);
     const yearMax = top.n;
 
-    // update sidebar stats
     document.getElementById('stat-total').textContent = total;
     document.getElementById('stat-top').textContent   = top.n > 0 ? top.name.split(' /')[0] : 'None';
 
-    // ── BUBBLES ──
+    // bubbles
     bubbleG.selectAll('circle').data(locs, d => d.name)
       .join(
         enter => enter.append('circle')
           .attr('cx', d => project(d.lat, d.lng)[0])
           .attr('cy', d => project(d.lat, d.lng)[1])
-          .attr('r', 0) // start at 0 for enter transition
+          .attr('r', 0)
           .attr('fill',  d => d.n === yearMax && d.n > 0 ? '#05597A' : '#627461')
           .attr('opacity', 0.78)
           .attr('stroke', '#F9F8FA').attr('stroke-width', 1.5)
@@ -118,7 +199,7 @@ d3.json('../data/processed/parrot_by_location_year.json').then(parrotData => {
             .attr('fill', d => d.n === yearMax && d.n > 0 ? '#05597A' : '#627461'))
       );
 
-    // ── COUNT LABELS inside bubbles ──
+    // count labels inside bubbles
     labelG.selectAll('.cnt').data(locs.filter(d => d.n >= 5), d => d.name)
       .join(
         enter => enter.append('text').attr('class', 'cnt')
@@ -134,14 +215,14 @@ d3.json('../data/processed/parrot_by_location_year.json').then(parrotData => {
       .attr('y', d => project(d.lat, d.lng)[1] + 4)
       .text(d => d.n);
 
-    // ── LOCATION NAME LABELS ──
+    // name labels for top sites
     labelG.selectAll('.nlbl').remove();
     const offsets = {
-      'Fort Mason':      [0, -1],  // above
-      'Telegraph Hill':  [1,  0],  // right
-      'Presidio':        [-1, 0],  // left
-      'Golden Gate Park':[0,  1],  // below
-      'Corona Heights':  [1,  0],  // right
+      'Fort Mason':      [0, -1],
+      'Telegraph Hill':  [1,  0],
+      'Presidio':        [-1, 0],
+      'Golden Gate Park':[0,  1],
+      'Corona Heights':  [1,  0],
     };
     locs.filter(d => d.n >= 15).sort((a,b) => b.n - a.n).slice(0, 2).forEach(d => {
       const [px, py] = project(d.lat, d.lng);
@@ -174,12 +255,10 @@ d3.json('../data/processed/parrot_by_location_year.json').then(parrotData => {
 
   playBtn.addEventListener('click', () => {
     if (playing) {
-      // pause
       clearInterval(interval);
       playing = false;
       playBtn.textContent = 'Play';
     } else {
-      // play from current position, or restart if at end
       playing = true;
       playBtn.textContent = 'Pause';
       let yr = +slider.value >= 2025 ? 2010 : +slider.value;
@@ -197,11 +276,9 @@ d3.json('../data/processed/parrot_by_location_year.json').then(parrotData => {
     }
   });
 
-  // wait for Leaflet tiles to load before first draw so projection is correct
   map.whenReady(() => draw(2010));
 
 }).catch(() => {
-  //  error for teseting
   document.querySelector('.sub').textContent =
     'Run with python3 -m http.server — loads from ../data/processed/parrot_by_location_year.json';
 });

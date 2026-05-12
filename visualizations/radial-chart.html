@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1>Raptor Migration · Radial Bar</h1>
-<p class="subtitle">Monthly raptor sighting distribution in San Francisco from raptor_monthly.json.</p>
+<p class="subtitle">Monthly raptor sighting distribution in San Francisco</p>
 
 <div class="layout">
   <div class="chart-wrap">
@@ -90,6 +90,39 @@ d3.json('../data/processed/raptor_monthly.json').then(raw => {
     .attr('font-family','IM Fell English,serif').attr('font-size',13).attr('fill','#3a3020').text('Sightings');
   g.append('text').attr('text-anchor','middle').attr('y',22)
     .attr('font-family','DM Sans,sans-serif').attr('font-size',9).attr('fill','#93876F').text('% by month');
+
+  // ── SEND hover to parent ──────────────────────────────────────────────────
+  g.selectAll('path')
+    .on('mouseover', function(event, d) {
+      const i = vals.indexOf(d);
+      window.parent.postMessage({ type: 'hawk-hover', monthIndex: i }, '*');
+      // highlight self
+      g.selectAll('path').attr('opacity', (v, j) =>
+        j === i ? 1.0 : 0.15
+      );
+    })
+    .on('mouseout', function() {
+      window.parent.postMessage({ type: 'hawk-hover', monthIndex: null }, '*');
+      // restore
+      g.selectAll('path').attr('opacity', (d, i) =>
+        i === sepIdx || i === octIdx ? 0.9 : 0.5
+      );
+    });
+
+  // ── RECEIVE hover from sibling iframe ────────────────────────────────────
+  window.addEventListener('message', e => {
+    if (!e.data || e.data.type !== 'hawk-hover') return;
+    const i = e.data.monthIndex;
+    if (i === null) {
+      g.selectAll('path').attr('opacity', (d, j) =>
+        j === sepIdx || j === octIdx ? 0.9 : 0.5
+      );
+    } else {
+      g.selectAll('path').attr('opacity', (d, j) =>
+        j === i ? 1.0 : 0.15
+      );
+    }
+  });
 
 }).catch(() => {
   document.body.insertAdjacentHTML('afterbegin',

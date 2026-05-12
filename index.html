@@ -17,25 +17,39 @@
       <h1 class="landing-title">Flock by Block</h1>
       <p class="landing-desc">How does San Francisco's urban infrastructure shape which birds live where? This project uses over 600,000 eBird observations to follow four species across the city and ask why each one is where it is.</p>
     </div>
+    <div class="landing-author">
+      <div class="author-name">Alina Scantlebury</div>
+      <div class="author-meta">Data Visualization · Spring 2026</div>
+    </div>
   </div>
-
-
-
-  <!-- bird circles row -->
+  <div class="forest-scene">
+    <img src="img/tree-vector.png" alt="">
+  </div>
   <div class="bird-row">
-
-    <div class="bird-circle" >
-      <img src="img/hawk.png" alt="hawk">
-    </div>
-
-    <div class="bird-circle" >
+    <div class="bird-circle" onclick="goTo('ch-crow')" role="button" tabindex="0" aria-label="Go to Crow chapter">
       <img src="img/crow.png" alt="crow">
+      <div class="bird-circle-label">
+        <span class="bc-num">01</span>
+        <span class="bc-name">Crow</span>
+        <span class="bc-line">I know when your bins go out.</span>
+      </div>
     </div>
-
-    <div class="bird-circle" >
+    <div class="bird-circle" onclick="goTo('ch-parrot')" role="button" tabindex="0" aria-label="Go to Parrot chapter">
       <img src="img/parrot.png" alt="parrot">
+      <div class="bird-circle-label">
+        <span class="bc-num">02</span>
+        <span class="bc-name">Parrot</span>
+        <span class="bc-line">Telegraph Hill? I moved.</span>
+      </div>
     </div>
-
+    <div class="bird-circle" onclick="goTo('ch-hawk')" role="button" tabindex="0" aria-label="Go to Hawk chapter">
+      <img src="img/hawk.png" alt="hawk">
+      <div class="bird-circle-label">
+        <span class="bc-num">03</span>
+        <span class="bc-name">Hawk</span>
+        <span class="bc-line">Only here in September.</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -43,9 +57,9 @@
 <nav id="main-nav" style="display:none">
   <div class="nav-logo">Flock by Block</div>
   <div class="nav-links">
-    <a href="#ch-crow" id="nav-crow">Crows</a>
+    <a href="#ch-crow"   id="nav-crow">Crows</a>
     <a href="#ch-parrot" id="nav-parrot">Parrots</a>
-    <a href="#ch-hawk" id="nav-hawk">Hawks</a>
+    <a href="#ch-hawk"   id="nav-hawk">Hawks</a>
   </div>
 </nav>
 
@@ -56,33 +70,21 @@
 </div>
 <div class="scrolly">
   <div class="prose-col">
-    <div class="step" data-chapter="crow" data-viz="scatter">
-      <div class="step-label" style="color:#1a3a6a">Objective 1 · Crows</div>
-      <div class="step-body" style="color:#091221">Crows are urban generalists. Their sighting frequency barely shifts between SF's quietest residential neighborhoods and its densest commercial corridors, 37% to 35%. They don't need Clement Street. They just don't avoid it.
-        That's because food businesses create exactly the infrastructure crows exploit: dumpsters, outdoor dining scraps, bin collection days. The same density that drives jays out (noise, foot traffic, reduced canopy) functions as a food subsidy for crows. They are commensal: they benefit from human activity without depending on any particular form of it.
-        Jays are the opposite. Their frequency drops 2.5x between low- and high-commercial neighborhoods. Same family, opposite strategy.
-      </div>
-    </div>
-    <div class="step" data-chapter="crow" data-viz="choropleth">
-      <div class="step-label" style="color:#1a3a6a">The Map</div>
+    <div class="step" data-chapter="crow">
+      <div class="step-label" style="color:#05597A">Objective 1 · Crows</div>
+      <h2 class="step-head">Do crows follow restaurants?</h2>
+      <p class="step-body">Crows are urban generalists. Their sighting frequency barely shifts between SF's quietest residential neighborhoods and its densest commercial corridors, 37% to 35%. They don't need Clement Street. They just don't avoid it.</p>
+      <p class="step-body">That's because food businesses create exactly the infrastructure crows exploit: dumpsters, outdoor dining scraps, bin collection days. The same density that drives jays out functions as a food subsidy for crows. They are commensal.</p>
+      <p class="step-body">Jays are the opposite. Their frequency drops 2.5x in high-commercial neighborhoods. Same family, opposite strategy. That contrast is what this chapter is about.</p>
     </div>
   </div>
-  <div class="viz-col" id="viz-crow">
-    <div class="viz-wrap" id="crow-scatter-wrap">
+  <div class="viz-col">
+    <div class="viz-wrap">
+      <div class="viz-label">Crow vs Jay frequency · food business density</div>
       <div class="chart-box">
         <iframe src="./visualizations/slope-chart.html"
-        style="width:150%;height:700px;border:none;display:block;">
-    </iframe>
+          style="width:100%;height:700px;border:none;display:block;"></iframe>
       </div>
-    </div>
-    <div class="viz-wrap" id="crow-choro-wrap" style="display:none">
-      <div class="viz-label">Crow frequency by neighborhood</div>
-      <div class="chart-box">
-        <iframe src="./visualizations/slope-chart.html"
-        style="width:150%;height:700px;border:none;display:block;">
-        </iframe>
-      </div>
-      <div class="annot" id="choro-annot">Darker = more crows. Toggle to compare with food business density.</div>
     </div>
   </div>
 </div>
@@ -90,34 +92,29 @@
 <!-- ── CH 2: PARROTS ── -->
 <div class="sec-break" id="ch-parrot">
   <div class="sec-n">02.</div>
-  <div class="sec-title">The <em>Parrots</em></div>
+  <div class="sec-title">The <em>Parrot</em></div>
 </div>
-<div class="scrolly">
+<div class="scrolly scrolly--parrot">
   <div class="prose-col">
-    <div class="step" data-chapter="parrot" data-viz="line">
+    <div class="step" data-chapter="parrot">
       <div class="step-label" style="color:#1a5a30">Objective 2 · Parrots</div>
-    </div>
-    <div class="step" data-chapter="parrot" data-viz="dotmap">
-      <div class="step-label" style="color:#1a5a30">The Colony</div>
-
+      <h2 class="step-head">The documentary made Telegraph Hill their address. <em>The data disagreed.</em></h2>
+      <p class="step-body">Fort Mason peaked at 92 sightings in 2022. Telegraph Hill peaked at 30 the same year. The crossover happened around 2013 and Fort Mason has led ever since.</p>
+      <p class="step-body">By 2025 the Presidio peaked at 68 sightings. The colony's center of mass has shifted west. The Presidio is now the fastest-growing site.</p>
+      <div class="stat-pull" style="border-color:#1a5a30">
+        <div class="num" style="color:#1a5a30">3×</div>
+        <div class="lbl">Fort Mason vs Telegraph Hill in 2022</div>
+      </div>
+      <p class="step-body">Drag the slider to watch the colony spread year by year. Play through from 2010 to see the full story.</p>
     </div>
   </div>
   <div class="viz-col">
-    <div class="viz-wrap" id="parrot-line-wrap">
+    <div class="viz-wrap">
+      <div class="viz-label">Red-masked Parakeet colony · SF 2010–2025</div>
       <div class="chart-box">
         <iframe src="./visualizations/bubble-map.html"
-        style="width:100%;height:800px;border:none;display:block;">
-        </iframe>
+          style="width:100%;height:800px;border:none;display:block;"></iframe>
       </div>
-    </div>
-    <div class="viz-wrap" id="parrot-dot-wrap" style="display:none">
-      <div class="viz-label">Parrot colony · SF map</div>
-      <div class="chart-box">
-        <iframe src="ch02-parrot-bubble-map.html"
-                style="width:100%;height:520px;border:none;border-radius:2px;">
-        </iframe>
-      </div>
-      <div class="annot" style="border-color:#1a5a30">Bubble size = sightings. Fort Mason dominates since 2014.</div>
     </div>
   </div>
 </div>
@@ -127,33 +124,94 @@
   <div class="sec-n">03.</div>
   <div class="sec-title">The <em>Hawk</em></div>
 </div>
-<div class="scrolly">
+<div class="scrolly scrolly--hawk">
   <div class="prose-col">
-    <div class="step" data-chapter="hawk" data-viz="smult">
+    <div class="step" data-chapter="hawk">
       <div class="step-label" style="color:#8a6010">Objective 3 · Hawks</div>
+      <h2 class="step-head">29% of all SF raptor sightings happen in <em>two months.</em></h2>
+      <div class="stat-pull" style="border-color:#8a6010">
+        <div class="num" style="color:#8a6010">3.5×</div>
+        <div class="lbl">More raptors in Sep/Oct than the summer low</div>
+      </div>
+      <p class="step-body">The Pacific Flyway bottleneck at the Golden Gate funnels migrating raptors through SF every autumn. Most residents walk beneath it without looking up.</p>
+      <p class="step-body">The spike is not one bird. Red-tailed Hawk, Peregrine Falcon, Cooper's Hawk, Merlin — all peak in the same two months simultaneously. Hover a month in either chart to see the signal across all four species at once.</p>
     </div>
   </div>
   <div class="viz-col">
     <div class="viz-wrap">
+      <div class="viz-label">Monthly raptor sightings · radial</div>
       <div class="chart-box">
         <iframe src="./visualizations/radial-chart.html"
-        style="width:100%;height:100%;border:none;display:block;">
-        </iframe>
+          style="width:100%;height:550px;border:none;display:block;"></iframe>
       </div>
     </div>
     <div class="viz-wrap">
+      <div class="viz-label">Monthly sightings · four species</div>
       <div class="chart-box">
         <iframe src="./visualizations/bar-chart.html"
-        style="width:100%;height:100%;border:none;display:block;">
-        </iframe>
+          style="width:100%;height:550px;border:none;display:block;"></iframe>
       </div>
+      <div class="annot" style="border-color:#8a6010">Hover any month in either chart to highlight it across both simultaneously.</div>
     </div>
-  </div>
-    
   </div>
 </div>
 
 <footer>
   <div>
     <div class="footer-title">Flock by Block</div>
-    <div class="footer-meta">Alina Scantlebury · Data Visualization · Spring 2026<br>Cornell Lab of Ornithology · DataSF Open Data Port
+    <div class="footer-meta">Alina Scantlebury · Data Visualization · Spring 2026<br>Cornell Lab of Ornithology · DataSF Open Data Portal</div>
+  </div>
+  <div class="footer-right">Crows follow bins.<br>Parrots follow parks.<br>Hawks follow the coast.</div>
+  <!-- ── METHODOLOGY ── -->
+<section id="methodology">
+  <div class="method-inner">
+    <div class="method-label">Methodology</div>
+    <div class="method-body">
+      <p>The primary dataset is the eBird Basic Dataset for San Francisco County (US-CA-075), downloaded from the Cornell Lab of Ornithology. The raw file contained 5,054,584 rows and was cleaned to 621,286 approved, deduplicated records covering 757 species from 1884 to 2026. The cleaning pipeline was written in Python using pandas with assistance from Claude (Anthropic). Cleaning steps included filtering to APPROVED = 1, deduplicating shared checklists using GROUP IDENTIFIER, parsing OBSERVATION DATE into year and month fields, dropping rows with missing coordinates, and flagging exotic species via EXOTIC CODE. All bird frequency metrics are normalized by checklist effort: frequency = sighting checklists divided by total complete checklists (ALL SPECIES REPORTED = 1) per neighborhood.</p>
+      <p>One secondary dataset from DataSF provided urban infrastructure context. The Registered Businesses dataset was filtered to active food establishments using NAICS code (Food Services) and LIC code keywords (restaurant, bar, bakery, caterer, and related terms). Because the business file uses different neighborhood boundary names than the eBird analysis neighborhoods, a three-pass pipeline with manual name mapping was required to fill all 111 neighborhoods. Claude assisted in writing and debugging all three pipeline scripts.</p>
+      <p>The parrot pipeline extracted 2,350 Red-masked Parakeet sightings from the cleaned eBird CSV and aggregated them by colony location and year. The raptor pipeline computed monthly sighting totals and species-level monthly distributions for four species. Both scripts were written with Claude's assistance. All heavy computation was done offline. The browser loads pre-aggregated JSON files under 300kb total.</p>
+      <p>All visualizations are built in D3.js v7 and embedded as iframe elements so each chart can be developed and tested independently. The animated parrot bubble map uses Leaflet.js for the basemap with a D3 SVG overlay. Scroll behavior is managed by Scrollama.js. Synchronized hover between the radial bar chart and small multiples uses the postMessage API to pass month index values between iframes through the parent window.</p>
+    </div>
+  </div>
+</section>
+</footer>
+
+<script>
+function goTo(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+// relay hawk-hover messages between iframes
+window.addEventListener('message', e => {
+  if (e.data && e.data.type === 'hawk-hover') {
+    document.querySelectorAll('iframe').forEach(f => {
+      try { f.contentWindow.postMessage(e.data, '*'); } catch(err) {}
+    });
+  }
+});
+
+// keyboard accessibility for bird circles
+document.querySelectorAll('.bird-circle').forEach(el => {
+  el.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') el.click();
+  });
+});
+
+// show nav after landing
+const navEl = document.getElementById('main-nav');
+const obs = new IntersectionObserver(([e]) => {
+  navEl.style.display = e.isIntersecting ? 'none' : 'flex';
+}, { threshold: 0.05 });
+obs.observe(document.getElementById('landing'));
+
+// scrollama — update nav highlight only
+const scroller = scrollama();
+scroller.setup({ step: '.step', offset: 0.5 }).onStepEnter(({ element }) => {
+  const ch = element.dataset.chapter;
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  const nl = document.getElementById('nav-' + ch);
+  if (nl) nl.classList.add('active');
+});
+</script>
+</body>
+</html>

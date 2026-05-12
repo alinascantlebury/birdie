@@ -8,7 +8,6 @@ body {
     background: #F9F8FA;
     font-family: 'DM Sans', sans-serif;
     font-weight: 300;
-    padding: 40px;
 }
 
 .kicker {
@@ -48,10 +47,11 @@ h1 em {
 }
 
 .year-display {
-    font-size: 48px;
-    font-weight: 300;
+    font-size: 42px;
+    font-weight: 200;
     color: #05597A;
     line-height: 1;
+    letter-spacing: .1px;
     width: 90px;
     flex-shrink: 0;
 }
