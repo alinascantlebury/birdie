@@ -5,16 +5,13 @@
 <title>Radial Bar · Raptor Migration by Month</title>
 <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
-<link rel="stylesheet" href="styles-radial.css">
+<link rel="stylesheet" href="styles_radial.css">
 
 </head>
 <body>
-<h1>Raptor Migration · Radial Bar</h1>
-<p class="subtitle">Monthly raptor sighting distribution in San Francisco</p>
-
 <div class="layout">
   <div class="chart-wrap">
-    <svg id="radial-svg" viewBox="0 0 420 420" width="420" style="display:block;"></svg>
+    <svg id="radial-svg" viewBox="0 0 420 390" width="400" style="display:block;"></svg>
   </div>
 </div>
 
@@ -56,11 +53,11 @@ d3.json('../data/processed/raptor_monthly.json').then(raw => {
     g.append('circle').attr('r', innerR+(outerMaxR-innerR)*pct/100)
       .attr('fill','none').attr('stroke','#e0d8c8').attr('stroke-width',0.5);
   });
-  g.append('circle').attr('r',innerR).attr('fill','#F9F8FA').attr('stroke','#d8ceb8').attr('stroke-width',0.8);
+  g.append('circle').attr('r',innerR).attr('fill','#FFFFFF').attr('stroke','#d8ceb8').attr('stroke-width',0.8);
 
   g.selectAll('path').data(vals).join('path')
     .attr('d',(d,i) => arc(d,i))
-    .attr('fill',(d,i) => i===sepIdx||i===octIdx ? '#b87a10' : '#627461')
+    .attr('fill',(d,i) => i===sepIdx||i===octIdx ? '#2F7D97' : '#C8C9CC')
     .attr('opacity',(d,i) => i===sepIdx||i===octIdx ? 0.9 : 0.5);
 
   vals.forEach((v,i) => {
@@ -71,7 +68,7 @@ d3.json('../data/processed/raptor_monthly.json').then(raw => {
       .attr('x', Math.cos(mid)*lr).attr('y', Math.sin(mid)*lr)
       .attr('text-anchor','middle').attr('dominant-baseline','central')
       .attr('font-size', isHL?11:9).attr('font-weight', isHL?'500':'300')
-      .attr('fill', isHL?'#b87a10':'#93876F').attr('font-family','DM Sans,sans-serif')
+      .attr('fill', isHL?'#2F7D97':'#A19C92').attr('font-family','DM Sans,sans-serif')
       .text(months[i]);
 
     if (isHL) {
@@ -79,17 +76,17 @@ d3.json('../data/processed/raptor_monthly.json').then(raw => {
       g.append('text')
         .attr('x', Math.cos(mid)*vr).attr('y', Math.sin(mid)*vr)
         .attr('text-anchor','middle').attr('dominant-baseline','central')
-        .attr('font-size',8).attr('fill','#b87a10').attr('font-family','DM Sans,sans-serif')
+        .attr('font-size',8).attr('fill','#2F7D97').attr('font-family','DM Sans,sans-serif')
         .text(pcts[i]+'%');
     }
   });
 
   g.append('text').attr('text-anchor','middle').attr('y',-8)
-    .attr('font-family','IM Fell English,serif').attr('font-size',13).attr('fill','#3a3020').text('Raptor');
+    .attr('font-family','IM Fell English,serif').attr('font-size',13).attr('fill','#1A1208').text('Raptor');
   g.append('text').attr('text-anchor','middle').attr('y',8)
-    .attr('font-family','IM Fell English,serif').attr('font-size',13).attr('fill','#3a3020').text('Sightings');
+    .attr('font-family','IM Fell English,serif').attr('font-size',13).attr('fill','#1A1208').text('Sightings');
   g.append('text').attr('text-anchor','middle').attr('y',22)
-    .attr('font-family','DM Sans,sans-serif').attr('font-size',9).attr('fill','#93876F').text('% by month');
+    .attr('font-family','DM Sans,sans-serif').attr('font-size',9).attr('fill','#A19C92').text('% by month');
 
   // ── SEND hover to parent ──────────────────────────────────────────────────
   g.selectAll('path')
@@ -126,7 +123,7 @@ d3.json('../data/processed/raptor_monthly.json').then(raw => {
 
 }).catch(() => {
   document.body.insertAdjacentHTML('afterbegin',
-    '<p style="color:#803020;padding:20px;font-size:13px">Run with python3 -m http.server — loads from ../data/processed/raptor_monthly.json</p>'
+    '<p style="color:#803020;padding: 12px 16px;font-size:13px">Run with python3 -m http.server — loads from ../data/processed/raptor_monthly.json</p>'
   );
 });
 </script>

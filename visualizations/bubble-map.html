@@ -71,59 +71,61 @@
 </head>
 <body>
 
-<p class="kicker">Chapter 02 · Parrots · Objective 2</p>
-<h1>The Colony <em>Moves</em></h1>
-<p class="sub">Drag the slider to watch the Red-masked Parakeet colony spread across San Francisco from 2010 to 2025. Bubble size = sightings at each location that year.</p>
+<div class="outer">
 
-<div class="controls">
-  <div class="year-display" id="year-display">2010</div>
-  <div class="slider-wrap">
-    <input type="range" id="year-slider" min="2010" max="2025" value="2010" step="1">
-    <div class="tick-row">
-      <span>2010</span><span>2013</span><span>2016</span><span>2019</span><span>2022</span><span>2025</span>
-    </div>
-  </div>
-  <button class="play-btn" id="play-btn">Play</button>
-</div>
-
-<div class="layout">
-  <div class="map-wrap">
-    <div id="leaflet-map"></div>
-    <svg id="overlay-svg"></svg>
-  </div>
-  <div class="sidebar">
-    <div class="stat-row">
-      <div class="stat">
-        <div class="stat-num" id="stat-total">0</div>
-        <div class="stat-lbl">Total sightings this year</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num" id="stat-top">Fort Mason</div>
-        <div class="stat-lbl">Dominant location</div>
+  <!-- LEFT: map fills remaining space -->
+  <div class="map-side">
+    <!-- slider sits above map -->
+    <div class="slider-row">
+      <input type="range" id="year-slider" min="2010" max="2025" value="2010" step="1">
+      <div class="tick-row">
+        <span>2010</span><span>2013</span><span>2016</span><span>2019</span><span>2022</span><span>2025</span>
       </div>
     </div>
-
-    <div class="legend-wrap">
-      <!-- color legend -->
-      <div class="leg-section-title">Color</div>
-      <div class="color-leg">
-        <div class="leg-item">
-          <div class="leg-dot" style="width:14px;height:14px;background:#05597A;opacity:0.8"></div>
-          Dominant site that year
-        </div>
-        <div class="leg-item">
-          <div class="leg-dot" style="width:14px;height:14px;background:#627461;opacity:0.75"></div>
-          Secondary sites
-        </div>
-      </div>
-
-      <!-- size legend -->
-      <div class="leg-section-title">Bubble size = sightings</div>
-      <div class="size-leg" id="size-legend">
-        <!-- built by JS so it matches the real scale -->
-      </div>
+    <div class="map-wrap">
+      <div id="leaflet-map"></div>
+      <svg id="overlay-svg"></svg>
     </div>
   </div>
+
+  <!-- RIGHT: fixed width panel -->
+  <div class="right-panel">
+    <button class="play-btn" id="play-btn">Play</button>
+
+    <!-- big year -->
+    <div class="year-display" id="year-display">2010</div>
+
+    <!-- stats -->
+    <div class="stat">
+      <div class="stat-num" id="stat-total">0</div>
+      <div class="stat-lbl">Total sightings this year</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-num stat-top" id="stat-top">—</div>
+      <div class="stat-lbl">Dominant location</div>
+    </div>
+
+    <!-- color legend -->
+    <div class="leg-section">
+      <div class="leg-title">Color</div>
+      <div class="leg-item">
+        <div class="leg-dot" style="background:#2F7D97;"></div>
+        Dominant site that year
+      </div>
+      <div class="leg-item">
+        <div class="leg-dot" style="background:#7F907F;"></div>
+        Secondary sites
+      </div>
+    </div>
+
+    <!-- size legend -->
+    <div class="leg-section">
+      <div class="leg-title">Bubble size = sightings</div>
+      <div class="size-leg" id="size-legend"></div>
+    </div>
+  </div>
+
 </div>
 
 <script>
@@ -133,15 +135,16 @@ const rSc = d3.scaleSqrt().domain([0, MAX_N]).range([0, 38]);
 
 // ── BUILD SIZE LEGEND ──────────────────────────────────────────────────────
 const sizeLegend = document.getElementById('size-legend');
+const displayScale = d3.scaleSqrt().domain([0, MAX_N]).range([0, 24]);
 [10, 30, 60, 92].forEach(n => {
-  const r = rSc(n);
+  const r = displayScale(n);
   const d = r * 2;
   const item = document.createElement('div');
   item.className = 'size-item';
   item.innerHTML = `
-    <div class="size-circle" style="width:${d}px;height:${d}px;margin-bottom:${38*2 - d}px"></div>
-    <span>${n}</span>
-  `;
+  <div class="size-circle" style="width:${d}px;height:${d}px;"></div>
+  <span>${n} sigtings</span>
+`;
   sizeLegend.appendChild(item);
 });
 

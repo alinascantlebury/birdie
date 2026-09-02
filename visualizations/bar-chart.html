@@ -1,155 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raptor Migration — Small Multiples</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
-    <link rel="stylesheet" href="styles-bar.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raptor Migration — Small Multiples</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<link rel="stylesheet" href="styles-bar.css">
+<style>
+body { padding: 16px; background: #fff; }
 
+.legend {
+  display: flex;
+  gap: 16px;
+  font-size: 11px;
+  color: #A19C92;
+  margin-bottom: 16px;
+  align-items: center;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+}
+.legend-dot {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 2px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+/* 2x2 grid */
+#charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.chart-wrap {
+  background: #FAFAFA;
+  border: 1px solid #E0D8C8;
+  border-radius: 8px;
+  padding: 14px 12px 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* bird oval top right */
+.bird-photo-wrap {
+  position: absolute;
+  top: 10px; right: 10px;
+  width: 58px; height: 70px;
+  border-radius: 50% / 40%;
+  overflow: hidden;
+  border: 2px solid #E0D8C8;
+  background: #F5F5F5;
+}
+.bird-photo-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.species-title {
+  font-size: 14px;
+  font-weight: 400;
+  color: #222222;
+  font-family: 'Jost', sans-serif;
+  margin-bottom: 8px;
+  padding-right: 68px;
+}
+</style>
 </head>
-
 <body>
 
-    <h1>The Sep–Oct migration spike repeats across every top SF raptor</h1>
-    <div class="legend">
-        <span><span class="legend-dot" style="background:#E8910A;"></span>Sep–Oct (Pacific Flyway migration peak)</span>
-        <span><span class="legend-dot" style="background:#C8C9CC;"></span>Other months</span>
-    </div>
+<div class="legend">
+  <span><span class="legend-dot" style="background:#2F7D97;"></span>Sep–Oct (Pacific Flyway migration peak)</span>
+  <span><span class="legend-dot" style="background:#C8C9CC;"></span>Other months</span>
+</div>
 
-    <div id="charts"></div>
+<div id="charts"></div>
 
+<script>
+const SPECIES = [
+  { name: "Red-tailed Hawk",     img: "../img/Group-1.png" },
+  { name: "Red-shouldered Hawk", img: "../img/Group-2.png" },
+  { name: "Cooper's Hawk",       img: "../img/Group-5.png" },
+  { name: "Peregrine Falcon",    img: "../img/Group-3.png" },
+];
 
-    <script>
-        /* ── Data ────────────────────────────────────────────────────────────────────*/
-        const SPECIES = ["Red-tailed Hawk", "Red-shouldered Hawk", "Peregrine Falcon", "Cooper's Hawk"];
+const MONTHS   = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const BLUE     = "#2F7D97";
+const GRAY     = "#C8C9CC";
+const MIGR     = new Set([8, 9]); // Sep=8, Oct=9
 
-        d3.json("../data/processed/raptor_species_monthly.json").then(raw => {
-            const data = SPECIES.map(species => ({
-                species,
-                counts: d3.range(1, 13).map(m => {
-                    const row = raw.find(r => r["COMMON NAME"] === species && r.month ===
-                    m);
-                    return row ? row.count : 0;
-                })
-            }));
+d3.json("../data/processed/raptor_species_monthly.json").then(raw => {
 
-            /* ── Config ──────────────────────────────────────────────────────────────── */
-            const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-            const migrationMonths = new Set([8, 9]); // Sep=8, Oct=9
-            const ORANGE = "#E8910A";
-            const GRAY = "#C8C9CC";
+  const data = SPECIES.map(s => ({
+    ...s,
+    counts: d3.range(1, 13).map(m => {
+      const row = raw.find(r => r["COMMON NAME"] === s.name && r.month === m);
+      return row ? row.count : 0;
+    })
+  }));
 
-            const W = 300;
-            const H = 185;
-            const margin = {
-                top: 28,
-                right: 12,
-                bottom: 28,
-                left: 44
-            };
-            const innerW = W - margin.left - margin.right;
-            const innerH = H - margin.top - margin.bottom;
+  const W = 300, H = 180;
+  const m = { top: 44, right: 10, bottom: 22, left: 38 };
+  const iW = W - m.left - m.right;
+  const iH = H - m.top - m.bottom;
 
-            const container = document.getElementById("charts");
+  const container = document.getElementById("charts");
 
-            data.forEach(d => {
-                const wrap = document.createElement("div");
-                wrap.className = "chart-wrap";
-                container.appendChild(wrap);
+  data.forEach(d => {
+    // card
+    const wrap = document.createElement("div");
+    wrap.className = "chart-wrap";
+    container.appendChild(wrap);
 
-                const svg = d3.select(wrap).append("svg")
-                    .attr("viewBox", `0 0 ${W} ${H}`)
-                    .attr("width", "100%");
+    // title
+    const title = document.createElement("div");
+    title.className = "species-title";
+    title.textContent = d.name;
+    wrap.appendChild(title);
 
-                const g = svg.append("g")
-                    .attr("transform", `translate(${margin.left},${margin.top})`);
+    // bird photo
+    const pw = document.createElement("div");
+    pw.className = "bird-photo-wrap";
+    const img = document.createElement("img");
+    img.src = d.img;
+    img.alt = d.name;
+    pw.appendChild(img);
+    wrap.appendChild(pw);
 
-                const x = d3.scaleBand()
-                    .domain(months)
-                    .range([0, innerW])
-                    .padding(0.2);
+    // svg
+    const svg = d3.select(wrap).append("svg")
+      .attr("viewBox", `0 0 ${W} ${H}`)
+      .attr("width", "100%");
 
-                const y = d3.scaleLinear()
-                    .domain([0, d3.max(d.counts) * 1.1])
-                    .range([innerH, 0]);
+    const g = svg.append("g")
+      .attr("transform", `translate(${m.left},${m.top})`);
 
-                /* Title */
-                g.append("text")
-                    .attr("x", innerW / 2)
-                    .attr("y", -10)
-                    .attr("text-anchor", "middle")
-                    .style("font-size", "12px")
-                    .style("font-weight", "500")
-                    .style("fill", "#222")
-                    .text(d.species);
+    const x = d3.scaleBand()
+      .domain(MONTHS).range([0, iW]).padding(0.22);
 
-                /* X axis */
-                const xAxis = g.append("g")
-                    .attr("class", "axis")
-                    .attr("transform", `translate(0,${innerH})`)
-                    .call(d3.axisBottom(x).tickSize(0));
-                xAxis.select(".domain").remove();
-                xAxis.selectAll("text").attr("dy", "1em");
+    const y = d3.scaleLinear()
+      .domain([0, d3.max(d.counts) * 1.25]).range([iH, 0]);
 
-                /* Y axis with gridlines */
-                const yAxis = g.append("g")
-                    .attr("class", "axis")
-                    .call(d3.axisLeft(y).ticks(4).tickSize(-innerW));
-                yAxis.select(".domain").remove();
-                yAxis.selectAll(".tick line")
-                    .attr("stroke", "#eee")
-                    .attr("stroke-dasharray", "2,2");
+    // gridlines
+    g.selectAll(".gl")
+      .data(y.ticks(4)).join("line").attr("class","gl")
+      .attr("x1",0).attr("x2",iW)
+      .attr("y1",v=>y(v)).attr("y2",v=>y(v))
+      .attr("stroke","#EEEEEE").attr("stroke-dasharray","2,2");
 
-                /* Y axis label */
-                g.append("text")
-                    .attr("transform", "rotate(-90)")
-                    .attr("x", -innerH / 2)
-                    .attr("y", -34)
-                    .attr("text-anchor", "middle")
-                    .style("font-size", "9px")
-                    .style("fill", "#999")
-                    .text("Sightings");
+    // x axis
+    const xa = g.append("g").attr("transform",`translate(0,${iH})`)
+      .call(d3.axisBottom(x).tickSize(0));
+    xa.select(".domain").remove();
+    xa.selectAll("text")
+      .style("font-size","8px")
+      .style("font-family","Inter,sans-serif")
+      .style("fill","#000000")
+      .attr("dy","1.2em");
 
-                /* Bars */
-                g.selectAll("rect")
-                    .data(d.counts)
-                    .join("rect")
-                    .attr("x", (_, i) => x(months[i]))
-                    .attr("y", v => y(v))
-                    .attr("width", x.bandwidth())
-                    .attr("height", v => innerH - y(v))
-                    .attr("fill", (_, i) => migrationMonths.has(i) ? ORANGE : GRAY)
-                    .attr("rx", 1)
-                    .on("mouseover", function(event, v) {
-                      const i = d.counts.indexOf(v);
-                      window.parent.postMessage({ type: "hawk-hover", monthIndex: i }, "*");
-                      // highlight matching bars across all panels
-                      d3.selectAll("rect").attr("opacity", function(v2, j) {
-                        return j % 12 === i ? 1.0 : 0.15;
-                      });
-                    })
-                    .on("mouseout", function() {
-                      window.parent.postMessage({ type: "hawk-hover", monthIndex: null }, "*");
-                      d3.selectAll("rect").attr("opacity", 1);
-                    });
-            });
+    // y axis
+    const ya = g.append("g")
+      .call(d3.axisLeft(y).ticks(4).tickSize(0));
+    ya.select(".domain").remove();
+    ya.selectAll("text")
+      .style("font-size","8px")
+      .style("font-family","Inter,sans-serif")
+      .style("fill","#000000");
 
-        // ── RECEIVE hover from sibling iframe ──────────────────────────────
-        window.addEventListener("message", e => {
-          if (!e.data || e.data.type !== "hawk-hover") return;
-          const i = e.data.monthIndex;
-          if (i === null) {
-            d3.selectAll("rect").attr("opacity", 1);
-          } else {
-            d3.selectAll("rect").attr("opacity", function(v, j) {
-              return j % 12 === i ? 1.0 : 0.15;
-            });
-          }
-        });
-        });
-    </script>
+    // y label
+    g.append("text")
+      .attr("transform","rotate(-90)")
+      .attr("x",-iH/2).attr("y",-28)
+      .attr("text-anchor","middle")
+      .style("font-size","8px")
+      .style("fill","#999999")
+      .style("font-family","Inter,sans-serif")
+      .text("Sightings");
+
+    // bars
+    g.selectAll("rect")
+      .data(d.counts).join("rect")
+      .attr("x",(_, i)=>x(MONTHS[i]))
+      .attr("y", v=>y(v))
+      .attr("width", x.bandwidth())
+      .attr("height", v=>iH-y(v))
+      .attr("fill",(_, i)=>MIGR.has(i) ? BLUE : GRAY)
+      .attr("rx", 2)
+      .on("mouseover", function(event, v) {
+        const i = d.counts.indexOf(v);
+        window.parent.postMessage({ type:"hawk-hover", monthIndex:i }, "*");
+        d3.selectAll("rect").attr("opacity",(v2,j)=>j%12===i?1:0.2);
+      })
+      .on("mouseout", function() {
+        window.parent.postMessage({ type:"hawk-hover", monthIndex:null }, "*");
+        d3.selectAll("rect").attr("opacity",1);
+      });
+  });
+
+  // receive from sibling iframe
+  window.addEventListener("message", e => {
+    if (!e.data || e.data.type !== "hawk-hover") return;
+    const i = e.data.monthIndex;
+    d3.selectAll("rect").attr("opacity",(v,j)=>
+      i===null ? 1 : j%12===i ? 1 : 0.2
+    );
+  });
+
+}).catch(() => {
+  document.body.innerHTML += '<p style="color:#A19C92;padding:20px;font-size:12px;">Run with python3 -m http.server</p>';
+});
+</script>
 </body>
-
 </html>

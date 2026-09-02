@@ -40,13 +40,13 @@ d3.json('../data/processed/master.json').then(raw => {
   const series = [
     {
       name: 'Crow',
-      color: '#b87a10',
+      color: '#2F7D97',
       low:  mean(bottom, 'crow_frequency'),
       high: mean(top,    'crow_frequency'),
     },
     {
       name: 'Jay',
-      color: '#05597A',
+      color: '#7F907F',
       low:  mean(bottom, 'jay_frequency'),
       high: mean(top,    'jay_frequency'),
     },
@@ -70,7 +70,7 @@ d3.json('../data/processed/master.json').then(raw => {
   g.selectAll('.gl').data(y.ticks(5)).join('line')
     .attr('x1', 0).attr('x2', w)
     .attr('y1', d => y(d)).attr('y2', d => y(d))
-    .attr('stroke', '#e0d8c8').attr('stroke-width', 0.5);
+    .attr('stroke', '#E0D8C8').attr('stroke-width', 0.5);
 
   // ── LINES ───────────────────────────────────────────────────────────────────
   series.forEach(s => {
@@ -123,15 +123,15 @@ d3.json('../data/processed/master.json').then(raw => {
   // ── Y AXIS ───────────────────────────────────────────────────────────────────
   g.append('g')
     .call(d3.axisLeft(y).ticks(5).tickFormat(d3.format('.0%')))
-    .selectAll('text').attr('fill', '#93876F').attr('font-size', 10).attr('font-family', 'DM Sans, sans-serif');
-  g.selectAll('.domain,.tick line').attr('stroke', '#d8ceb8');
+    .selectAll('text').attr('fill', '#A19C92').attr('font-size', 10).attr('font-family', 'DM Sans, sans-serif');
+  g.selectAll('.domain,.tick line').attr('stroke', '#E0D8C8');
 
   // axis label
   g.append('text')
     .attr('transform', 'rotate(-90)')
     .attr('x', -h/2).attr('y', -52)
     .attr('text-anchor', 'middle')
-    .attr('font-size', 10).attr('fill', '#93876F')
+    .attr('font-size', 10).attr('fill', '#A19C92')
     .attr('font-family', 'DM Sans, sans-serif')
     .text('Sighting Frequency');
     // ── LEGEND ────────────────────────────────────────────────────────────────────
@@ -159,12 +159,12 @@ d3.json('../data/processed/master.json').then(raw => {
       .attr('x', x(label)).attr('y', h + 28)
       .attr('text-anchor', 'middle')
       .attr('font-size', 13).attr('font-weight', '500')
-      .attr('fill', '#3a3020').attr('font-family', 'DM Sans, sans-serif')
+      .attr('fill', '#1A1208').attr('font-family', 'DM Sans, sans-serif')
       .text(label);
     g.append('text')
       .attr('x', x(label)).attr('y', h + 46)
       .attr('text-anchor', 'middle')
-      .attr('font-size', 10).attr('fill', '#93876F')
+      .attr('font-size', 10).attr('fill', '#A19C92')
       .attr('font-family', 'DM Sans, sans-serif')
       .text(sub);
   });
